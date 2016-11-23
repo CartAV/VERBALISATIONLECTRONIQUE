@@ -216,6 +216,7 @@
       {
         "name": "CODE_INSEE_INFRACTION",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -536,13 +537,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 16,
+    "versionNumber": 17,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479927668164
+    "lastModifiedOn": 1479927675337
   },
   "customMeta": {
     "kv": {}
