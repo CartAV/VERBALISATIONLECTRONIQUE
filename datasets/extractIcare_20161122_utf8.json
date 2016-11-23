@@ -59,7 +59,6 @@
       {
         "name": "PAYS_RESIDENCE_CONTREVENANT",
         "type": "string",
-        "meaning": "CountryMeaning",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -530,13 +529,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479927522816
+    "lastModifiedOn": 1479927555199
   },
   "customMeta": {
     "kv": {}
