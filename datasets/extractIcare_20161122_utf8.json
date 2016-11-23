@@ -304,15 +304,17 @@
       },
       {
         "name": "ANNEE_INFRACTION",
-        "type": "int",
+        "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "maxLength": 1000
       },
       {
         "name": "MOIS_INFRACTION",
-        "type": "int",
+        "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "maxLength": 1000
       },
       {
         "name": "NUM_ANNEE_MOIS_INFRACTION",
@@ -545,13 +547,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 35,
+    "versionNumber": 36,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479928124129
+    "lastModifiedOn": 1479928202000
   },
   "customMeta": {
     "kv": {}
