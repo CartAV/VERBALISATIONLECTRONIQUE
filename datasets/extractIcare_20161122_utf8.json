@@ -172,7 +172,7 @@
       },
       {
         "name": "NBR_POINTS_RETIRES",
-        "type": "string",
+        "type": "int",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -535,13 +535,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 11,
+    "versionNumber": 12,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479927629278
+    "lastModifiedOn": 1479927649713
   },
   "customMeta": {
     "kv": {}
