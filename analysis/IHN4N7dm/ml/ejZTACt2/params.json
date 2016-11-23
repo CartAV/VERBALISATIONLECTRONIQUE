@@ -1,0 +1,42 @@
+{
+  "id": "ejZTACt2",
+  "initiator": "antoinefa",
+  "taskType": "CLUSTERING",
+  "name": "Cluster data",
+  "backendType": "PY_MEMORY",
+  "sparkPreparedDFStorageLevel": "MEMORY_AND_DISK",
+  "sparkRepartitionNonHDFS": 1,
+  "predictionDisplayScript": {
+    "steps": [],
+    "tags": [],
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "partitionSelectionMethod": "ALL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {},
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS",
+    "charts": [],
+    "chartsEngine": "LINO"
+  }
+}
