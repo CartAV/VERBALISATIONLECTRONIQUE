@@ -349,7 +349,7 @@
       {
         "name": "VACS_ZONE_A",
         "type": "string",
-        "meaning": "Boolean",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -544,13 +544,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 30,
+    "versionNumber": 31,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479927887099
+    "lastModifiedOn": 1479927890649
   },
   "customMeta": {
     "kv": {}
