@@ -297,7 +297,7 @@
       },
       {
         "name": "DATE_JOUR_REEL_INFRACTION",
-        "type": "int",
+        "type": "string",
         "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
@@ -545,13 +545,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 34,
+    "versionNumber": 35,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479928111880
+    "lastModifiedOn": 1479928124129
   },
   "customMeta": {
     "kv": {}
