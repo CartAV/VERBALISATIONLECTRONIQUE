@@ -304,7 +304,7 @@
       },
       {
         "name": "ANNEE_INFRACTION",
-        "type": "string",
+        "type": "int",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -541,13 +541,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 24,
+    "versionNumber": 25,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479927753547
+    "lastModifiedOn": 1479927761231
   },
   "customMeta": {
     "kv": {}
