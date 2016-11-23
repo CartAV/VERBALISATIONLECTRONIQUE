@@ -36,7 +36,7 @@
     "compress": ""
   },
   "schema": {
-    "userModified": false,
+    "userModified": true,
     "columns": [
       {
         "name": "MOTIF_STATUT_DOSSIER",
@@ -52,7 +52,7 @@
       },
       {
         "name": "ANNEE_PERMIS_CONTREVENANT",
-        "type": "string",
+        "type": "int",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -527,6 +527,15 @@
   "flowOptions": {
     "rebuildBehavior": "NORMAL",
     "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "antoinefa",
+      "displayName": "Fabien Antoine",
+      "email": "fabien.antoine@interieur.gouv.fr"
+    },
+    "lastModifiedOn": 1479927514344
   },
   "customMeta": {
     "kv": {}
