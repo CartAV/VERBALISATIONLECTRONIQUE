@@ -115,7 +115,7 @@
       },
       {
         "name": "AGE_CONTREVENANT",
-        "type": "string",
+        "type": "int",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -532,13 +532,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 7,
+    "versionNumber": 8,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479927598937
+    "lastModifiedOn": 1479927601788
   },
   "customMeta": {
     "kv": {}
