@@ -16,7 +16,7 @@
       },
       "metaType": "PROCESSOR",
       "preview": false,
-      "disabled": true,
+      "disabled": false,
       "alwaysShowComment": false
     }
   ],
