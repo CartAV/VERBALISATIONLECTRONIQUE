@@ -184,7 +184,7 @@
       },
       {
         "name": "MNT_AF",
-        "type": "string",
+        "type": "int",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -535,13 +535,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 13,
+    "versionNumber": 14,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1479927654433
+    "lastModifiedOn": 1479927657393
   },
   "customMeta": {
     "kv": {}
