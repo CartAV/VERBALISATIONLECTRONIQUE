@@ -1,0 +1,259 @@
+{
+  "inputDatasetSmartName": "extractIcare_20161122_utf8_noStation_prepared",
+  "script": {
+    "steps": [],
+    "tags": [],
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "analysisColumnData": {
+      "CODE_INSEE_INFRACTION": {
+        "meaning": "Text"
+      },
+      "LIBELLE_NATURE": {
+        "meaning": "Text"
+      },
+      "LIBELLE_NUIT": {
+        "meaning": "Text"
+      },
+      "MARQUE": {
+        "meaning": "Text"
+      },
+      "GENRE": {
+        "meaning": "Text"
+      },
+      "LIBELLE_ECHANGE_PERMIS": {
+        "meaning": "Text"
+      },
+      "NUM_ANNEE_MOIS_INFRACTION": {
+        "meaning": "Text"
+      },
+      "LIB_LOCALITE_INFRACTION": {
+        "meaning": "Text"
+      },
+      "LIB_REGION_UNITE": {
+        "meaning": "Text"
+      },
+      "COD_DISPOSITIF": {
+        "meaning": "Text"
+      },
+      "COMMUNE_INFRACTION": {
+        "meaning": "Text"
+      },
+      "LIB_COURT_CORPS": {
+        "meaning": "Text"
+      },
+      "VACS_ZONE_A": {
+        "meaning": "Text"
+      },
+      "VACS_ZONE_B": {
+        "meaning": "Text"
+      },
+      "COD_CORPS": {
+        "meaning": "Text"
+      },
+      "VACS_ZONE_C": {
+        "meaning": "Text"
+      },
+      "LIB_ZONE_CRS": {
+        "meaning": "Text"
+      },
+      "CODE_POSTAL_INFRACTION": {
+        "meaning": "Text"
+      },
+      "LIBELLE_FAMILLE": {
+        "meaning": "Text"
+      },
+      "SEMAINE_INFRAC": {
+        "meaning": "Text"
+      },
+      "LIB_DEPARTEMENT_UNITE": {
+        "meaning": "Text"
+      },
+      "LIB_ENTITE": {
+        "meaning": "Text"
+      },
+      "SEXE_CONTREVENANT": {
+        "meaning": "Text"
+      },
+      "LIBELLE_FICHE_IMMO_ETABLIE": {
+        "meaning": "Text"
+      },
+      "COD_UNITE": {
+        "meaning": "Text"
+      },
+      "LIB_TYPE_UNITE": {
+        "meaning": "Text"
+      },
+      "VOIE_INFRACTION": {
+        "meaning": "Text"
+      },
+      "DATE_JOUR_REEL_INFRACTION": {
+        "meaning": "Date"
+      },
+      "COD_DEPARTEMENT_UNITE": {
+        "meaning": "Text"
+      },
+      "LIBELLE_CLASSE": {
+        "meaning": "Text"
+      },
+      "REGION_CONTREVENANT": {
+        "meaning": "Text"
+      },
+      "LIBELLE_PLAGE_HORAIRE": {
+        "meaning": "Text"
+      },
+      "REGROUPEMENT_GENRE": {
+        "meaning": "Text"
+      },
+      "LIBELLE_TYPE_VOIE": {
+        "meaning": "Text"
+      },
+      "DATE_JOUR_REEL_INTEGRATION": {
+        "meaning": "Text"
+      },
+      "CODE_POSTAL_CONTREVENANT": {
+        "meaning": "Text"
+      },
+      "LIBELLE_JOUR_INFRACTION": {
+        "meaning": "Text"
+      },
+      "TYPE_PLAQUE": {
+        "meaning": "Text"
+      },
+      "LIBELLE_UNITE": {
+        "meaning": "Text"
+      },
+      "CODE_NATURE_INFRA": {
+        "meaning": "Text"
+      },
+      "CODE_INSEE_CONTREVENANT": {
+        "meaning": "Text"
+      },
+      "LIB_ZONE_PAF": {
+        "meaning": "Text"
+      },
+      "PAYS_RESIDENCE_CONTREVENANT": {
+        "meaning": "Text"
+      },
+      "LIBELLE_CORPS": {
+        "meaning": "Text"
+      },
+      "MOIS_INFRACTION": {
+        "meaning": "Text"
+      },
+      "LIB_TRANCHE_DEPASSEMENT": {
+        "meaning": "Text"
+      },
+      "LIB_ETAT_UNITE": {
+        "meaning": "Text"
+      },
+      "COD_UNITE_PN": {
+        "meaning": "Text"
+      },
+      "DEPARTEMENT_CONTREVENANT": {
+        "meaning": "Text"
+      },
+      "REGION_INFRACTION": {
+        "meaning": "Text"
+      },
+      "LIBELLE_NPAI": {
+        "meaning": "Text"
+      },
+      "SEMAINE_INTEGRATION": {
+        "meaning": "Text"
+      },
+      "NATIONALITE_PLAQUE": {
+        "meaning": "Text"
+      },
+      "LIBELLE_STATUT_DOSSIER": {
+        "meaning": "Text"
+      },
+      "ID_CLASSE": {
+        "meaning": "Text"
+      },
+      "COMMUNE_CONTREVENANT": {
+        "meaning": "Text"
+      },
+      "LIBELLE_ENLEVEMENT_DEMANDE": {
+        "meaning": "Text"
+      },
+      "DEPARTEMENT_INFRACTION": {
+        "meaning": "Text"
+      },
+      "MOIS_INTEGRATION": {
+        "meaning": "Text"
+      },
+      "ANNEE_INTEGRATION": {
+        "meaning": "Text"
+      },
+      "COD_ENTITE": {
+        "meaning": "Text"
+      },
+      "LIB_COURT_ENTITE": {
+        "meaning": "Text"
+      },
+      "EST_TITULAIRE": {
+        "meaning": "Text"
+      },
+      "COD_GENRE": {
+        "meaning": "Text"
+      },
+      "MOTIF_STATUT_DOSSIER": {
+        "meaning": "Text"
+      },
+      "LIBELLE_INTERCEPTION": {
+        "meaning": "Text"
+      },
+      "SEMAINE_INFRACTION": {
+        "meaning": "Text"
+      }
+    },
+    "explorationSampling": {
+      "selection": {
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "partitionSelectionMethod": "ALL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {},
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS",
+    "charts": [],
+    "chartsEngine": "LINO"
+  },
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "antoinefa",
+      "displayName": "Fabien Antoine"
+    },
+    "lastModifiedOn": 1479929046412
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "antoinefa",
+      "displayName": "Fabien Antoine"
+    },
+    "lastModifiedOn": 1479929046412
+  },
+  "name": "Analyze extractIcare_20161122_utf8_noStation_prepared",
+  "tags": [],
+  "checklists": {
+    "checklists": []
+  }
+}
