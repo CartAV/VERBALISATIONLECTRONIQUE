@@ -1,0 +1,666 @@
+{
+  "type": "Filesystem",
+  "params": {
+    "connection": "filesystem_managed",
+    "path": "/VERBALISATIONLECTRONIQUE.extractIcare_20161122_utf8_noStation_prepared"
+  },
+  "checks": [],
+  "managed": true,
+  "formatType": "csv",
+  "formatParams": {
+    "style": "unix",
+    "charset": "utf8",
+    "separator": "\t",
+    "quoteChar": "\"",
+    "escapeChar": "\\",
+    "dateSerializationFormat": "ISO",
+    "arrayMapFormat": "json",
+    "hiveSeparators": [
+      "\u0002",
+      "\u0003",
+      "\u0004",
+      "\u0005",
+      "\u0006",
+      "\u0007",
+      "\b"
+    ],
+    "skipRowsBeforeHeader": 0,
+    "parseHeaderRow": false,
+    "skipRowsAfterHeader": 0,
+    "probableNumberOfRecords": 0,
+    "normalizeBooleans": false,
+    "normalizeDoubles": true,
+    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
+    "readMissingColumnsBehavior": "DISCARD_SILENT",
+    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
+    "compress": "gz"
+  },
+  "schema": {
+    "userModified": true,
+    "columns": [
+      {
+        "name": "MOTIF_STATUT_DOSSIER",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_STATUT_DOSSIER",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "ANNEE_PERMIS_CONTREVENANT",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "PAYS_RESIDENCE_CONTREVENANT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "REGION_CONTREVENANT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "DEPARTEMENT_CONTREVENANT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "COMMUNE_CONTREVENANT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "CODE_POSTAL_CONTREVENANT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "CODE_INSEE_CONTREVENANT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NPAI",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "EST_TITULAIRE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "SEXE_CONTREVENANT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "AGE_CONTREVENANT",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "ANNEE_NAISSANCE",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "COD_DISPOSITIF",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "ID_FAMILLE",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "ID_CLASSE",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "LIBELLE_CLASSE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "CODE_NATURE_INFRA",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "LIBELLE_NATURE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "NBR_POINTS_RETIRES",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MNT_AF_MINOREE",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MNT_AF",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MNT_AF_MAJOREE",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "REGION_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "DEPARTEMENT_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "COMMUNE_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "CODE_INSEE_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "CODE_POSTAL_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "NUM_ARRONDISSEMENT",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_TYPE_VOIE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "VOIE_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_LOCALITE_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_ENLEVEMENT_DEMANDE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FICHE_IMMO_ETABLIE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_ECHANGE_PERMIS",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_INTERCEPTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "VAL_VITESSE_RETENUE",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "VAL_VITESSE_VLA",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_TRANCHE_DEPASSEMENT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "DATE_JOUR_REEL_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "ANNEE_INFRACTION",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "MOIS_INFRACTION",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "NUM_ANNEE_MOIS_INFRACTION",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "SEMAINE_INFRACTION",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "LIBELLE_JOUR_INFRACTION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NUIT",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "SEMAINE_INFRAC",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "VACS_ZONE_A",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "VACS_ZONE_B",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "VACS_ZONE_C",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_PLAGE_HORAIRE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "DATE_JOUR_REEL_INTEGRATION",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "ANNEE_INTEGRATION",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "MOIS_INTEGRATION",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "SEMAINE_INTEGRATION",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "COD_UNITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_UNITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "COD_ENTITE",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "LIB_ENTITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_COURT_ENTITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "COD_CORPS",
+        "type": "bigint",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": 1000
+      },
+      {
+        "name": "LIBELLE_CORPS",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_COURT_CORPS",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_ETAT_UNITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_TYPE_UNITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "COD_UNITE_PN",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "COD_DEPARTEMENT_UNITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_DEPARTEMENT_UNITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_REGION_UNITE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_ZONE_CRS",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIB_ZONE_PAF",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MARQUE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "TYPE_PLAQUE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "NATIONALITE_PLAQUE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "COD_GENRE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "GENRE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "REGROUPEMENT_GENRE",
+        "type": "string",
+        "meaning": "Text",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      }
+    ]
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "dimensions": []
+  },
+  "tags": [
+    "creator_antoinefa"
+  ],
+  "checklists": {
+    "checklists": []
+  },
+  "flowOptions": {
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "customMeta": {
+    "kv": {}
+  },
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": [],
+        "addDkuUdf": false
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "samplingMethod": "FULL",
+          "partitionSelectionMethod": "ALL",
+          "maxRecords": 10000,
+          "targetRatio": 0.02
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "basic:COUNT_FILES",
+        "basic:SIZE",
+        "records:COUNT_RECORDS"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "runOnBuild": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  }
+}
