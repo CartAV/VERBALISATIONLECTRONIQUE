@@ -1,6 +1,27 @@
 {
-  "steps": [],
+  "steps": [
+    {
+      "type": "DateParser",
+      "params": {
+        "lang": "auto",
+        "timezone_id": "UTC",
+        "formats": [
+          "dd-MMM-yy"
+        ],
+        "appliesTo": "COLUMNS",
+        "columns": [
+          "DATE_JOUR_REEL_INFRACTION",
+          "DATE_JOUR_REEL_INTEGRATION"
+        ]
+      },
+      "metaType": "PROCESSOR",
+      "preview": false,
+      "disabled": true,
+      "alwaysShowComment": false
+    }
+  ],
   "tags": [],
+  "origin": "PREPARE_RECIPE",
   "columnsSelection": {
     "mode": "ALL"
   },
@@ -12,23 +33,26 @@
   "analysisColumnData": {},
   "explorationSampling": {
     "selection": {
-      "samplingMethod": "HEAD_SEQUENTIAL",
+      "samplingMethod": "RANDOM_FIXED_NB",
       "partitionSelectionMethod": "ALL",
       "maxRecords": 10000,
       "targetRatio": 0.02
     },
     "autoRefreshSample": false,
-    "_refreshTrigger": 0
+    "_refreshTrigger": 1
   },
   "vizSampling": {
     "autoRefreshSample": false,
     "_refreshTrigger": 0
   },
-  "exploreUIParams": {},
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
   "globalSearchQuery": "",
   "explorationFilters": [
     {
-      "type": "global_search"
+      "type": "global_search",
+      "$$hashKey": "5Y5"
     }
   ],
   "previewMode": "ALL_ROWS",
