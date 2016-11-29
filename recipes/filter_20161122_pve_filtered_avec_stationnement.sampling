@@ -1,0 +1,15 @@
+{
+  "enabled": false,
+  "uiData": {
+    "conditions": [
+      {
+        "num": 0,
+        "col": "LIBELLE_STATUT_DOSSIER",
+        "input": "MOTIF_STATUT_DOSSIER",
+        "operator": "contains"
+      }
+    ],
+    "mode": "\u0026\u0026"
+  },
+  "language": "GREL"
+}
