@@ -1,4 +1,1618 @@
 {
+  "preprocessing": {
+    "outliers": {
+      "method": "CLUSTER",
+      "min_cum_ratio": 0.01,
+      "min_n": 100
+    },
+    "per_feature": {
+      "LIBELLE_NATURE": {
+        "text_handling": "TOKENIZE_HASHING_SVD",
+        "minRowsRatio": 0.001,
+        "maxRowsRatio": 0.8,
+        "maxWords": 0,
+        "ngramMinSize": 1,
+        "ngramMaxSize": 1,
+        "hashSVDHashSize": 200000,
+        "hashSVDSVDLimit": 50000,
+        "hashSVDSVDComponents": 100,
+        "stopWordsMode": "NONE",
+        "useCustomVectorizer": false,
+        "name": "LIBELLE_NATURE",
+        "role": "REJECT",
+        "type": "TEXT",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "FreeText"
+        },
+        "autoReason": "REJECT_DEFAULT_TEXT_HANDLING"
+      },
+      "CODE_INSEE_INFRACTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_NUIT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "VAL_VITESSE_VLA": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "MARQUE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "GENRE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_ECHANGE_PERMIS": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "NUM_ANNEE_MOIS_INFRACTION": {
+        "generate_derivative": false,
+        "impute_constant_value": 0.0,
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "LIB_LOCALITE_INFRACTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIB_REGION_UNITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "COD_DISPOSITIF": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "ANNEE_PERMIS_CONTREVENANT": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "COMMUNE_INFRACTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIB_COURT_CORPS": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "CountryMeaning"
+        }
+      },
+      "VACS_ZONE_A": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "VACS_ZONE_B": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "COD_CORPS": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "MNT_AF": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "VACS_ZONE_C": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "LIB_ZONE_CRS": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "CODE_POSTAL_INFRACTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "ANNEE_INFRACTION": {
+        "generate_derivative": false,
+        "impute_constant_value": 0.0,
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "LIBELLE_FAMILLE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "SEMAINE_INFRAC": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "ID_FAMILLE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIB_DEPARTEMENT_UNITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIB_ENTITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "SEXE_CONTREVENANT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_FICHE_IMMO_ETABLIE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "COD_UNITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIB_TYPE_UNITE": {
+        "text_handling": "TOKENIZE_HASHING_SVD",
+        "minRowsRatio": 0.001,
+        "maxRowsRatio": 0.8,
+        "maxWords": 0,
+        "ngramMinSize": 1,
+        "ngramMaxSize": 1,
+        "hashSVDHashSize": 200000,
+        "hashSVDSVDLimit": 50000,
+        "hashSVDSVDComponents": 100,
+        "stopWordsMode": "NONE",
+        "useCustomVectorizer": false,
+        "name": "LIB_TYPE_UNITE",
+        "role": "REJECT",
+        "type": "TEXT",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "FreeText"
+        },
+        "autoReason": "REJECT_DEFAULT_TEXT_HANDLING"
+      },
+      "ANNEE_NAISSANCE": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "VOIE_INFRACTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "DATE_JOUR_REEL_INFRACTION": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Date"
+        }
+      },
+      "COD_DEPARTEMENT_UNITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_PLAGE_HORAIRE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_CLASSE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "REGION_CONTREVENANT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "REGROUPEMENT_GENRE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_TYPE_VOIE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "NBR_POINTS_RETIRES": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "DATE_JOUR_REEL_INTEGRATION": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Date"
+        }
+      },
+      "CODE_POSTAL_CONTREVENANT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "LIBELLE_JOUR_INFRACTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "TYPE_PLAQUE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_UNITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "CODE_NATURE_INFRA": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "CODE_INSEE_CONTREVENANT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIB_ZONE_PAF": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "NUM_ARRONDISSEMENT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "PAYS_RESIDENCE_CONTREVENANT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_CORPS": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "MOIS_INFRACTION": {
+        "generate_derivative": false,
+        "impute_constant_value": 0.0,
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "MNT_AF_MINOREE": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "LIB_TRANCHE_DEPASSEMENT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "CountryMeaning"
+        }
+      },
+      "LIB_ETAT_UNITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "NONE",
+        "role": "REJECT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "COD_UNITE_PN": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "DEPARTEMENT_CONTREVENANT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_NPAI": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "REGION_INFRACTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "SEMAINE_INTEGRATION": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "NATIONALITE_PLAQUE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_STATUT_DOSSIER": {
+        "text_handling": "TOKENIZE_HASHING_SVD",
+        "minRowsRatio": 0.001,
+        "maxRowsRatio": 0.8,
+        "maxWords": 0,
+        "ngramMinSize": 1,
+        "ngramMaxSize": 1,
+        "hashSVDHashSize": 200000,
+        "hashSVDSVDLimit": 50000,
+        "hashSVDSVDComponents": 100,
+        "stopWordsMode": "NONE",
+        "useCustomVectorizer": false,
+        "name": "LIBELLE_STATUT_DOSSIER",
+        "role": "REJECT",
+        "type": "TEXT",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "FreeText"
+        },
+        "autoReason": "REJECT_DEFAULT_TEXT_HANDLING"
+      },
+      "MNT_AF_MAJOREE": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "ID_CLASSE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "COMMUNE_CONTREVENANT": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_ENLEVEMENT_DEMANDE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "MOIS_INTEGRATION": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "DEPARTEMENT_INFRACTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "VAL_VITESSE_RETENUE": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "COD_ENTITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "ANNEE_INTEGRATION": {
+        "generate_derivative": false,
+        "impute_constant_value": 0.0,
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      },
+      "LIB_COURT_ENTITE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "AGE_CONTREVENANT": {
+        "generate_derivative": false,
+        "numerical_handling": "REGULAR",
+        "missing_handling": "IMPUTE",
+        "missing_impute_with": "MEAN",
+        "impute_constant_value": 0.0,
+        "rescaling": "AVGSTD",
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "INPUT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        }
+      },
+      "EST_TITULAIRE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "COD_GENRE": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "MOTIF_STATUT_DOSSIER": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "LIBELLE_INTERCEPTION": {
+        "category_handling": "DUMMIFY",
+        "missing_handling": "NONE",
+        "missing_impute_with": "MODE",
+        "dummy_clip": "CUMULATIVE_PROPORTION",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "AUTO",
+        "role": "INPUT",
+        "type": "CATEGORY",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "Text"
+        }
+      },
+      "SEMAINE_INFRACTION": {
+        "generate_derivative": false,
+        "impute_constant_value": 0.0,
+        "quantile_bin_nb_bins": 4,
+        "binarize_threshold_mode": "MEDIAN",
+        "binarize_constant_threshold": 0.0,
+        "role": "REJECT",
+        "type": "NUMERIC",
+        "state": {
+          "userModified": false,
+          "autoModifiedByDSS": false,
+          "dssWantsToModify": false,
+          "recordedMeaning": "LongMeaning"
+        },
+        "autoReason": "REJECT_ZERO_VARIANCE"
+      }
+    },
+    "numerical_combinations": {
+      "pairwiseLinear": false,
+      "polynomialInteraction": false
+    },
+    "reduce": {
+      "enable": false,
+      "disable": true,
+      "kept_variance": 0.0
+    }
+  },
+  "modeling": {
+    "db_scan_clustering": {
+      "epsilon": [
+        0.5
+      ],
+      "min_sample_ratio": 0.1,
+      "enabled": false,
+      "seed": 0
+    },
+    "spectral_clustering": {
+      "k": [
+        3,
+        5
+      ],
+      "enabled": false,
+      "affinity_rbf": false,
+      "affinity_nearest_neighbors": false,
+      "affinity_sigmoid": false,
+      "affinity_polynomial": false,
+      "gamma": [],
+      "coef0": 0.0,
+      "seed": 0
+    },
+    "ward_clustering": {
+      "k": [
+        3,
+        5
+      ],
+      "enabled": false
+    },
+    "kmeans_clustering": {
+      "k": [
+        5
+      ],
+      "enabled": true,
+      "seed": 0,
+      "n_jobs": 2
+    },
+    "mini_batch_kmeans_clustering": {
+      "k": [
+        3,
+        5
+      ],
+      "enabled": false,
+      "seed": 0
+    },
+    "gmm_clustering": {
+      "k": [
+        5
+      ],
+      "enabled": false,
+      "max_iterations": 100,
+      "seed": 0
+    },
+    "mllib_kmeans_clustering": {
+      "k": [],
+      "enabled": false,
+      "max_iterations": 0
+    },
+    "mllib_gaussian_mixture_clustering": {
+      "k": [],
+      "enabled": false,
+      "max_iterations": 0
+    },
+    "h2o_kmeans": {
+      "k": [],
+      "enabled": false,
+      "max_iterations": 0
+    },
+    "vertica_kmeans_clustering": {
+      "enabled": false,
+      "k": [
+        5
+      ],
+      "max_iterations": 50
+    },
+    "metrics": {
+      "evaluationMetric": "SILHOUETTE",
+      "customEvaluationMetricGIB": true
+    },
+    "custom_python": [],
+    "custom_mllib": []
+  },
+  "sampling": {
+    "extractBeforePrepare": true,
+    "selection": {
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "partitionSelectionMethod": "ALL",
+      "maxRecords": 100000,
+      "targetRatio": 0.02
+    },
+    "instanceIdRefresher": 0
+  },
   "id": "4YEeNedQ",
   "initiator": "antoinefa",
   "taskType": "CLUSTERING",
