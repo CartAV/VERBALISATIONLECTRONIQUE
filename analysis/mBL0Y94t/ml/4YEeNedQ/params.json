@@ -7,22 +7,17 @@
     },
     "per_feature": {
       "LIBELLE_NATURE": {
-        "text_handling": "TOKENIZE_HASHING_SVD",
-        "minRowsRatio": 0.001,
-        "maxRowsRatio": 0.8,
-        "maxWords": 0,
-        "ngramMinSize": 1,
-        "ngramMaxSize": 1,
-        "hashSVDHashSize": 200000,
-        "hashSVDSVDLimit": 50000,
-        "hashSVDSVDComponents": 100,
-        "stopWordsMode": "NONE",
-        "useCustomVectorizer": false,
+        "dummy_clip": "MAX_NB_CATEGORIES",
+        "cumulative_proportion": 0.95,
+        "min_samples": 10,
+        "max_nb_categories": 100,
+        "max_cat_safety": 200,
+        "dummy_drop": "NONE",
         "name": "LIBELLE_NATURE",
         "role": "REJECT",
-        "type": "TEXT",
+        "type": "CATEGORY",
         "state": {
-          "userModified": false,
+          "userModified": true,
           "autoModifiedByDSS": false,
           "dssWantsToModify": false,
           "recordedMeaning": "FreeText"
@@ -39,6 +34,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "CODE_INSEE_INFRACTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -58,6 +54,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_NUIT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -77,6 +74,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "VAL_VITESSE_VLA",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -96,6 +94,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "MARQUE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -115,6 +114,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "GENRE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -134,6 +134,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_ECHANGE_PERMIS",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -149,6 +150,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "NUM_ANNEE_MOIS_INFRACTION",
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
@@ -169,6 +171,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_LOCALITE_INFRACTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -188,6 +191,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_REGION_UNITE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -207,6 +211,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "COD_DISPOSITIF",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -226,6 +231,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "ANNEE_PERMIS_CONTREVENANT",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -245,6 +251,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "COMMUNE_INFRACTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -264,6 +271,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_COURT_CORPS",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -283,6 +291,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "NONE",
+        "name": "VACS_ZONE_A",
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
@@ -303,6 +312,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "NONE",
+        "name": "VACS_ZONE_B",
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
@@ -323,6 +333,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "COD_CORPS",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -342,6 +353,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "MNT_AF",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -361,6 +373,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "NONE",
+        "name": "VACS_ZONE_C",
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
@@ -381,6 +394,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_ZONE_CRS",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -400,6 +414,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "CODE_POSTAL_INFRACTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -415,6 +430,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "ANNEE_INFRACTION",
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
@@ -435,6 +451,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_FAMILLE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -454,6 +471,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "SEMAINE_INFRAC",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -473,6 +491,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "ID_FAMILLE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -492,6 +511,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_DEPARTEMENT_UNITE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -511,6 +531,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_ENTITE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -530,6 +551,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "SEXE_CONTREVENANT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -549,6 +571,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "NONE",
+        "name": "LIBELLE_FICHE_IMMO_ETABLIE",
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
@@ -569,6 +592,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "COD_UNITE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -611,6 +635,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "ANNEE_NAISSANCE",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -630,6 +655,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "VOIE_INFRACTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -649,6 +675,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "DATE_JOUR_REEL_INFRACTION",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -668,6 +695,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "COD_DEPARTEMENT_UNITE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -687,6 +715,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_PLAGE_HORAIRE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -706,6 +735,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_CLASSE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -725,6 +755,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "REGION_CONTREVENANT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -744,6 +775,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "REGROUPEMENT_GENRE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -763,6 +795,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_TYPE_VOIE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -782,6 +815,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "NBR_POINTS_RETIRES",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -801,6 +835,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "DATE_JOUR_REEL_INTEGRATION",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -820,6 +855,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "CODE_POSTAL_CONTREVENANT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -839,6 +875,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_JOUR_INFRACTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -858,6 +895,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "TYPE_PLAQUE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -877,6 +915,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_UNITE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -896,6 +935,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "CODE_NATURE_INFRA",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -915,6 +955,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "CODE_INSEE_CONTREVENANT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -934,6 +975,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_ZONE_PAF",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -953,6 +995,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "NUM_ARRONDISSEMENT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -972,6 +1015,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "PAYS_RESIDENCE_CONTREVENANT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -991,6 +1035,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_CORPS",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1006,6 +1051,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "MOIS_INFRACTION",
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
@@ -1026,6 +1072,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "MNT_AF_MINOREE",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -1045,6 +1092,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_TRANCHE_DEPASSEMENT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1064,6 +1112,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "NONE",
+        "name": "LIB_ETAT_UNITE",
         "role": "REJECT",
         "type": "CATEGORY",
         "state": {
@@ -1084,6 +1133,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "COD_UNITE_PN",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1103,6 +1153,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "DEPARTEMENT_CONTREVENANT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1122,6 +1173,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_NPAI",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1141,6 +1193,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "REGION_INFRACTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1160,6 +1213,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "SEMAINE_INTEGRATION",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -1179,6 +1233,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "NATIONALITE_PLAQUE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1221,6 +1276,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "MNT_AF_MAJOREE",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -1240,6 +1296,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "ID_CLASSE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1259,6 +1316,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "COMMUNE_CONTREVENANT",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1278,6 +1336,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_ENLEVEMENT_DEMANDE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1297,6 +1356,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "MOIS_INTEGRATION",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -1316,6 +1376,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "DEPARTEMENT_INFRACTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1335,6 +1396,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "VAL_VITESSE_RETENUE",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -1354,6 +1416,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "COD_ENTITE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1369,6 +1432,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "ANNEE_INTEGRATION",
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
@@ -1389,6 +1453,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIB_COURT_ENTITE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1408,6 +1473,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "AGE_CONTREVENANT",
         "role": "INPUT",
         "type": "NUMERIC",
         "state": {
@@ -1427,6 +1493,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "EST_TITULAIRE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1446,6 +1513,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "COD_GENRE",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1465,6 +1533,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "MOTIF_STATUT_DOSSIER",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1484,6 +1553,7 @@
         "max_nb_categories": 100,
         "max_cat_safety": 200,
         "dummy_drop": "AUTO",
+        "name": "LIBELLE_INTERCEPTION",
         "role": "INPUT",
         "type": "CATEGORY",
         "state": {
@@ -1499,6 +1569,7 @@
         "quantile_bin_nb_bins": 4,
         "binarize_threshold_mode": "MEDIAN",
         "binarize_constant_threshold": 0.0,
+        "name": "SEMAINE_INFRACTION",
         "role": "REJECT",
         "type": "NUMERIC",
         "state": {
@@ -1517,7 +1588,7 @@
     "reduce": {
       "enable": false,
       "disable": true,
-      "kept_variance": 0.0
+      "kept_variance": 0.9
     }
   },
   "modeling": {
@@ -1606,9 +1677,9 @@
   "sampling": {
     "extractBeforePrepare": true,
     "selection": {
-      "samplingMethod": "HEAD_SEQUENTIAL",
+      "samplingMethod": "RANDOM_FIXED_NB",
       "partitionSelectionMethod": "ALL",
-      "maxRecords": 100000,
+      "maxRecords": 200000,
       "targetRatio": 0.02
     },
     "instanceIdRefresher": 0
