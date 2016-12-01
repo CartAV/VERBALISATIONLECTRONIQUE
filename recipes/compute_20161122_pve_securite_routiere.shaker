@@ -1,6 +1,36 @@
 {
-  "steps": [],
+  "steps": [
+    {
+      "type": "FilterOnValue",
+      "params": {
+        "values": [
+          "Vitesse",
+          "Alcool",
+          "Règles de conduite",
+          "Priorité de passage - intersections",
+          "Ceinture et casque",
+          "Etat ou équipement des utilisateurs et des véhicules",
+          "Eclairage et signalisation",
+          "Croisements et dépassements",
+          "Autres infractions à la circulation routière"
+        ],
+        "matchingMode": "FULL_STRING",
+        "normalizationMode": "EXACT",
+        "action": "KEEP_ROW",
+        "booleanMode": "AND",
+        "appliesTo": "SINGLE_COLUMN",
+        "columns": [
+          "LIBELLE_FAMILLE"
+        ]
+      },
+      "metaType": "PROCESSOR",
+      "preview": true,
+      "disabled": false,
+      "alwaysShowComment": false
+    }
+  ],
   "tags": [],
+  "origin": "PREPARE_RECIPE",
   "columnsSelection": {
     "mode": "ALL"
   },
@@ -24,11 +54,14 @@
     "autoRefreshSample": false,
     "_refreshTrigger": 0
   },
-  "exploreUIParams": {},
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
   "globalSearchQuery": "",
   "explorationFilters": [
     {
-      "type": "global_search"
+      "type": "global_search",
+      "$$hashKey": "G0P"
     }
   ],
   "previewMode": "ALL_ROWS",
