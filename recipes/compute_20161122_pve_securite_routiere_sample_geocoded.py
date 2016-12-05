@@ -4,8 +4,8 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 # Recipe inputs
-20161122_pve_securite_routiere_sample = dataiku.Dataset("20161122_pve_securite_routiere_sample.csv")
-20161122_pve_securite_routiere_sample_df = 20161122_pve_securite_routiere_sample.get_dataframe()
+f= dataiku.Dataset("20161122_pve_securite_routiere_sample")
+events = f.get_dataframe()
 
 
 
