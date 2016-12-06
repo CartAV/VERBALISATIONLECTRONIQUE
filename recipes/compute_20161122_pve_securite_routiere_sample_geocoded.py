@@ -4,7 +4,7 @@ import os.path
 import codec, io, StringIO, requests
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
-from collections import Counter
+from collections import OrderedDict
 
 def adresse_submit(file):
     requests_session = requests.Session()
