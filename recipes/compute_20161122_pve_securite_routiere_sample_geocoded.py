@@ -46,7 +46,7 @@ i=0
 #    pass    
 
 #multithread
-with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
     enrich={executor.submit(adresse_submit,df): geocoded for subset in f.iter_dataframes(chunksize=split)}
     for subset in concurrent.futures.as_completed(enrich):  
         geocoded=enrich[subset]
