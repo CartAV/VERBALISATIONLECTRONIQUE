@@ -26,7 +26,7 @@ def adresse_submit(df):
     }
     response = requests_session.request(**kwargs)
     df=pd.read_csv(StringIO.StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
-    return response.content
+    return df
 
 
 # Recipe inputs
@@ -38,7 +38,7 @@ i=0
 for events_subset in f.iter_dataframes(chunksize=split):
     i+=split
     print("Enrichissement addok/BAN: {}...".format(i))
-    events=pd.read_csv(adresse_submit(events_subset),",",encoding="utf8",quotechar='"')
+    events=adresse_submit(events_subset)
     # Insert here applicative logic on each partial dataframe.
     pass    
 
