@@ -52,7 +52,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
         subset=enrich[subset]
         i+=split
         try:
-            liste.append(subset.result())
+            liste.append(subset)
         except Exception as exc:
             print ("%r generated an exception: %s" %(subset,exc))
         else:
