@@ -49,7 +49,7 @@ i=0
 with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
     enrich={executor.submit(adresse_submit,subset): k for subset in f.iter_dataframes(chunksize=split)}
     for subset in concurrent.futures.as_completed(enrich):  
-        k=enrich[subset]
+        var k=enrich[subset]
         i+=split
         try:
             liste.append(subset.result())
