@@ -33,7 +33,6 @@ def adresse_submit(file):
 
 # Recipe inputs
 f = d.Dataset("20161122_pve_securite_routiere_sample")
-events = f.get_dataframe()
 liste=[]
 
 for events_subset in f.iter_dataframes(chunksize=500):
