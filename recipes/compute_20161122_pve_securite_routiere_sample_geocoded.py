@@ -26,18 +26,15 @@ def adresse_submit(df):
         'url': 'http://fa-srv-1/search/csv/'
     }
     response = requests_session.request(**kwargs)
-    with codecs.open(file+"geo", 'wb', 'utf8') as f:
-        f.write(response.text)
-    return True;
+    return response.text;
 
 
 # Recipe inputs
 f = d.Dataset("20161122_pve_securite_routiere_sample")
 liste=[]
 
-for events_subset in f.iter_dataframes(chunksize=500):
-    adresse_submit(events_subset)
-    liste.append(pd.read_csv("tmp.csvgeo",sep=";", na_filter=False,dtype=object,index_col=None))
+for events_subset in f.iter_dataframes(chunksize=500):  
+    liste.append(adresse_submit(events_subset))
     # Insert here applicative logic on each partial dataframe.
     pass    
 events=pd.concat(liste,ignore_index=True)
