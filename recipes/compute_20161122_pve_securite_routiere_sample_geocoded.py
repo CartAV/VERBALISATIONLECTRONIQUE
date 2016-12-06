@@ -38,7 +38,7 @@ i=0
 for events_subset in f.iter_dataframes(chunksize=split):
     i+=split
     print("Enrichissement addok/BAN: {}...".format(i))
-    liste.append(adresse_submit(events_subset))
+    events=adresse_submit(events_subset)
     # Insert here applicative logic on each partial dataframe.
     pass    
 
