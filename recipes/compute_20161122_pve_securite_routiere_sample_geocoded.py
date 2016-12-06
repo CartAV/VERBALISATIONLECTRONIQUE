@@ -33,8 +33,8 @@ def adresse_submit(df):
 # Recipe inputs
 f = d.Dataset("20161122_pve_securite_routiere_sample")
 liste=[]
-split=1000
-nthreads=4
+split=1500
+nthreads=6
 i=0
 
 #version monothread
