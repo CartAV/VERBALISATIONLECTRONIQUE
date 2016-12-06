@@ -52,9 +52,9 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
         geocoded=enrich[subset]
         i+=split
         try:
-            liste.append(geocoded.result())
+            liste.append(subset.result())
         except Exception as exc:
-            print ("%r generated an exception: %s" %(geocoded,exc))
+            print ("%r generated an exception: %s" %(subset,exc))
         else:
             print ("%r ok" % i)
 
