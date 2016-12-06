@@ -25,7 +25,7 @@ def adresse_submit(df):
         'url': 'http://fa-srv-1/search/csv/'
     }
     response = requests_session.request(**kwargs)
-    df=pd.read_csv(StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
+    df=pd.read_csv(StringIO.StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
     return response.content
 
 
