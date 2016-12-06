@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import dataiku as d
 import os.path
+import codec, io, StringIO, requests
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 from collections import Counter
@@ -10,8 +11,9 @@ def adresse_submit(file):
     print("Enrichissement addok/BAN: {}...".format(file))
     kwargs = {
         'data': OrderedDict([
-            ('columns', 'VOIE_INFRACTION'), 
-            ('citycode', 'CODE_INSEE_INFRACTION')
+            ('columns', 'v1'), 
+            ('columns', 'adr'),
+            ('citycode', 'code_insee')
         ]),
         'method': 'post',
         'files': OrderedDict([
