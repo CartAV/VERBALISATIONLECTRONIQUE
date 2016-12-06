@@ -50,15 +50,13 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
     enrich={executor.submit(adresse_submit,subset): subset for subset in f.iter_dataframes(chunksize=split)}
     for subset in concurrent.futures.as_completed(enrich):  
         i+=split
-        print("submit chunk %r to %r" %(i-split,i))
         subset=enrich[subset]
-        
         try:
             liste.append(subset)
         except Exception as exc:
             print ("%r generated an exception: %s" %(subset,exc))
         else:
-            print("result chunk %r to %r is ok" %(i-split,i))
+            print("geocoded chunk %r to %r" %(i-split,i))
 
 
 
