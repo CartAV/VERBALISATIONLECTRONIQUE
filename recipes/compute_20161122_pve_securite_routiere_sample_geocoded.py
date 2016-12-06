@@ -3,6 +3,7 @@ import dataiku as d
 import os.path
 import codecs, io, StringIO, requests
 import pandas as pd, numpy as np
+import concurrent.futures
 from dataiku import pandasutils as pdu
 from collections import OrderedDict
 
@@ -33,14 +34,31 @@ def adresse_submit(df):
 f = d.Dataset("20161122_pve_securite_routiere_sample")
 liste=[]
 split=500
+nthreads=2
 i=0
 
-for events_subset in f.iter_dataframes(chunksize=split):
-    i+=split
-    print("Enrichissement addok/BAN: {}...".format(i))
-    liste.append(adresse_submit(events_subset))
-    # Insert here applicative logic on each partial dataframe.
-    pass    
+#version monothread
+#for events_subset in f.iter_dataframes(chunksize=split):
+#    i+=split
+#    print("Enrichissement addok/BAN: {}...".format(i))
+#    liste.append(adresse_submit(events_subset))
+#    # Insert here applicative logic on each partial dataframe.
+#    pass    
+
+#multithread
+with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+    enrich={executor.submit(adresse_submit,df): geocoded for subset in f.iter_dataframes(chunksize=split)}
+    for subset in concurrent.futures.as_completed(enrich):  
+        geocoded=enrich[subset]
+        i+=split
+        try:
+            liste.append(geocoded.result())
+        except
+            print ("%r generated an exception: %s" %(geocoded,exc))
+        else:
+            print ("%r ok" % i)
+
+
 
 events=pd.concat(liste,ignore_index=True)
 
