@@ -38,7 +38,7 @@ liste=[]
 for events_subset in f.iter_dataframes(chunksize=500):
     events_subset.to_csv("tmp.csv",sep=";", quotechar='"',index=False)
     adresse_submit("tmp.csv")
-    liste.append(p.read_csv("tmp.csvgeo",sep=";", na_filter=False,dtype=object,index_col=None))
+    liste.append(pd.read_csv("tmp.csvgeo",sep=";", na_filter=False,dtype=object,index_col=None))
     # Insert here applicative logic on each partial dataframe.
     pass    
 events=pd.concat(liste,ignore_index=True)
