@@ -24,7 +24,7 @@ def adresse_submit(df):
         'url': 'http://fa-srv-1/search/csv/'
     }
     response = requests_session.request(**kwargs)
-    return pd.read_csv(response.content)
+    return pd.read_csv(response.content,sep=",")
 
 
 # Recipe inputs
@@ -39,6 +39,7 @@ for events_subset in f.iter_dataframes(chunksize=split):
     liste.append(adresse_submit(events_subset))
     # Insert here applicative logic on each partial dataframe.
     pass    
+
 events=pd.concat(liste,ignore_index=True)
 
 # Recipe outputs
