@@ -11,9 +11,8 @@ def adresse_submit(file):
     print("Enrichissement addok/BAN: {}...".format(file))
     kwargs = {
         'data': OrderedDict([
-            ('columns', 'v1'), 
-            ('columns', 'adr'),
-            ('citycode', 'code_insee')
+            ('columns', 'VOIE_INFRACTION'), 
+            ('citycode', 'CODE_INSEE_INFRACTION')
         ]),
         'method': 'post',
         'files': OrderedDict([
