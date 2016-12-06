@@ -8,12 +8,13 @@ from collections import OrderedDict
 
 def adresse_submit(df):
     s = StringIO.StringIO()
-    df.to_csv(s,sep=",", quotechar='"',index=False)
+    df.to_csv(s,sep=",", quotechar='"',encoding="utf8",index=False)
     requests_session = requests.Session()
     kwargs = {
         'data': OrderedDict([
-            ('columns', 'VOIE_INFRACTION'), 
-            ('citycode', 'CODE_INSEE_INFRACTION')
+                ('columns', 'VOIE_INFRACTION'), 
+                ('citycode', 'CODE_INSEE_INFRACTION'),
+               ('encoding','utf8')
         ]),
         'method': 'post',
         'files': OrderedDict([
@@ -24,7 +25,7 @@ def adresse_submit(df):
         'url': 'http://fa-srv-1/search/csv/'
     }
     response = requests_session.request(**kwargs)
-    df=pd.read_csv(response.content,sep=",",quotechar='"')
+    df=pd.read_csv(response.content,sep=",",encoding="utf8",quotechar='"')
     return df
 
 
