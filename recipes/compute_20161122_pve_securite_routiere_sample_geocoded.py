@@ -53,7 +53,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
         i+=split
         try:
             liste.append(geocoded.result())
-        except
+        except Exception as exc:
             print ("%r generated an exception: %s" %(geocoded,exc))
         else:
             print ("%r ok" % i)
