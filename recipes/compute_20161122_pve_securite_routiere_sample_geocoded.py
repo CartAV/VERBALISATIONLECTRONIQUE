@@ -24,7 +24,7 @@ def adresse_submit(df):
         'url': 'http://fa-srv-1/search/csv/'
     }
     response = requests_session.request(**kwargs)
-    print response.text
+    print(response.text)
     return response.text
 
 
