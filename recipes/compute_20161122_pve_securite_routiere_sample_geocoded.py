@@ -11,7 +11,6 @@ def adresse_submit(df):
     df.to_csv(s,sep=";", quotechar='"',index=False)
 
     requests_session = requests.Session()
-    print("Enrichissement addok/BAN: {}...".format(file))
     kwargs = {
         'data': OrderedDict([
             ('columns', 'VOIE_INFRACTION'), 
@@ -32,8 +31,12 @@ def adresse_submit(df):
 # Recipe inputs
 f = d.Dataset("20161122_pve_securite_routiere_sample")
 liste=[]
+split=500
+i=0
 
-for events_subset in f.iter_dataframes(chunksize=500):  
+for events_subset in f.iter_dataframes(chunksize=split):
+    i+=split
+    print("Enrichissement addok/BAN: {}...".format(i))
     liste.append(adresse_submit(events_subset))
     # Insert here applicative logic on each partial dataframe.
     pass    
