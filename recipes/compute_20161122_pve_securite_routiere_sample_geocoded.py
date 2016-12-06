@@ -47,14 +47,14 @@ i=0
 
 #multithread
 with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
-    enrich={executor.submit(adresse_submit,subset): k for subset in f.iter_dataframes(chunksize=split)}
+    enrich={executor.submit(adresse_submit,subset): subset for subset in f.iter_dataframes(chunksize=split)}
     for subset in concurrent.futures.as_completed(enrich):  
-        var k=enrich[subset]
+        subset=enrich[subset]
         i+=split
         try:
             liste.append(subset.result())
         except Exception as exc:
-            print ("%r generated an exception: %s" %(k,exc))
+            print ("%r generated an exception: %s" %(subset,exc))
         else:
             print ("%r ok" % i)
 
