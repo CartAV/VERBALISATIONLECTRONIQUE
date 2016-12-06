@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import dataiku as d
+import requests
 import os.path
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
