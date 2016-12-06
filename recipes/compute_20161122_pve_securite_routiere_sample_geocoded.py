@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 import dataiku as d
-import requests, io, codecs
-from collections import OrderedDict
 import os.path
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
@@ -12,7 +10,7 @@ def adresse_submit(file):
     print("Enrichissement addok/BAN: {}...".format(file))
     kwargs = {
         'data': OrderedDict([
-            ('columns', 'VOIE_INFRACTION'),
+            ('columns', 'VOIE_INFRACTION'), 
             ('citycode', 'CODE_INSEE_INFRACTION')
         ]),
         'method': 'post',
@@ -37,10 +35,10 @@ f = d.Dataset("20161122_pve_securite_routiere_sample")
 events = f.get_dataframe()
 liste=[]
 
-for events_subset in f.iter_dataframes(chunksize=500):
+for events_subset in events.iter_dataframes(chunksize=500):
     events_subset.to_csv("tmp.csv",sep=";", quotechar='"',index=False)
     adresse_submit("tmp.csv")
-    liste.append(pd.read_csv("tmp.csvgeo",sep=";", na_filter=False,dtype=object,index_col=None))
+    liste.append(p.read_csv("tmp.csvgeo",sep=";", na_filter=False,dtype=object,index_col=None))
     # Insert here applicative logic on each partial dataframe.
     pass    
 events=pd.concat(liste,ignore_index=True)
