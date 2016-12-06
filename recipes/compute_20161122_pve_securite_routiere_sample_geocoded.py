@@ -9,7 +9,7 @@ from collections import OrderedDict
 def adresse_submit(df):
     s = StringIO.StringIO()
     df.to_csv(s,sep=";", quotechar='"',index=False)
-    print(s)
+    print(s.getValue())
     requests_session = requests.Session()
     kwargs = {
         'data': OrderedDict([
@@ -18,7 +18,7 @@ def adresse_submit(df):
         ]),
         'method': 'post',
         'files': OrderedDict([
-            ('data', s)
+            ('data', s.getValue())
         ]),
         'stream': True,
         'timeout':500,
