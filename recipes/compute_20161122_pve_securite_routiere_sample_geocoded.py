@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import dataiku as d
+import os.path
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
-
-step=1000
+from collections import Counter
 
 def adresse_submit(file):
     requests_session = requests.Session()
@@ -34,12 +34,15 @@ def adresse_submit(file):
 # Recipe inputs
 f = d.Dataset("20161122_pve_securite_routiere_sample")
 events = f.get_dataframe()
+liste=[]
 
-#splitting
-for k in range(step,len(events)+step,step):
-    file="tmp_{}".format(k)
-    events[k-step:k].to_csv(file,sep=";",quotechar='"',index=false)
-    
+for events_subset in events.iter_dataframes(chunksize=500):
+    events_subset.to_csv("tmp.csv",sep=";", quotechar='"',index=False)
+    adresse_submit("tmp.csv")
+    liste.append(p.read_csv("tmp.csvgeo",sep=";", na_filter=False,dtype=object,index_col=None))
+    # Insert here applicative logic on each partial dataframe.
+    pass    
+events=pd.concat(liste,ignore_index=True)
 
 # Recipe outputs
 out = d.Dataset("20161122_pve_securite_routiere_sample_geocoded")
