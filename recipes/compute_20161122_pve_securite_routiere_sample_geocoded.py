@@ -54,7 +54,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
         try:
             liste.append(subset)
         except Exception as exc:
-            print ("%r generated an exception: %s" %(subset,exc))
+            print ("chunk %r to %r generated an exception: %s\n%r" %(i-split,i,exc,subset))
         else:
             print("geocoded chunk %r to %r" %(i-split,i))
 
