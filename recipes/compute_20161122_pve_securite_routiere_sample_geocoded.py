@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import dataiku as d
-import requests
-import io
+import requests, io, codecs
 from collections import OrderedDict
 import os.path
 import pandas as pd, numpy as np
