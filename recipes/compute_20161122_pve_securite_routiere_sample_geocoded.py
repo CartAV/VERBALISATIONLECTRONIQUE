@@ -36,7 +36,7 @@ f = d.Dataset("20161122_pve_securite_routiere_sample")
 events = f.get_dataframe()
 liste=[]
 
-for events_subset in events.iter_dataframes(chunksize=500):
+for events_subset in f.iter_dataframes(chunksize=500):
     events_subset.to_csv("tmp.csv",sep=";", quotechar='"',index=False)
     adresse_submit("tmp.csv")
     liste.append(p.read_csv("tmp.csvgeo",sep=";", na_filter=False,dtype=object,index_col=None))
