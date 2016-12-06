@@ -38,11 +38,11 @@ i=0
 for events_subset in f.iter_dataframes(chunksize=split):
     i+=split
     print("Enrichissement addok/BAN: {}...".format(i))
-    events=adresse_submit(events_subset)
+    liste.append(adresse_submit(events_subset))
     # Insert here applicative logic on each partial dataframe.
     pass    
 
-#events=pd.concat(liste,ignore_index=True)
+events=pd.concat(liste,ignore_index=True)
 
 # Recipe outputs
 out = d.Dataset("20161122_pve_securite_routiere_sample_geocoded")
