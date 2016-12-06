@@ -38,7 +38,7 @@ i=0
 for events_subset in f.iter_dataframes(chunksize=split):
     i+=split
     print("Enrichissement addok/BAN: {}...".format(i))
-    events=adresse_submit(events_subset)
+    events=pd.read_csv(adresse_submit(events_subset),",",encoding="utf8",quotechar='"')
     # Insert here applicative logic on each partial dataframe.
     pass    
 
