@@ -33,6 +33,7 @@ def adresse_submit(df):
 # Recipe inputs
 f = d.Dataset("20161122_pve_securite_routiere_sample")
 liste=[]
+futures=[]
 split=1000
 nthreads=5
 i=0
@@ -47,16 +48,13 @@ i=0
 
 #multithread
 with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
-    enrich={executor.submit(adresse_submit,subset): geo for subset in f.iter_dataframes(chunksize=split)}
-    for subset in concurrent.futures.as_completed(enrich):  
-        i+=split
-        geo=enrich[subset]
-        try:
-            liste.append(gep)
-        except Exception as exc:
-            print ("chunk %r to %r generated an exception: %s\n%r" %(i-split,i,exc,geo))
-        else:
-            print("geocoded chunk %r to %r" %(i-split,i))
+    for subset in f.iter_dataframes(chunksize=split):
+        futures.append(executor.submit(adresse_submit,subset))
+        
+for f in concurrent.futures.as_completed(futures):  
+    i+=split
+    liste.append(f.result())
+    print("geocoded chunk %r to %r" %(i-split,i))
 
 
 
