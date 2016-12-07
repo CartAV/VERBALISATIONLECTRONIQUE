@@ -7,7 +7,7 @@ from dataiku import pandasutils as pdu
 ds_in = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 df = ds_in.get_dataframe()
 
-df=pd.concat([df,pd.get_dummies('GENRE')],axis=1)
+df=pd.concat([df,pd.get_dummies(df['GENRE'])],axis=1)
 
 
 # Recipe outputs
