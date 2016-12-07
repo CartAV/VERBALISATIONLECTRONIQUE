@@ -14,7 +14,7 @@ liste=('REGROUPEMENT_GENRE','LIBELLE_CLASSE','SEXE_CONTREVENANT','LIBELLE_FAMILL
 for key in liste:
     values = df[key]
     counts = pd.value_counts(values)
-    mask = values.isin(counts[counts > int(threshold)].index)
+    mask = values.isin(counts[counts > threshold].index)
     df=pd.concat([df,pd.get_dummies(values[mask],prefix=key,prefix_sep=" ")],axis=1)
 
     
