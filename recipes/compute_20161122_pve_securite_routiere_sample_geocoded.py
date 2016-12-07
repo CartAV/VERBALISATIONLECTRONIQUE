@@ -17,7 +17,10 @@ verbosechunksize=5000
 maxtries=3
 nthreads=8
 j=0
+out = d.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 
+
+#appel API geocodage (addok/BAN
 def adresse_submit(df):
     global i
     s = StringIO.StringIO()
@@ -61,30 +64,26 @@ def adresse_submit(df):
 
 
 
-#version monothread
-#for events_subset in f.iter_dataframes(chunksize=split):
-#    i+=split
-#    print("Enrichissement addok/BAN: {}...".format(i))
-#    liste.append(adresse_submit(events_subset))
-#    # Insert here applicative logic on each partial dataframe.
-#    pass    
-
-#multithread
-with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
-    enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
-    for s in concurrent.futures.as_completed(enrich):  
-        j+=split
-        try:
-            liste.append(s.result())
-        except Exception as exc:
-            print("chunk %r to %r generated an exception: %r\n%r" %(j-split,j,exc,s))
-        else:
-            if ((j%verbosechunksize)==0):
-                print("geocoded chunk %r to %r" %(j-verbosechunksize,j))
 
 
-events=pd.concat(liste,ignore_index=True)
+
+#chunking, multithreading, and streaming output
+using out.get_writer() as writer:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
+        enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
+        for s in concurrent.futures.as_completed(enrich):  
+            j+=split
+            try:
+                liste.append(s.result())
+            except Exception as exc:
+                print("chunk %r to %r generated an exception: %r\n%r" %(j-split,j,exc,s))
+            else:
+                if ((j%verbosechunksize)==0):
+                    events=pd.concat(liste,ignore_index=True)
+                    writer.write_row_array(events)
+                    liste=[]
+                    print("wrote geocoded chunk %r to %r" %(j-verbosechunksize,j))
+
 
 # Recipe outputs
-out = d.Dataset("20161122_pve_securite_routiere_sample_geocoded")
-out.write_with_schema(events)
+#out.write_with_schema(events)
