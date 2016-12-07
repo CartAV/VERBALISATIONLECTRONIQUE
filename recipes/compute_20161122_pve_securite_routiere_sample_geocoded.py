@@ -62,7 +62,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
         except Exception as exc:
             print("chunk %r to %r generated an exception: %r\n%r" %(j-split,j,s))
         else:
-            print("geocoded chunk %r to %r\n%r" %(j-split,j,s.result()))
+            print("geocoded chunk %r to %r" %(j-split,j))
 
 
 events=pd.concat(liste,ignore_index=True)
