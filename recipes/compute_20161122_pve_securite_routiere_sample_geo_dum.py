@@ -7,7 +7,7 @@ from dataiku import pandasutils as pdu
 ds_in = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 df = ds_in.get_dataframe()
 
-nrows=df.count()
+nrows=len(df.index)
 thresold=0.02*float(nrows)
 
 liste=('REGROUPEMENT_GENRE','LIBELLE_CLASSE','SEXE_CONTREVENANT','LIBELLE_FAMILLE')
