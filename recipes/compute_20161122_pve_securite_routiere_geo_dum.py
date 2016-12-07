@@ -26,6 +26,7 @@ for key in liste:
     df=pd.concat([df,pd.get_dummies(values[mask],prefix=key,prefix_sep=" ")],axis=1)
 
     
+print("écriture finale")
 
 # Recipe outputs
 ds_out = dataiku.Dataset("20161122_pve_securite_routiere_geo_dum")
