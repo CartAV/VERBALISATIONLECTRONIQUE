@@ -18,8 +18,61 @@
     "chart": {
       "type": "grouped_columns",
       "variant": "normal",
-      "name": "Chart",
+      "name": "Count by result_score",
       "userEditedName": false,
+      "genericDimension0": [
+        {
+          "column": "result_score",
+          "type": "NUMERICAL",
+          "numParams": {
+            "mode": "NONE",
+            "nbBins": 10,
+            "binSize": 100,
+            "emptyBinsMode": "ZEROS"
+          },
+          "maxValues": 100,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Count of records, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Count of records, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "NATURAL",
+            "label": "Natural ordering",
+            "sortAscending": true
+          }
+        }
+      ],
+      "genericDimension1": [],
+      "genericMeasures": [
+        {
+          "function": "COUNT",
+          "type": "NUMERICAL",
+          "displayed": true,
+          "isA": "measure",
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "computeMode": "NORMAL",
+          "computeModeDim": 0
+        }
+      ],
       "xDimension": [],
       "yDimension": [],
       "uaXDimension": [],
@@ -37,10 +90,11 @@
       "tooltipMeasures": [],
       "boxplotBreakdownDim": [],
       "boxplotValue": [],
+      "filters": [],
       "axis1LogScale": false,
       "axis2LogScale": false,
       "includeZero": true,
-      "hexbinRadius": 0,
+      "hexbinRadius": 20,
       "smoothing": false,
       "showLegend": true,
       "showXAxis": false,
@@ -73,11 +127,12 @@
         "gridLonDeg": 0.6,
         "gridLatDeg": 0.6
       },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAABBElEQVRoge3XO07DUBCF4ewDdOfuhg2wC2rm2ElkEJJBFNlCFsHMTRuxCDpaarZAkYAi5SElBNsazl96rNF8jSWPRowxNuAEvuz7hk4jOHoER4/g6BEcPYKjJ+qffd/QaQRHLyQ4w6/2zUKCD32JCY4QwZszggNE8ObsP4FF/X1QYFGbn2XPb8Fd/VKdE7zr5pBgqbwQ/LOf4D1LCP6bjgVfTuxia8cK/LELPWiwoLwdfBe+FJTZ1vM1OKG8ngxOatdH3H1yAruRyh+yWp3ValGfCLxNKM/p9qUR+Hg9uxN4u5p5k9VqgY8TvBF4m9QeBWX6vSdXdp9QnhIWKrBpFxbGeuoLSqztsXP+HWIAAAAASUVORK5CYII\u003d",
       "disableSafetyLimits": false,
       "useLiveProcessingIfAvailable": true
     }
   },
-  "name": "Chart",
+  "name": "Count by result_score",
   "type": "CHART",
   "miniature": {
     "type": "chart",
