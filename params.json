@@ -27,7 +27,7 @@
   "checklists": {
     "checklists": [
       {
-        "title": "Your new project\u0027s Todo",
+        "title": "Todo",
         "createdOn": 0,
         "items": [
           {
@@ -53,8 +53,36 @@
           },
           {
             "done": false,
-            "text": "aggrégations sur 2015",
+            "text": "aggrégations sur 2015 : commune, département, semaine, mois",
             "createdOn": 1479920580247,
+            "createdBy": "antoinefa",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "ajout d\u0027une base vertica et relancement des jobs",
+            "createdOn": 1481136224512,
+            "createdBy": "antoinefa",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "ajout des années 2009 à 2014",
+            "createdOn": 1481136236895,
+            "createdBy": "antoinefa",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "corrélation accidentalité",
+            "createdOn": 1481136248807,
+            "createdBy": "antoinefa",
+            "stateChangedOn": 0
+          },
+          {
+            "done": false,
+            "text": "injections géocodage et aggrégations vers elasticsearch",
+            "createdOn": 1481136355050,
             "createdBy": "antoinefa",
             "stateChangedOn": 0
           }
