@@ -4,13 +4,13 @@
       "chartsEngine": "LINO",
       "sampling": {
         "selection": {
-          "samplingMethod": "HEAD_SEQUENTIAL",
+          "samplingMethod": "RANDOM_FIXED_NB",
           "partitionSelectionMethod": "ALL",
-          "maxRecords": 10000,
+          "maxRecords": 1000000,
           "targetRatio": 0.02
         },
         "autoRefreshSample": false,
-        "_refreshTrigger": 0
+        "_refreshTrigger": 1
       },
       "steps": []
     },
@@ -18,8 +18,61 @@
     "chart": {
       "type": "grouped_columns",
       "variant": "normal",
-      "name": "Chart",
+      "name": "Count by result_score",
       "userEditedName": false,
+      "genericDimension0": [
+        {
+          "column": "result_score",
+          "type": "NUMERICAL",
+          "numParams": {
+            "mode": "NONE",
+            "nbBins": 10,
+            "binSize": 100,
+            "emptyBinsMode": "ZEROS"
+          },
+          "maxValues": 100,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Count of records, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Count of records, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "NATURAL",
+            "label": "Natural ordering",
+            "sortAscending": true
+          }
+        }
+      ],
+      "genericDimension1": [],
+      "genericMeasures": [
+        {
+          "function": "COUNT",
+          "type": "NUMERICAL",
+          "displayed": true,
+          "isA": "measure",
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "computeMode": "NORMAL",
+          "computeModeDim": 0
+        }
+      ],
       "xDimension": [],
       "yDimension": [],
       "uaXDimension": [],
@@ -37,10 +90,11 @@
       "tooltipMeasures": [],
       "boxplotBreakdownDim": [],
       "boxplotValue": [],
+      "filters": [],
       "axis1LogScale": false,
       "axis2LogScale": false,
       "includeZero": true,
-      "hexbinRadius": 0,
+      "hexbinRadius": 20,
       "smoothing": false,
       "showLegend": true,
       "showXAxis": false,
@@ -73,11 +127,12 @@
         "gridLonDeg": 0.6,
         "gridLatDeg": 0.6
       },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAABFElEQVRoge3TPU7DQBCGYdcRLU1AM3sMeq4AHCFHmPEPiBhIyFkomc9QWsodOAcVPRWSlQYsiG0m85a73t15CmdZFEXRRCNtrsaeYdAC7L0Aey/A3guw9wLsvQB77+DArM3b2DMMWoC9F2DvBdh7BwcmxcfYMwza5MCsaPd5v2vwfGGz3TWX4K87Apz1AO/73/rLd1jRsqINcDZh8G/eY0XLgvf5wmbHy6ej7t5kwSTYUvl6/t23u3OdyMtpF0yCbXf/x2ASu+g5e5bk+azvGRJbc447VrtOYgUrSs5RsWJFgg0rVpzjhgVVEitYUCVFzdrck9ojCx6S2G0SK1LeFKwok6ImwSaJLUlRU47LvnNF0T/qE3kUs8niurfxAAAAAElFTkSuQmCC",
       "disableSafetyLimits": false,
       "useLiveProcessingIfAvailable": true
     }
   },
-  "name": "Chart",
+  "name": "Count by result_score",
   "type": "CHART",
   "miniature": {
     "type": "chart",
