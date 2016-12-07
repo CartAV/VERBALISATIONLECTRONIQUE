@@ -8,12 +8,13 @@ ds_in = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 df = ds_in.get_dataframe()
 
 nrows=df.count
+thresold=0.02
 
 liste=('REGROUPEMENT_GENRE','LIBELLE_CLASSE','SEXE_CONTREVENANT','LIBELLE_FAMILLE')
 for key in liste:
     values = df[key]
     counts = pd.value_counts(values)
-    mask = values.isin(counts[counts > nrows*0.02].index)
+    mask = values.isin(counts[counts > int(float(nrows)*threshold)].index)
     df=pd.concat([df,pd.get_dummies(values[mask],prefix=key,prefix_sep=" ")],axis=1)
 
     
