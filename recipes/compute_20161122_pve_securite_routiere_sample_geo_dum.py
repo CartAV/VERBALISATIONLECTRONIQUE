@@ -9,7 +9,7 @@ df = ds_in.get_dataframe()
 
 liste=('GENRE','LIBELLE_CLASSE')
 for key in liste:
-    df=pd.concat([df,pd.get_dummies(df[key])],axis=1)
+    df=pd.concat([df,pd.get_dummies(df[key],prefix=key+" ")],axis=1)
 
 
 # Recipe outputs
