@@ -287,7 +287,7 @@
       },
       {
         "name": "DATE_JOUR_REEL_INFRACTION",
-        "type": "date",
+        "type": "string",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -359,7 +359,7 @@
       },
       {
         "name": "DATE_JOUR_REEL_INTEGRATION",
-        "type": "date",
+        "type": "string",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -512,6 +512,78 @@
         "type": "string",
         "timestampNoTzAsDate": false,
         "maxLength": -1
+      },
+      {
+        "name": "latitude",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "longitude",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_label",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_score",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_type",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_id",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_housenumber",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_name",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_street",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_postcode",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_city",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "result_context",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
       }
     ]
   },
@@ -530,12 +602,12 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 3,
+    "versionNumber": 4,
     "lastModifiedBy": {
       "login": "DSS",
       "displayName": "DSS"
     },
-    "lastModifiedOn": 1481037980292
+    "lastModifiedOn": 1481110762751
   },
   "customMeta": {
     "kv": {}
