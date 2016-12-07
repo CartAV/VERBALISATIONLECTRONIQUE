@@ -49,9 +49,8 @@ i=0
 #multithread
 with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
     enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
-    for subset in concurrent.futures.as_completed(enrich):  
+    for s in concurrent.futures.as_completed(enrich):  
         i+=split
-        s=enrich[subset]
         try:
             liste.append(s.result())
         except Exception as exc:
