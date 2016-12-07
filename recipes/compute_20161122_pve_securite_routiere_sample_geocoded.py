@@ -12,8 +12,8 @@ f = d.Dataset("20161122_pve_securite_routiere_sample")
 i=0
 liste=[]
 futures=[]
-split=1000
-nthreads=3
+split=50
+nthreads=5
 j=0
 
 def adresse_submit(df):
@@ -61,7 +61,6 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
             liste.append(s.result())
         except Exception as exc:
             print("chunk %r to %r generated an exception: %r\n%r" %(j-split,j,exc,s))
-            liste.append(s)
         else:
             print("geocoded chunk %r to %r" %(j-split,j))
 
