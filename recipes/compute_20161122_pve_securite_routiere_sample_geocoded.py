@@ -68,7 +68,7 @@ def adresse_submit(df):
 
 
 #chunking, multithreading, and streaming output
-using out.get_writer() as writer:
+with out.get_writer() as writer:
     with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
         enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
         for s in concurrent.futures.as_completed(enrich):  
