@@ -38,8 +38,12 @@ def adresse_submit(df):
     }
     print("geocoding chunk %r to %r" %(i-split,i))
     response = requests_session.request(**kwargs)
-    df=pd.read_csv(StringIO.StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
-    return df
+    try:
+        res=pd.read_csv(StringIO.StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
+    except Exception as exc:
+        print("chunk %r to %r generated an exception: %r\n%r" %(i-split,i,exc,df))
+        res=df
+    return res
 
 
 
