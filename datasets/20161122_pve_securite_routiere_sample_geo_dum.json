@@ -586,12 +586,6 @@
         "maxLength": -1
       },
       {
-        "name": "REGROUPEMENT_GENRE AUTRE",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
         "name": "REGROUPEMENT_GENRE CAMION",
         "type": "double",
         "timestampNoTzAsDate": false,
@@ -604,19 +598,7 @@
         "maxLength": -1
       },
       {
-        "name": "REGROUPEMENT_GENRE TCP",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
         "name": "REGROUPEMENT_GENRE VL",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
-        "name": "LIBELLE_CLASSE Classe 1",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
@@ -664,19 +646,7 @@
         "maxLength": -1
       },
       {
-        "name": "LIBELLE_FAMILLE Autres infractions à la circulation routière",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
         "name": "LIBELLE_FAMILLE Ceinture et casque",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
-        "name": "LIBELLE_FAMILLE Croisements et dépassements",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
@@ -728,12 +698,12 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
       "login": "DSS",
       "displayName": "DSS"
     },
-    "lastModifiedOn": 1481133685260
+    "lastModifiedOn": 1481134410370
   },
   "customMeta": {
     "kv": {}
