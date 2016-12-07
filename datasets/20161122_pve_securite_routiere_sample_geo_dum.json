@@ -586,85 +586,85 @@
         "maxLength": -1
       },
       {
-        "name": "GENRE _Autre",
+        "name": "GENRE Autre",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Bicyclette",
+        "name": "GENRE Bicyclette",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Camionnette (véhicule dun poids total autorisé en charge \u003c\u003d 3500 kg)",
+        "name": "GENRE Camionnette (véhicule dun poids total autorisé en charge \u003c\u003d 3500 kg)",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Cyclomoteur",
+        "name": "GENRE Cyclomoteur",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Motocyclette - ancienne nomenclature",
+        "name": "GENRE Motocyclette - ancienne nomenclature",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Piéton",
+        "name": "GENRE Piéton",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Poids lourd",
+        "name": "GENRE Poids lourd",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Taxi",
+        "name": "GENRE Taxi",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Transport en commun de personnes",
+        "name": "GENRE Transport en commun de personnes",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE _Voiture particulière",
+        "name": "GENRE Voiture particulière",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "LIBELLE_CLASSE _Classe 1",
+        "name": "LIBELLE_CLASSE Classe 1",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "LIBELLE_CLASSE _Classe 2",
+        "name": "LIBELLE_CLASSE Classe 2",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "LIBELLE_CLASSE _Classe 3",
+        "name": "LIBELLE_CLASSE Classe 3",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "LIBELLE_CLASSE _Classe 4",
+        "name": "LIBELLE_CLASSE Classe 4",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
@@ -686,12 +686,12 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "DSS",
       "displayName": "DSS"
     },
-    "lastModifiedOn": 1481132468088
+    "lastModifiedOn": 1481132557509
   },
   "customMeta": {
     "kv": {}
