@@ -76,7 +76,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
         except Exception as exc:
             print("chunk %r to %r generated an exception: %r\n%r" %(j-split,j,exc,s))
         else:
-            if ((j%verbosechunksize)==0:
+            if ((j%verbosechunksize)==0):
                 print("geocoded chunk %r to %r" %(j-split,j))
 
 
