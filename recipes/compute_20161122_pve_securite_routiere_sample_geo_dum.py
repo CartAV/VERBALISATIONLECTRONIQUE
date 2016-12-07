@@ -7,8 +7,8 @@ from dataiku import pandasutils as pdu
 ds_in = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 df = ds_in.get_dataframe()
 
-nrows=df.count+1
-thresold=int(0.02*float(nrows))
+nrows=int(df.count)+1
+thresold=0.02*float(nrows)
 
 liste=('REGROUPEMENT_GENRE','LIBELLE_CLASSE','SEXE_CONTREVENANT','LIBELLE_FAMILLE')
 for key in liste:
