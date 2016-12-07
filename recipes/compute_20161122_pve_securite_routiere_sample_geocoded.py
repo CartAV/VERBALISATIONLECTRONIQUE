@@ -49,7 +49,7 @@ def adresse_submit(df):
             t=maxtries+1
         else:
             print("chunk %r to %r generated an exception, trying again:\n%r" %(i-split,i,response.content))
-            t++
+            t+=1
             
     return res
 
