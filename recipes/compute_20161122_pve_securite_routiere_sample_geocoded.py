@@ -80,9 +80,9 @@ with out.get_writer() as writer:
             else:
                 if ((j%verbosechunksize)==0):
                     events=pd.concat(liste,ignore_index=True)
+                    liste=[]
                     for row in events.to_records(index=False):
                         writer.write_tuple(row)
-                    liste=[]
                     print("wrote geocoded chunk %r to %r" %(j-verbosechunksize,j))
      
 
