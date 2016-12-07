@@ -9,6 +9,7 @@ from collections import OrderedDict
 
 def adresse_submit(df):
     s = StringIO.StringIO()
+    i+=split
     df.to_csv(s,sep=",", quotechar='"',encoding="utf8",index=False)
     requests_session = requests.Session()
     kwargs = {
@@ -25,6 +26,7 @@ def adresse_submit(df):
         'timeout':500,
         'url': 'http://fa-srv-1/search/csv/'
     }
+    print("geocoding chunk %r to %r" %(i-split,i))
     response = requests_session.request(**kwargs)
     df=pd.read_csv(StringIO.StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
     return df
@@ -32,11 +34,12 @@ def adresse_submit(df):
 
 # Recipe inputs
 f = d.Dataset("20161122_pve_securite_routiere_sample")
+i=0
 liste=[]
 futures=[]
 split=1000
 nthreads=3
-i=0
+j=0
 
 #version monothread
 #for events_subset in f.iter_dataframes(chunksize=split):
@@ -50,13 +53,13 @@ i=0
 with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
     enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
     for s in concurrent.futures.as_completed(enrich):  
-        i+=split
+        j+=split
         try:
             liste.append(s.result())
         except Exception as exc:
-            print ("chunk %r to %r generated an exception: %s\n%r" %(i-split,i,exc,s.result()))
+            print ("chunk %r to %r generated an exception: %s\n%r" %(j-split,j,exc,s.result()))
         else:
-            print("geocoded chunk %r to %r" %(i-split,i))
+            print("geocoded chunk %r to %r" %(j-split,j))
 
 
 
