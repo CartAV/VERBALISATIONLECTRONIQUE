@@ -32,35 +32,28 @@
         "items": [
           {
             "done": true,
-            "text": "Create the project",
+            "text": "20161201 import 2015",
+            "createdOn": 1479920580247,
+            "createdBy": "antoinefa",
+            "stateChangedOn": 0
+          },
+          {
+            "done": true,
+            "text": "20161206 géoloc via addok/BAN (script python \u003e fa-srv-1) sur 2015",
+            "createdOn": 1479920580247,
+            "createdBy": "antoinefa",
+            "stateChangedOn": 0
+          },
+          {
+            "done": true,
+            "text": "20161206 pivot unstack sur 2015",
             "createdOn": 1479920580247,
             "createdBy": "antoinefa",
             "stateChangedOn": 0
           },
           {
             "done": false,
-            "text": "Set a project image (click on the color next to the project title)",
-            "createdOn": 1479920580247,
-            "createdBy": "antoinefa",
-            "stateChangedOn": 0
-          },
-          {
-            "done": false,
-            "text": "Import your [first dataset](datasets/new/)",
-            "createdOn": 1479920580247,
-            "createdBy": "antoinefa",
-            "stateChangedOn": 0
-          },
-          {
-            "done": false,
-            "text": "Invite [other users](settings/permissions/) to collaborate",
-            "createdOn": 1479920580247,
-            "createdBy": "antoinefa",
-            "stateChangedOn": 0
-          },
-          {
-            "done": false,
-            "text": "Organize your work by replacing this with a real todo",
+            "text": "aggrégations sur 2015",
             "createdOn": 1479920580247,
             "createdBy": "antoinefa",
             "stateChangedOn": 0
