@@ -17,6 +17,7 @@ nthreads=3
 j=0
 
 def adresse_submit(df):
+    global i
     s = StringIO.StringIO()
     i+=split
     df.to_csv(s,sep=",", quotechar='"',encoding="utf8",index=False)
