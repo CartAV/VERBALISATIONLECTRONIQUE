@@ -680,6 +680,96 @@
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE CIRCULATION D\u0027UN VEHICULE A MOTEUR OU D\u0027UNE REMORQUE MUNI DE PNEUMATIQUE LISSE, DECHIRE OU DONT LA TOILE EST APPARENTE",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE CIRCULATION D\u0027UN VEHICULE NON AUTORISE SUR UNE VOIE RESERVEE AUX VEHICULES DE TRANSPORT PUBLIC DE VOYAGEURS",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE CONDUITE D\u0027UN VEHICULE A UNE VITESSE EXCESSIVE EU EGARD AUX CIRCONSTANCES",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE CONDUITE D\u0027UN VEHICULE AVEC UNE CONCENTRATION D\u0027ALCOOL PAR LITRE D\u0027AU MOINS 0,50 GRAMME DANS LE SANG OU 0,25 MILLIGRAMME DANS L\u0027AIR EXPIRE",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE CONDUITE D\u0027UN VEHICULE DANS DES CONDITIONS NE PERMETTANT PAS AU CONDUCTEUR DE MANOEUVRER AISEMENT",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE CONDUITE DE VEHICULE SANS RESPECT D\u0027INDICATIONS RESULTANT DE LA SIGNALISATION ROUTIERE",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE CONDUITE, SANS PORT DE LA CEINTURE DE SECURITE, D\u0027UN VEHICULE A MOTEUR RECEPTIONNE AVEC CET EQUIPEMENT",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE EXCES DE VITESSE D\u0027AU MOINS 20 KM/H ET INFERIEUR A 30 KM/H PAR CONDUCTEUR DE VEHICULE A MOTEUR",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE EXCES DE VITESSE D\u0027AU MOINS 30 KM/H ET INFERIEUR A 40 KM/H PAR CONDUCTEUR DE VEHICULE A MOTEUR",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE EXCES DE VITESSE INFERIEUR A 20 KM/H PAR CONDUCTEUR DE VEHICULE A MOTEUR - VITESSE MAXIMALE AUTORISEE INFERIEURE OU EGALE A 50 KM/H",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE EXCES DE VITESSE INFERIEUR A 20 KM/H PAR CONDUCTEUR DE VEHICULE A MOTEUR - VITESSE MAXIMALE AUTORISEE SUPERIEURE A 50 KM/H",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE FRANCHISSEMENT D\u0027UNE LIGNE CONTINUE PAR LE CONDUCTEUR D\u0027UN VEHICULE",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE INOBSERVATION, PAR CONDUCTEUR DE VEHICULE, DE L\u0027ARRET IMPOSE PAR UN FEU ROUGE",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE INOBSERVATION, PAR CONDUCTEUR, DE L\u0027ARRET ABSOLU IMPOSE PAR LE PANNEAU \"STOP\" A UNE INTERSECTION DE ROUTES",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_NATURE USAGE D\u0027UN TELEPHONE TENU EN MAIN PAR LE CONDUCTEUR D\u0027UN VEHICULE EN CIRCULATION",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
       }
     ]
   },
@@ -698,12 +788,12 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 5,
+    "versionNumber": 6,
     "lastModifiedBy": {
       "login": "DSS",
       "displayName": "DSS"
     },
-    "lastModifiedOn": 1481134410370
+    "lastModifiedOn": 1481134496767
   },
   "customMeta": {
     "kv": {}
