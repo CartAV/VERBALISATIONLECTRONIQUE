@@ -586,61 +586,31 @@
         "maxLength": -1
       },
       {
-        "name": "GENRE Autre",
+        "name": "REGROUPEMENT_GENRE AUTRE",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE Bicyclette",
+        "name": "REGROUPEMENT_GENRE CAMION",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE Camionnette (véhicule dun poids total autorisé en charge \u003c\u003d 3500 kg)",
+        "name": "REGROUPEMENT_GENRE MOTO",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE Cyclomoteur",
+        "name": "REGROUPEMENT_GENRE TCP",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
-        "name": "GENRE Motocyclette - ancienne nomenclature",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
-        "name": "GENRE Piéton",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
-        "name": "GENRE Poids lourd",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
-        "name": "GENRE Taxi",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
-        "name": "GENRE Transport en commun de personnes",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
-        "name": "GENRE Voiture particulière",
+        "name": "REGROUPEMENT_GENRE VL",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
@@ -668,6 +638,78 @@
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
+      },
+      {
+        "name": "SEXE_CONTREVENANT Femme",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "SEXE_CONTREVENANT Homme",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "SEXE_CONTREVENANT Non defini",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Alcool",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Autres infractions à la circulation routière",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Ceinture et casque",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Croisements et dépassements",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Eclairage et signalisation",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Etat ou équipement des utilisateurs et des véhicules",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Priorité de passage - intersections",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Règles de conduite",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_FAMILLE Vitesse",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
       }
     ]
   },
@@ -686,12 +728,12 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 3,
+    "versionNumber": 4,
     "lastModifiedBy": {
       "login": "DSS",
       "displayName": "DSS"
     },
-    "lastModifiedOn": 1481132557509
+    "lastModifiedOn": 1481133685260
   },
   "customMeta": {
     "kv": {}
