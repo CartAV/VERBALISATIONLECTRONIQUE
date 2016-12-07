@@ -47,14 +47,14 @@ i=0
 
 #multithread
 with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
-    enrich={executor.submit(adresse_submit,subset): subset for subset in f.iter_dataframes(chunksize=split)}
+    enrich={executor.submit(adresse_submit,subset): geo for subset in f.iter_dataframes(chunksize=split)}
     for subset in concurrent.futures.as_completed(enrich):  
         i+=split
-        subset=enrich[subset]
+        geo=enrich[subset]
         try:
-            liste.append(subset)
+            liste.append(gep)
         except Exception as exc:
-            print ("chunk %r to %r generated an exception: %s\n%r" %(i-split,i,exc,subset))
+            print ("chunk %r to %r generated an exception: %s\n%r" %(i-split,i,exc,geo))
         else:
             print("geocoded chunk %r to %r" %(i-split,i))
 
