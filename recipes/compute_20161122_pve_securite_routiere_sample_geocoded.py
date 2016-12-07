@@ -13,14 +13,11 @@ i=0
 liste=[]
 futures=[]
 split=100
-verbosechunksize=1000
+verbosechunksize=5000
 maxtries=3
-nthreads=4
+nthreads=8
 j=0
-out = d.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 
-
-#appel API geocodage (addok/BAN
 def adresse_submit(df):
     global i
     s = StringIO.StringIO()
@@ -61,29 +58,34 @@ def adresse_submit(df):
             
     return res
 
-firstwrite=True
 
-#chunking, multithreading, and streaming output
-with out.get_writer() as writer:
-    with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
-        enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
-        for s in concurrent.futures.as_completed(enrich):  
-            j+=split
-            try:
-                liste.append(s.result())
-            except Exception as exc:
-                print("chunk %r to %r generated an exception: %r\n%r" %(j-split,j,exc,s))
-            else:
-                if ((j%verbosechunksize)==0):
-                    events=pd.concat(liste,ignore_index=True)
-                    liste=[]
-                    if (firstwrite):
-                        out.write_schema_from_dataframe(events)
-                        firstwrite=False
-                    for row in events.to_records(index=False):
-                        writer.write_tuple(row)
-                    print("wrote geocoded chunk %r to %r" %(j-verbosechunksize,j))
-     
+
+
+#version monothread
+#for events_subset in f.iter_dataframes(chunksize=split):
+#    i+=split
+#    print("Enrichissement addok/BAN: {}...".format(i))
+#    liste.append(adresse_submit(events_subset))
+#    # Insert here applicative logic on each partial dataframe.
+#    pass    
+
+#multithread
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
+    enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
+    for s in concurrent.futures.as_completed(enrich):  
+        j+=split
+        try:
+            liste.append(s.result())
+        except Exception as exc:
+            print("chunk %r to %r generated an exception: %r\n%r" %(j-split,j,exc,s))
+        else:
+            if ((j%verbosechunksize)==0):
+                print("geocoded chunk %r to %r" %(j-verbosechunksize,j))
+
+
+events=pd.concat(liste,ignore_index=True)
 
 # Recipe outputs
-#out.write_with_schema(events)
+out = d.Dataset("20161122_pve_securite_routiere_sample_geocoded")
+out.write_with_schema(events)
