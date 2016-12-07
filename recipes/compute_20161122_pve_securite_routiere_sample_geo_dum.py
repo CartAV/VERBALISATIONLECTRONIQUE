@@ -8,7 +8,7 @@ ds_in = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 df = ds_in.get_dataframe()
 
 nrows=len(df.index)
-thresold=0.02*float(nrows)
+threshold=0.02*float(nrows)
 
 liste=('REGROUPEMENT_GENRE','LIBELLE_CLASSE','SEXE_CONTREVENANT','LIBELLE_FAMILLE')
 for key in liste:
