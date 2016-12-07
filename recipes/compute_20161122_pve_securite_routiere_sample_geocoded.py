@@ -13,7 +13,7 @@ i=0
 liste=[]
 futures=[]
 split=1
-verbosechunk=1000
+verbosechunksize=1000
 maxtries=3
 nthreads=8
 j=0
@@ -37,7 +37,8 @@ def adresse_submit(df):
         'timeout':500,
         'url': 'http://fa-srv-1/search/csv/'
     }
-    print("geocoding chunk %r to %r" %(i-split,i))
+    if ((i%verbosechunksize)==0):
+        print("geocoding chunk %r to %r" %(i-split,i))
     t=1
     while (t<=maxtries):
         response = requests_session.request(**kwargs)
@@ -75,7 +76,8 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
         except Exception as exc:
             print("chunk %r to %r generated an exception: %r\n%r" %(j-split,j,exc,s))
         else:
-            print("geocoded chunk %r to %r" %(j-split,j))
+            if ((j%verbosechunksize)==0:
+                print("geocoded chunk %r to %r" %(j-split,j))
 
 
 events=pd.concat(liste,ignore_index=True)
