@@ -13,6 +13,7 @@ i=0
 liste=[]
 futures=[]
 split=50
+maxtries=3
 nthreads=5
 j=0
 
@@ -36,12 +37,19 @@ def adresse_submit(df):
         'url': 'http://fa-srv-1/search/csv/'
     }
     print("geocoding chunk %r to %r" %(i-split,i))
-    response = requests_session.request(**kwargs)
-    try:
-        res=pd.read_csv(StringIO.StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
-    except Exception as exc:
-        print("chunk %r to %r generated an exception: %r\n%r" %(i-split,i,exc,df))
-        res=df
+    try=1
+    while (try<=maxtries):
+        response = requests_session.request(**kwargs)
+        if (response.status_code == 200):
+            res=pd.read_csv(StringIO.StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
+            try=maxtries+1
+        elif (response.status_code == 400):
+            print("chunk %r to %r generated an exception:\n%r" %(i-split,i,response.content))
+            res=df
+            try=maxtries+1
+        elif (response.status_code == 502):
+            try++
+            
     return res
 
 
