@@ -48,13 +48,17 @@ i=0
 
 #multithread
 with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
-    for subset in f.iter_dataframes(chunksize=split):
-        futures.append(executor.submit(adresse_submit,subset))
-        
-for f in concurrent.futures.as_completed(futures):  
-    i+=split
-    liste.append(f.result())
-    print("geocoded chunk %r to %r" %(i-split,i))
+    enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
+    for subset in concurrent.futures.as_completed(enrich):  
+        i+=split
+        s=enrich[subset]
+        try:
+            liste.append(s.result())
+        except Exception as exc:
+            print ("chunk %r to %r generated an exception: %s\n%r" %(i-split,i,exc,s.result()))
+        else:
+            print("geocoded chunk %r to %r" %(i-split,i))
+
 
 
 
