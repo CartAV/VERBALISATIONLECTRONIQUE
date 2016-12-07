@@ -7,6 +7,15 @@ import concurrent.futures
 from dataiku import pandasutils as pdu
 from collections import OrderedDict
 
+# Recipe inputs
+f = d.Dataset("20161122_pve_securite_routiere_sample")
+i=0
+liste=[]
+futures=[]
+split=1000
+nthreads=3
+j=0
+
 def adresse_submit(df):
     s = StringIO.StringIO()
     i+=split
@@ -32,14 +41,7 @@ def adresse_submit(df):
     return df
 
 
-# Recipe inputs
-f = d.Dataset("20161122_pve_securite_routiere_sample")
-i=0
-liste=[]
-futures=[]
-split=1000
-nthreads=3
-j=0
+
 
 #version monothread
 #for events_subset in f.iter_dataframes(chunksize=split):
