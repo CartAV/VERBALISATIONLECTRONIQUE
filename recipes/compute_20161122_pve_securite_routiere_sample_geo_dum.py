@@ -10,10 +10,11 @@ df = ds_in.get_dataframe()
 nrows=len(df.index)
 threshold=0.02*float(nrows)
 
-liste=('REGROUPEMENT_GENRE','LIBELLE_CLASSE','SEXE_CONTREVENANT','LIBELLE_FAMILLE')
+liste=('REGROUPEMENT_GENRE','LIBELLE_CLASSE','SEXE_CONTREVENANT','LIBELLE_FAMILLE','LIBELLE_NATURE')
 for key in liste:
     values = df[key]
     counts = pd.value_counts(values)
+    #filtre les valeurs présentées à moins de (threshold) %
     mask = values.isin(counts[counts > threshold].index)
     df=pd.concat([df,pd.get_dummies(values[mask],prefix=key,prefix_sep=" ")],axis=1)
 
