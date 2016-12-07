@@ -1,0 +1,21 @@
+{
+  "dataset": "20161122_pve_securite_routiere_sample_geocoded",
+  "datasetType": "Filesystem",
+  "name": "20161122_pve_securite_routiere_sample_geocoded",
+  "type": "DATASET",
+  "miniature": {
+    "type": "description",
+    "showTitle": true,
+    "fullImage": true
+  },
+  "fullView": {
+    "descriptionPosition": "right"
+  },
+  "description": "",
+  "tags": [],
+  "checklists": {
+    "checklists": []
+  },
+  "createdBy": "antoinefa",
+  "createdOn": 1481130713384
+}
