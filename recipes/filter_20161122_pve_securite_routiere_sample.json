@@ -26,7 +26,7 @@
     "selection": {
       "samplingMethod": "RANDOM_FIXED_NB",
       "partitionSelectionMethod": "ALL",
-      "maxRecords": 100000,
+      "maxRecords": 10000,
       "targetRatio": 0.02
     }
   },
@@ -35,13 +35,13 @@
   },
   "tags": [],
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1481042271129
+    "lastModifiedOn": 1481099722641
   },
   "customMeta": {
     "kv": {}
