@@ -40,38 +40,32 @@
     "userModified": false,
     "columns": [
       {
-        "name": "\u003c!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\"\u003e",
-        "type": "string",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
         "name": "AGE_CONTREVENANT",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "ANNEE_INFRACTION",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "ANNEE_INTEGRATION",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "ANNEE_NAISSANCE",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "ANNEE_PERMIS_CONTREVENANT",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -89,7 +83,7 @@
       },
       {
         "name": "CODE_NATURE_INFRA",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -107,7 +101,7 @@
       },
       {
         "name": "COD_CORPS",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -125,7 +119,7 @@
       },
       {
         "name": "COD_ENTITE",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -197,13 +191,13 @@
       },
       {
         "name": "ID_CLASSE",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "ID_FAMILLE",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -371,31 +365,31 @@
       },
       {
         "name": "MNT_AF",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "MNT_AF_MAJOREE",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "MNT_AF_MINOREE",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "MOIS_INFRACTION",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "MOIS_INTEGRATION",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -413,19 +407,19 @@
       },
       {
         "name": "NBR_POINTS_RETIRES",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "NUM_ANNEE_MOIS_INFRACTION",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "NUM_ARRONDISSEMENT",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -461,13 +455,13 @@
       },
       {
         "name": "SEMAINE_INFRACTION",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "SEMAINE_INTEGRATION",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -503,13 +497,13 @@
       },
       {
         "name": "VAL_VITESSE_RETENUE",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "VAL_VITESSE_VLA",
-        "type": "double",
+        "type": "bigint",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -608,12 +602,12 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 5,
+    "versionNumber": 6,
     "lastModifiedBy": {
       "login": "DSS",
       "displayName": "DSS"
     },
-    "lastModifiedOn": 1481111851639
+    "lastModifiedOn": 1481112985903
   },
   "customMeta": {
     "kv": {}
