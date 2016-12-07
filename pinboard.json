@@ -2,20 +2,8 @@
   "sections": [
     {
       "title": "First section",
-      "pinlets": [
-        {
-          "box": {
-            "top": 0,
-            "left": 0,
-            "width": 1,
-            "height": 1
-          },
-          "insightId": "jC5jEAG"
-        }
-      ]
+      "pinlets": []
     }
   ],
-  "datasetNames": [
-    "20161122_pve_securite_routiere_sample_geocoded"
-  ]
+  "datasetNames": []
 }
