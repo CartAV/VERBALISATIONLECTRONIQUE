@@ -13,9 +13,9 @@ i=0
 liste=[]
 futures=[]
 split=100
-verbosechunksize=5000
+verbosechunksize=1000
 maxtries=3
-nthreads=8
+nthreads=4
 j=0
 out = d.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 
@@ -80,7 +80,8 @@ with out.get_writer() as writer:
             else:
                 if ((j%verbosechunksize)==0):
                     events=pd.concat(liste,ignore_index=True)
-                    writer.write_row_array(events.to_records(index=False))
+                    for row in events.to_records(index=False):
+                        writer.write_tuple(row)
                     liste=[]
                     print("wrote geocoded chunk %r to %r" %(j-verbosechunksize,j))
      
