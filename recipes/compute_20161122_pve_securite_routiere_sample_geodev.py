@@ -4,11 +4,11 @@ import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
 
 # Recipe inputs
-20161122_pve_securite_routiere_sample_geocoded = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
-df = 20161122_pve_securite_routiere_sample_geocoded.get_dataframe()
+in_ds = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
+in_df = in_ds.get_dataframe()
 
-out = df.unstack(level=1)
+out_df = in_df.unstack(level=1)
 
 # Recipe outputs
-20161122_pve_securite_routiere_sample_geodev = dataiku.Dataset("20161122_pve_securite_routiere_sample_geodev")
-20161122_pve_securite_routiere_sample_geodev.write_with_schema(out)
+out_ds = dataiku.Dataset("20161122_pve_securite_routiere_sample_geodev")
+out_ds.write_with_schema(out_df)
