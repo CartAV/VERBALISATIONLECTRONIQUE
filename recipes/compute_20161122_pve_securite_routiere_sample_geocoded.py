@@ -61,11 +61,7 @@ def adresse_submit(df):
             
     return res
 
-
-
-
-
-
+firstwrite=True
 
 #chunking, multithreading, and streaming output
 with out.get_writer() as writer:
@@ -81,6 +77,9 @@ with out.get_writer() as writer:
                 if ((j%verbosechunksize)==0):
                     events=pd.concat(liste,ignore_index=True)
                     liste=[]
+                    if (firstwrite):
+                        out.write_schema_from_dataframe(events)
+                        firstwrite=False
                     for row in events.to_records(index=False):
                         writer.write_tuple(row)
                     print("wrote geocoded chunk %r to %r" %(j-verbosechunksize,j))
