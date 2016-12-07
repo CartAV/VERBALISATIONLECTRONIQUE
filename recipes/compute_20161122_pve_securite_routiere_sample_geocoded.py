@@ -35,7 +35,7 @@ f = d.Dataset("20161122_pve_securite_routiere_sample")
 liste=[]
 futures=[]
 split=1000
-nthreads=5
+nthreads=3
 i=0
 
 #version monothread
