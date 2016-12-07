@@ -7,7 +7,7 @@ from dataiku import pandasutils as pdu
 ds_in = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
 df = ds_in.get_dataframe()
 
-liste=('GENRE','LIBELLE_CLASSE')
+liste=('REGROUPEMENT_GENRE','LIBELLE_CLASSE','SEXE_CONTREVENANT','LIBELLE_FAMILLE')
 for key in liste:
     df=pd.concat([df,pd.get_dummies(df[key],prefix=key,prefix_sep=" ")],axis=1)
 
