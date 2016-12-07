@@ -48,9 +48,12 @@ def adresse_submit(df):
         elif (response.status_code == 400):
             print("chunk %r to %r generated an exception:\n%r" %(i-split,i,response.content))
             res=df
+            res['result_score']=-1
             t=maxtries+1
         else:
             print("chunk %r to %r generated an exception, trying again:\n%r" %(i-split,i,response.content))
+            res=df
+            res['result_score']=-0.5
             t+=1
             
     return res
