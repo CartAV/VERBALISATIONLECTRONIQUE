@@ -30,21 +30,21 @@
   "globalSearchQuery": "",
   "explorationFilters": [
     {
-      "column": "\u003c!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\"\u003e",
+      "column": "result_score",
       "type": "columnFilter",
       "currentMode": "FACET",
       "active": true,
       "facet": {
         "type": "facet",
-        "column": "\u003c!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\"\u003e",
-        "columnType": "ALPHANUM",
-        "currentMode": "ALPHANUM",
+        "column": "result_score",
+        "columnType": "NUMERICAL",
+        "currentMode": "NUMERICAL",
         "sort": "count",
         "selectedValues": {}
       },
       "alphanumFilter": {
         "type": "alphanum",
-        "column": "\u003c!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\"\u003e",
+        "column": "result_score",
         "values": [],
         "params": {
           "mode": "full_string",
@@ -53,11 +53,11 @@
       },
       "validityFilter": {
         "type": "validity",
-        "column": "\u003c!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\"\u003e",
+        "column": "result_score",
         "params": {
-          "type": "Text",
-          "ok": true,
-          "nok": true,
+          "type": "DoubleMeaning",
+          "ok": false,
+          "nok": false,
           "empty": true
         }
       }
