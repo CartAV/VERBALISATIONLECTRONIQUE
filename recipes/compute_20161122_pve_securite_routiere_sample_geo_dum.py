@@ -2,6 +2,7 @@
 import dataiku
 import pandas as pd, numpy as np
 from dataiku import pandasutils as pdu
+import distance
 
 # Recipe inputs
 ds_in = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
