@@ -4,7 +4,7 @@
   "permissions": [
     {
       "group": "DSCR",
-      "type": "ANALYST_READONLY",
+      "type": "ANALYST_READWRITE",
       "runJob": false,
       "downloadData": true
     },
