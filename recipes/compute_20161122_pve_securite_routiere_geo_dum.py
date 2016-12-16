@@ -5,7 +5,7 @@ from dataiku import pandasutils as pdu
 import distance
 
 # Recipe inputs
-ds_in = dataiku.Dataset("20161122_pve_securite_routiere_sample_geocoded")
+ds_in = dataiku.Dataset("20161122_pve_securite_routiere_geocoded")
 df = ds_in.get_dataframe()
 print("chargement initial")    
 
@@ -32,5 +32,5 @@ for key in liste:
 print("écriture finale")    
 
 # Recipe outputs
-ds_out = dataiku.Dataset("20161122_pve_securite_routiere_sample_geo_dum")
+ds_out = dataiku.Dataset("20161122_pve_securite_routiere_geo_dum")
 ds_out.write_with_schema(df)
