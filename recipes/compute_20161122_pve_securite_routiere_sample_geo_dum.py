@@ -13,7 +13,7 @@ threshold=0.02*float(nrows)
 
 liste=('REGROUPEMENT_GENRE','MOIS_INFRACTION','MNT_AF','LIBELLE_TYPE_VOIE','LIBELLE_STATUT_DOSSIER','LIBELLE_CLASSE','AGE_CONTREVENANT','SEXE_CONTREVENANT','LIBELLE_FAMILLE','LIBELLE_JOUR_INFRACTION','LIBELLE_NUIT','LIBELLE_PLAGE_HORAIRE','LIB_ENTITE','LIBELLE_CORPS','LIB_TRANCHE_DEPASSEMENT')
 for key in liste:
-    df=pd.concat([df,pd.get_dummies(df[key],prefix=key,prefix_sep=" ")],axis=1)
+    df=pd.concat([df,pd.get_dummies(df[key],prefix="DUM_"+key,prefix_sep=" ")],axis=1)
 
 liste=('LIBELLE_NATURE','MARQUE','NATIONALITE_PLAQUE')
 for key in liste:
@@ -21,7 +21,7 @@ for key in liste:
     counts = pd.value_counts(values)
     #filtre les valeurs présentées à moins de (threshold) %
     mask = values.isin(counts[counts > threshold].index)
-    df=pd.concat([df,pd.get_dummies(values[mask],prefix=key,prefix_sep=" ")],axis=1)
+    df=pd.concat([df,pd.get_dummies(values[mask],prefix="DUM_"+key,prefix_sep=" ")],axis=1)
 
     
 
