@@ -12,10 +12,10 @@ f = d.Dataset("2015_pve_SR")
 i=0
 liste=[]
 futures=[]
-split=100
-verbosechunksize=5000
+split=1000
+verbosechunksize=10000
 maxtries=3
-nthreads=4
+nthreads=3
 j=0
 
 def adresse_submit(df):
