@@ -47,13 +47,13 @@ def adresse_submit(df):
             res=pd.read_csv(StringIO.StringIO(response.content.decode('utf-8')),sep=",",quotechar='"')
             t=maxtries+1
         elif (response.status_code == 400):
-            print("chunk %r to %r generated an exception, trying again:\n%r" %(i-split,i,response.content))
+            print("chunk %r to %r generated an exception, try #%r" %(i-split,i,t))
             res=df
             res['result_score']=-1
             df=shuffle(df)
             t=maxtries+1
         else:
-            print("chunk %r to %r generated an exception, trying again:\n%r" %(i-split,i,response.content))
+            print("chunk %r to %r generated an exception, try #%r" %(i-split,i,t))
             res=df
             res['result_score']=-0.5
             t+=1
