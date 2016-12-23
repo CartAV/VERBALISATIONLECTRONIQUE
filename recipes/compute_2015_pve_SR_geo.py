@@ -74,7 +74,7 @@ def adresse_submit(df):
 #multithread
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=nthreads) as executor:
-    enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split)}
+    enrich={executor.submit(adresse_submit,subset) for subset in f.iter_dataframes(chunksize=split,infer_with_pandas=Flase)}
     for s in concurrent.futures.as_completed(enrich):  
         j+=split
         try:
