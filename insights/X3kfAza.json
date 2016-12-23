@@ -16,10 +16,94 @@
     },
     "dataset": "2015_pve_SR",
     "chart": {
-      "type": "grouped_columns",
+      "type": "stacked_columns",
       "variant": "normal",
-      "name": "Chart",
+      "name": "Avg. of NBR_POINTS_RETIRES by DATE_JOUR_REEL_INFRACTION",
       "userEditedName": false,
+      "genericDimension0": [
+        {
+          "column": "DATE_JOUR_REEL_INFRACTION",
+          "type": "DATE",
+          "dateParams": {
+            "mode": "DAY_OF_WEEK"
+          },
+          "maxValues": 0,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Average of NBR_POINTS_RETIRES, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Average of NBR_POINTS_RETIRES, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "NATURAL",
+            "label": "Natural ordering",
+            "sortAscending": true
+          }
+        }
+      ],
+      "genericDimension1": [
+        {
+          "column": "LIBELLE_NATURE",
+          "type": "ALPHANUM",
+          "maxValues": 10,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Average of NBR_POINTS_RETIRES, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Average of NBR_POINTS_RETIRES, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "AGGREGATION",
+            "measureIdx": 0,
+            "label": "Average of NBR_POINTS_RETIRES, descending"
+          }
+        }
+      ],
+      "genericMeasures": [
+        {
+          "column": "NBR_POINTS_RETIRES",
+          "function": "AVG",
+          "type": "NUMERICAL",
+          "displayed": true,
+          "isA": "measure",
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "computeMode": "NORMAL",
+          "computeModeDim": 0
+        }
+      ],
       "xDimension": [],
       "yDimension": [],
       "uaXDimension": [],
@@ -37,10 +121,11 @@
       "tooltipMeasures": [],
       "boxplotBreakdownDim": [],
       "boxplotValue": [],
+      "filters": [],
       "axis1LogScale": false,
       "axis2LogScale": false,
       "includeZero": true,
-      "hexbinRadius": 0,
+      "hexbinRadius": 20,
       "smoothing": false,
       "showLegend": true,
       "showXAxis": false,
@@ -73,11 +158,12 @@
         "gridLonDeg": 0.6,
         "gridLatDeg": 0.6
       },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAABZ0lEQVRoge3WsUoDQRAG4LyAeQLRRoiSe5OAXXwBizxCzip2ogSrRK5IkVaLYCCFEMh0lydIKiFt8CXWToYZZZzd5bJcZmGqn+Xfb+8OrtE49jXsdgDPITqqOMPPKt+3gOcQHVWcodKyWoHp6zi86bxqOyoFj3orwENz6fuihy3nGwaWOqQ86pLKtE/HwP/oCH3LaP7cvb74E+yKF8CjBdPDjnorBpY6Qs/wy6X7g7VPx8CpgbetS8CjBdP9m9YVA0sdoWeg+fgW/MHS7Rs4dXCxewI8WjDdX+weGVjqiJ2PPx/8wdLtGzh1cDbNAI8WTPdn04yBpY7YeXvS9gdLt2vg1MFumQMeLZjud8s7/qcldMTO3UfuD5Zu18AGTg08OAE86jKy3w2aHCx1RM7dfdPABjZwXcGz9R7whOaz9Z6BY3dI+Vv5ZWADHw34vL8APKH5WX/BwLE7pPw0nxvYwAauK9hWzdY30+vmBLM3UKwAAAAASUVORK5CYII\u003d",
       "disableSafetyLimits": false,
       "useLiveProcessingIfAvailable": true
     }
   },
-  "name": "Chart",
+  "name": "Avg. of NBR_POINTS_RETIRES by DATE_JOUR_REEL_INFRACTION",
   "type": "CHART",
   "miniature": {
     "type": "chart",
