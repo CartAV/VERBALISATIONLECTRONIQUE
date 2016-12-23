@@ -18,8 +18,89 @@
     "chart": {
       "type": "grouped_columns",
       "variant": "normal",
-      "name": "Chart",
+      "name": "Sum of MNT_AF by LIBELLE_CORPS",
       "userEditedName": false,
+      "genericDimension0": [
+        {
+          "column": "LIBELLE_CORPS",
+          "type": "ALPHANUM",
+          "maxValues": 20,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Sum of MNT_AF, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Sum of MNT_AF, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "AGGREGATION",
+            "measureIdx": 0,
+            "label": "Sum of MNT_AF, descending"
+          }
+        }
+      ],
+      "genericDimension1": [
+        {
+          "column": "LIBELLE_FAMILLE",
+          "type": "ALPHANUM",
+          "maxValues": 20,
+          "generateOthersCategory": true,
+          "oneTickPerBin": false,
+          "filters": [],
+          "isA": "dimension",
+          "possibleSorts": [
+            {
+              "type": "NATURAL",
+              "label": "Natural ordering",
+              "sortAscending": true
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Sum of MNT_AF, descending"
+            },
+            {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Sum of MNT_AF, ascending",
+              "sortAscending": true
+            }
+          ],
+          "sort": {
+            "type": "AGGREGATION",
+            "measureIdx": 0,
+            "label": "Sum of MNT_AF, descending"
+          }
+        }
+      ],
+      "genericMeasures": [
+        {
+          "column": "MNT_AF",
+          "function": "SUM",
+          "type": "NUMERICAL",
+          "displayed": true,
+          "isA": "measure",
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "computeMode": "NORMAL",
+          "computeModeDim": 0
+        }
+      ],
       "xDimension": [],
       "yDimension": [],
       "uaXDimension": [],
@@ -37,10 +118,11 @@
       "tooltipMeasures": [],
       "boxplotBreakdownDim": [],
       "boxplotValue": [],
+      "filters": [],
       "axis1LogScale": false,
       "axis2LogScale": false,
       "includeZero": true,
-      "hexbinRadius": 0,
+      "hexbinRadius": 20,
       "smoothing": false,
       "showLegend": true,
       "showXAxis": false,
@@ -73,11 +155,12 @@
         "gridLonDeg": 0.6,
         "gridLatDeg": 0.6
       },
+      "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAAw0lEQVRoge3YMQ6CQBBAUS7AGSjRhLN4Bm+BhYnWHoBQWJjYUxEbTej0BNracou1MiFUOyQrzuz//YR5G7LFJgkRmSwr227uHX4aYOsBth5g6wG2HmDrAbYeYEHNo9d3WFnZds29v02Z1QueuDhgDQEWBFhDgAUB1lC0YHfdiJePEuz26TrAWuECLChO8Hl1DLFXsIbg+n0Qob/g4lToubwACxqCX/nCe3bWZ6Ux+JkvL76zY7Crq63vN90u1fNX0B/2Aer1C/9T4231AAAAAElFTkSuQmCC",
       "disableSafetyLimits": false,
       "useLiveProcessingIfAvailable": true
     }
   },
-  "name": "Chart",
+  "name": "Sum of MNT_AF by LIBELLE_CORPS",
   "type": "CHART",
   "miniature": {
     "type": "chart",
