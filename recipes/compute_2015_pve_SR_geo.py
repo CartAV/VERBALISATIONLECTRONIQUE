@@ -4,6 +4,7 @@ import os.path
 import codecs, io, StringIO, requests
 import pandas as pd, numpy as np
 import concurrent.futures
+from sklearn.utils import shuffle
 from dataiku import pandasutils as pdu
 from collections import OrderedDict
 
@@ -14,7 +15,7 @@ liste=[]
 futures=[]
 split=1000
 verbosechunksize=10000
-maxtries=3
+maxtries=4
 nthreads=3
 j=0
 
@@ -49,6 +50,7 @@ def adresse_submit(df):
             print("chunk %r to %r generated an exception:\n%r" %(i-split,i,response.content))
             res=df
             res['result_score']=-1
+            df=shuffle(df)
             t=maxtries+1
         else:
             print("chunk %r to %r generated an exception, trying again:\n%r" %(i-split,i,response.content))
