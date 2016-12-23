@@ -15,7 +15,7 @@ futures=[]
 split=100
 verbosechunksize=5000
 maxtries=3
-nthreads=8
+nthreads=4
 j=0
 
 def adresse_submit(df):
