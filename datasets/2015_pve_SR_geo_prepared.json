@@ -51,12 +51,14 @@
       {
         "name": "CODE_INSEE_CONTREVENANT",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "CODE_INSEE_INFRACTION",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -69,12 +71,14 @@
       {
         "name": "CODE_POSTAL_CONTREVENANT",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "CODE_POSTAL_INFRACTION",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -87,6 +91,7 @@
       {
         "name": "COD_DEPARTEMENT_UNITE",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -111,12 +116,14 @@
       {
         "name": "COD_UNITE",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "COD_UNITE_PN",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -134,25 +141,27 @@
       },
       {
         "name": "DATE_JOUR_REEL_INFRACTION",
-        "type": "string",
+        "type": "date",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "DATE_JOUR_REEL_INTEGRATION",
-        "type": "string",
+        "type": "date",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "DEPARTEMENT_CONTREVENANT",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "DEPARTEMENT_INFRACTION",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -261,6 +270,7 @@
       {
         "name": "LIBELLE_TYPE_VOIE",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -273,12 +283,14 @@
       {
         "name": "LIB_COURT_CORPS",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "LIB_COURT_ENTITE",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -315,6 +327,7 @@
       {
         "name": "LIB_TRANCHE_DEPASSEMENT",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -375,6 +388,7 @@
       {
         "name": "MOTIF_STATUT_DOSSIER",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -519,6 +533,7 @@
       {
         "name": "result_housenumber",
         "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
@@ -563,6 +578,12 @@
         "type": "string",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
+      },
+      {
+        "name": "geo_point_2d",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
       }
     ]
   },
@@ -579,6 +600,15 @@
   "flowOptions": {
     "rebuildBehavior": "NORMAL",
     "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "antoinefa",
+      "displayName": "Fabien Antoine",
+      "email": "fabien.antoine@interieur.gouv.fr"
+    },
+    "lastModifiedOn": 1482742870580
   },
   "customMeta": {
     "kv": {}
