@@ -602,13 +602,13 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "antoinefa",
       "displayName": "Fabien Antoine",
       "email": "fabien.antoine@interieur.gouv.fr"
     },
-    "lastModifiedOn": 1482744169183
+    "lastModifiedOn": 1482744175089
   },
   "customMeta": {
     "kv": {}
@@ -702,7 +702,8 @@
       "metrics": [
         "basic:COUNT_COLUMNS",
         "records:COUNT_RECORDS",
-        "reporting:BUILD_SUCCESS"
+        "reporting:BUILD_SUCCESS",
+        "reporting:BUILD_DURATION"
       ]
     }
   },
