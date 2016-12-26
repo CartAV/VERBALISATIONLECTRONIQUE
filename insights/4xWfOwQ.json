@@ -4,22 +4,25 @@
       "chartsEngine": "LINO",
       "sampling": {
         "selection": {
-          "samplingMethod": "HEAD_SEQUENTIAL",
+          "samplingMethod": "FULL",
           "partitionSelectionMethod": "ALL",
           "maxRecords": 10000,
           "targetRatio": 0.02
         },
         "autoRefreshSample": false,
-        "_refreshTrigger": 0
+        "_refreshTrigger": 2
       },
       "steps": []
     },
     "dataset": "2015_pve_SR_geo_prepared",
     "chart": {
-      "type": "grouped_columns",
-      "variant": "normal",
+      "type": "admin_map",
+      "variant": "filled_map",
       "name": "Chart",
       "userEditedName": false,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "genericMeasures": [],
       "xDimension": [],
       "yDimension": [],
       "uaXDimension": [],
@@ -31,16 +34,46 @@
       "groupDimension": [],
       "xMeasure": [],
       "yMeasure": [],
-      "colorMeasure": [],
+      "colorMeasure": [
+        {
+          "function": "COUNT",
+          "type": "NUMERICAL",
+          "displayed": true,
+          "isA": "measure",
+          "displayAxis": "axis1",
+          "displayType": "column",
+          "computeModeDim": 0
+        }
+      ],
       "sizeMeasure": [],
-      "geometry": [],
+      "geometry": [
+        {
+          "column": "geo_point_2d",
+          "type": "GEOPOINT",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 6
+        }
+      ],
       "tooltipMeasures": [],
       "boxplotBreakdownDim": [],
       "boxplotValue": [],
+      "filters": [
+        {
+          "filterType": "DATE_FACET",
+          "column": "DATE_JOUR_REEL_INFRACTION",
+          "columnType": "DATE",
+          "dateFilterType": "RANGE",
+          "maxValue": 1.42398345861E12,
+          "isA": "filter",
+          "excludedValues": {},
+          "explicitExclude": false
+        }
+      ],
       "axis1LogScale": false,
       "axis2LogScale": false,
       "includeZero": true,
-      "hexbinRadius": 0,
+      "hexbinRadius": 20,
       "smoothing": false,
       "showLegend": true,
       "showXAxis": false,
