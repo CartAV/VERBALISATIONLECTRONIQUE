@@ -27,6 +27,40 @@
       "preview": false,
       "disabled": false,
       "alwaysShowComment": false
+    },
+    {
+      "type": "ColumnsSelector",
+      "params": {
+        "keep": false,
+        "appliesTo": "COLUMNS",
+        "columns": [
+          "CODE_POSTAL_CONTREVENANT",
+          "COD_UNITE",
+          "COD_ENTITE",
+          "COD_CORPS",
+          "COD_DISPOSITIF",
+          "COD_UNITE_PN",
+          "COD_DEPARTEMENT_UNITE",
+          "COMMUNE_CONTREVENANT",
+          "REGION_CONTREVENANT",
+          "CODE_INSEE_CONTREVENANT",
+          "LIBELLE_UNITE",
+          "LIB_ETAT_UNITE",
+          "LIB_TYPE_UNITE",
+          "LIB_DEPARTEMENT_UNITE",
+          "LIB_REGION_UNITE",
+          "LIB_ENTITE",
+          "LIB_COURT_ENTITE",
+          "LIBELLE_CORPS",
+          "LIB_COURT_CORPS",
+          "LIB_ZONE_CRS",
+          "LIB_ZONE_PAF"
+        ]
+      },
+      "metaType": "PROCESSOR",
+      "preview": true,
+      "disabled": false,
+      "alwaysShowComment": false
     }
   ],
   "tags": [],
