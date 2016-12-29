@@ -60,18 +60,6 @@
         "d": false
       },
       {
-        "name": "COMMUNE_CONTREVENANT",
-        "d": false
-      },
-      {
-        "name": "CODE_POSTAL_CONTREVENANT",
-        "d": false
-      },
-      {
-        "name": "CODE_INSEE_CONTREVENANT",
-        "d": false
-      },
-      {
         "name": "LIBELLE_NPAI",
         "d": false
       },
@@ -89,10 +77,6 @@
       },
       {
         "name": "ANNEE_NAISSANCE",
-        "d": false
-      },
-      {
-        "name": "COD_DISPOSITIF",
         "d": false
       },
       {
@@ -264,60 +248,12 @@
         "d": false
       },
       {
-        "name": "COD_UNITE",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_UNITE",
-        "d": false
-      },
-      {
-        "name": "COD_ENTITE",
-        "d": true
-      },
-      {
         "name": "LIB_ENTITE",
         "d": true
       },
       {
         "name": "LIB_COURT_ENTITE",
         "d": true
-      },
-      {
-        "name": "COD_CORPS",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_CORPS",
-        "d": false
-      },
-      {
-        "name": "LIB_COURT_CORPS",
-        "d": false
-      },
-      {
-        "name": "LIB_ETAT_UNITE",
-        "d": false
-      },
-      {
-        "name": "LIB_TYPE_UNITE",
-        "d": false
-      },
-      {
-        "name": "COD_UNITE_PN",
-        "d": false
-      },
-      {
-        "name": "COD_DEPARTEMENT_UNITE",
-        "d": false
-      },
-      {
-        "name": "LIB_DEPARTEMENT_UNITE",
-        "d": false
-      },
-      {
-        "name": "LIB_REGION_UNITE",
-        "d": false
       },
       {
         "name": "LIB_ZONE_CRS",
