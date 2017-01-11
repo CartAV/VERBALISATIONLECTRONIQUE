@@ -12,7 +12,8 @@
           "Etat ou équipement des utilisateurs et des véhicules",
           "Eclairage et signalisation",
           "Croisements et dépassements",
-          "Autres infractions à la circulation routière"
+          "Autres infractions à la circulation routière",
+          "Règles administratives"
         ],
         "matchingMode": "FULL_STRING",
         "normalizationMode": "EXACT",
