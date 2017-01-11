@@ -1,17 +1,6 @@
 {
   "steps": [
     {
-      "type": "CreateColumnWithGREL",
-      "params": {
-        "column": "PVE_ID",
-        "expression": "sha1(strval(\"DATE_JOUR_REEL_INTEGRATION\"))"
-      },
-      "metaType": "PROCESSOR",
-      "preview": false,
-      "disabled": false,
-      "alwaysShowComment": false
-    },
-    {
       "type": "FilterOnValue",
       "params": {
         "values": [
@@ -73,6 +62,31 @@
       "preview": false,
       "disabled": false,
       "alwaysShowComment": false
+    },
+    {
+      "type": "PythonUDF",
+      "params": {
+        "mode": "CELL",
+        "pythonSourceCode": "# Modify the process function to fit your needs\ndef process(row):\n    # In \u0027cell\u0027 mode, the process function must return\n    # a single cell value for each row,\n    # which will be affected to a new column.\n    # The \u0027row\u0027 argument is a dictionary of columns of the row   \n    return str(row)\n",
+        "column": "PVE_ID",
+        "stopOnError": true,
+        "usePythonUnicode": true
+      },
+      "metaType": "PROCESSOR",
+      "preview": false,
+      "disabled": false,
+      "alwaysShowComment": false
+    },
+    {
+      "type": "CreateColumnWithGREL",
+      "params": {
+        "column": "PVE_ID",
+        "expression": "sha1(PVE_ID)"
+      },
+      "metaType": "PROCESSOR",
+      "preview": false,
+      "disabled": false,
+      "alwaysShowComment": false
     }
   ],
   "tags": [],
@@ -110,15 +124,15 @@
       },
       {
         "name": "SEXE_CONTREVENANT",
-        "d": false
+        "d": true
       },
       {
         "name": "AGE_CONTREVENANT",
-        "d": false
+        "d": true
       },
       {
         "name": "ANNEE_NAISSANCE",
-        "d": false
+        "d": true
       },
       {
         "name": "ID_FAMILLE",
@@ -138,7 +152,7 @@
       },
       {
         "name": "CODE_NATURE_INFRA",
-        "d": false
+        "d": true
       },
       {
         "name": "LIBELLE_NATURE",
@@ -174,7 +188,7 @@
       },
       {
         "name": "CODE_INSEE_INFRACTION",
-        "d": false
+        "d": true
       },
       {
         "name": "CODE_POSTAL_INFRACTION",
@@ -319,7 +333,7 @@
     ]
   },
   "coloring": {
-    "scheme": "MEANING_AND_STATUS",
+    "scheme": "ALL_COLUMNS_VALUES",
     "individualColumns": [],
     "valueColoringMode": "HASH"
   },
