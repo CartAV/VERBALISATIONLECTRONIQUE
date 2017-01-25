@@ -60,7 +60,7 @@
       },
       "metaType": "PROCESSOR",
       "preview": false,
-      "disabled": false,
+      "disabled": true,
       "alwaysShowComment": false
     },
     {
@@ -111,8 +111,24 @@
         "d": false
       },
       {
+        "name": "REGION_CONTREVENANT",
+        "d": true
+      },
+      {
         "name": "DEPARTEMENT_CONTREVENANT",
         "d": false
+      },
+      {
+        "name": "COMMUNE_CONTREVENANT",
+        "d": true
+      },
+      {
+        "name": "CODE_POSTAL_CONTREVENANT",
+        "d": true
+      },
+      {
+        "name": "CODE_INSEE_CONTREVENANT",
+        "d": true
       },
       {
         "name": "LIBELLE_NPAI",
@@ -132,6 +148,10 @@
       },
       {
         "name": "ANNEE_NAISSANCE",
+        "d": true
+      },
+      {
+        "name": "COD_DISPOSITIF",
         "d": true
       },
       {
@@ -301,6 +321,70 @@
       {
         "name": "SEMAINE_INTEGRATION",
         "d": false
+      },
+      {
+        "name": "COD_UNITE",
+        "d": true
+      },
+      {
+        "name": "LIBELLE_UNITE",
+        "d": true
+      },
+      {
+        "name": "COD_ENTITE",
+        "d": true
+      },
+      {
+        "name": "LIB_ENTITE",
+        "d": true
+      },
+      {
+        "name": "LIB_COURT_ENTITE",
+        "d": true
+      },
+      {
+        "name": "COD_CORPS",
+        "d": true
+      },
+      {
+        "name": "LIBELLE_CORPS",
+        "d": true
+      },
+      {
+        "name": "LIB_COURT_CORPS",
+        "d": true
+      },
+      {
+        "name": "LIB_ETAT_UNITE",
+        "d": true
+      },
+      {
+        "name": "LIB_TYPE_UNITE",
+        "d": true
+      },
+      {
+        "name": "COD_UNITE_PN",
+        "d": true
+      },
+      {
+        "name": "COD_DEPARTEMENT_UNITE",
+        "d": true
+      },
+      {
+        "name": "LIB_DEPARTEMENT_UNITE",
+        "d": true
+      },
+      {
+        "name": "LIB_REGION_UNITE",
+        "d": true
+      },
+      {
+        "name": "LIB_ZONE_CRS",
+        "d": true
+      },
+      {
+        "name": "LIB_ZONE_PAF",
+        "d": true
       },
       {
         "name": "MARQUE",
