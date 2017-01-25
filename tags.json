@@ -1,6 +1,10 @@
 {
   "tags": {
-    "creator_antoinefa": {},
-    "creator_dauriame": {}
+    "creator_antoinefa": {
+      "color": "#1ac2ab"
+    },
+    "creator_dauriame": {
+      "color": "#77bec2"
+    }
   }
 }
