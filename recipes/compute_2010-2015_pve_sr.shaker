@@ -1,8 +1,355 @@
 {
+  "explorationFilters": [
+    {
+      "$$hashKey": "G0P",
+      "type": "global_search"
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "analysisColumnData": {},
+  "columnsSelection": {
+    "list": [
+      {
+        "d": false,
+        "name": "MOTIF_STATUT_DOSSIER"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_STATUT_DOSSIER"
+      },
+      {
+        "d": false,
+        "name": "ANNEE_PERMIS_CONTREVENANT"
+      },
+      {
+        "d": false,
+        "name": "PAYS_RESIDENCE_CONTREVENANT"
+      },
+      {
+        "d": true,
+        "name": "REGION_CONTREVENANT"
+      },
+      {
+        "d": false,
+        "name": "DEPARTEMENT_CONTREVENANT"
+      },
+      {
+        "d": true,
+        "name": "COMMUNE_CONTREVENANT"
+      },
+      {
+        "d": true,
+        "name": "CODE_POSTAL_CONTREVENANT"
+      },
+      {
+        "d": true,
+        "name": "CODE_INSEE_CONTREVENANT"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_NPAI"
+      },
+      {
+        "d": false,
+        "name": "EST_TITULAIRE"
+      },
+      {
+        "d": true,
+        "name": "SEXE_CONTREVENANT"
+      },
+      {
+        "d": true,
+        "name": "AGE_CONTREVENANT"
+      },
+      {
+        "d": true,
+        "name": "ANNEE_NAISSANCE"
+      },
+      {
+        "d": true,
+        "name": "COD_DISPOSITIF"
+      },
+      {
+        "d": false,
+        "name": "ID_FAMILLE"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_FAMILLE"
+      },
+      {
+        "d": false,
+        "name": "ID_CLASSE"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_CLASSE"
+      },
+      {
+        "d": true,
+        "name": "CODE_NATURE_INFRA"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_NATURE"
+      },
+      {
+        "d": false,
+        "name": "NBR_POINTS_RETIRES"
+      },
+      {
+        "d": false,
+        "name": "MNT_AF_MINOREE"
+      },
+      {
+        "d": false,
+        "name": "MNT_AF"
+      },
+      {
+        "d": false,
+        "name": "MNT_AF_MAJOREE"
+      },
+      {
+        "d": false,
+        "name": "REGION_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "DEPARTEMENT_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "COMMUNE_INFRACTION"
+      },
+      {
+        "d": true,
+        "name": "CODE_INSEE_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "CODE_POSTAL_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "NUM_ARRONDISSEMENT"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_TYPE_VOIE"
+      },
+      {
+        "d": false,
+        "name": "VOIE_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "LIB_LOCALITE_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_ENLEVEMENT_DEMANDE"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_FICHE_IMMO_ETABLIE"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_ECHANGE_PERMIS"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_INTERCEPTION"
+      },
+      {
+        "d": false,
+        "name": "VAL_VITESSE_RETENUE"
+      },
+      {
+        "d": false,
+        "name": "VAL_VITESSE_VLA"
+      },
+      {
+        "d": false,
+        "name": "LIB_TRANCHE_DEPASSEMENT"
+      },
+      {
+        "d": true,
+        "name": "DATE_JOUR_REEL_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "ANNEE_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "MOIS_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "NUM_ANNEE_MOIS_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "SEMAINE_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_JOUR_INFRACTION"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_NUIT"
+      },
+      {
+        "d": false,
+        "name": "SEMAINE_INFRAC"
+      },
+      {
+        "d": false,
+        "name": "VACS_ZONE_A"
+      },
+      {
+        "d": false,
+        "name": "VACS_ZONE_B"
+      },
+      {
+        "d": false,
+        "name": "VACS_ZONE_C"
+      },
+      {
+        "d": false,
+        "name": "LIBELLE_PLAGE_HORAIRE"
+      },
+      {
+        "d": false,
+        "name": "DATE_JOUR_REEL_INTEGRATION"
+      },
+      {
+        "d": false,
+        "name": "ANNEE_INTEGRATION"
+      },
+      {
+        "d": false,
+        "name": "MOIS_INTEGRATION"
+      },
+      {
+        "d": false,
+        "name": "SEMAINE_INTEGRATION"
+      },
+      {
+        "d": true,
+        "name": "COD_UNITE"
+      },
+      {
+        "d": true,
+        "name": "LIBELLE_UNITE"
+      },
+      {
+        "d": true,
+        "name": "COD_ENTITE"
+      },
+      {
+        "d": true,
+        "name": "LIB_ENTITE"
+      },
+      {
+        "d": true,
+        "name": "LIB_COURT_ENTITE"
+      },
+      {
+        "d": true,
+        "name": "COD_CORPS"
+      },
+      {
+        "d": true,
+        "name": "LIBELLE_CORPS"
+      },
+      {
+        "d": true,
+        "name": "LIB_COURT_CORPS"
+      },
+      {
+        "d": true,
+        "name": "LIB_ETAT_UNITE"
+      },
+      {
+        "d": true,
+        "name": "LIB_TYPE_UNITE"
+      },
+      {
+        "d": true,
+        "name": "COD_UNITE_PN"
+      },
+      {
+        "d": true,
+        "name": "COD_DEPARTEMENT_UNITE"
+      },
+      {
+        "d": true,
+        "name": "LIB_DEPARTEMENT_UNITE"
+      },
+      {
+        "d": true,
+        "name": "LIB_REGION_UNITE"
+      },
+      {
+        "d": true,
+        "name": "LIB_ZONE_CRS"
+      },
+      {
+        "d": true,
+        "name": "LIB_ZONE_PAF"
+      },
+      {
+        "d": false,
+        "name": "MARQUE"
+      },
+      {
+        "d": false,
+        "name": "TYPE_PLAQUE"
+      },
+      {
+        "d": false,
+        "name": "NATIONALITE_PLAQUE"
+      },
+      {
+        "d": false,
+        "name": "COD_GENRE"
+      },
+      {
+        "d": false,
+        "name": "GENRE"
+      },
+      {
+        "d": false,
+        "name": "REGROUPEMENT_GENRE"
+      },
+      {
+        "d": true,
+        "name": "PVE_ID"
+      }
+    ],
+    "mode": "SELECT"
+  },
+  "globalSearchQuery": "",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "origin": "PREPARE_RECIPE",
+  "sorting": [],
+  "coloring": {
+    "individualColumns": [],
+    "scheme": "ALL_COLUMNS_VALUES",
+    "valueColoringMode": "HASH"
+  },
   "steps": [
     {
-      "type": "FilterOnValue",
+      "alwaysShowComment": false,
+      "preview": false,
       "params": {
+        "matchingMode": "FULL_STRING",
         "values": [
           "Vitesse",
           "Alcool",
@@ -15,24 +362,22 @@
           "Autres infractions à la circulation routière",
           "Règles administratives"
         ],
-        "matchingMode": "FULL_STRING",
-        "normalizationMode": "EXACT",
-        "action": "KEEP_ROW",
         "booleanMode": "AND",
+        "normalizationMode": "EXACT",
         "appliesTo": "SINGLE_COLUMN",
         "columns": [
           "LIBELLE_FAMILLE"
-        ]
+        ],
+        "action": "KEEP_ROW"
       },
-      "metaType": "PROCESSOR",
-      "preview": false,
+      "type": "FilterOnValue",
       "disabled": false,
-      "alwaysShowComment": false
+      "metaType": "PROCESSOR"
     },
     {
-      "type": "ColumnsSelector",
+      "alwaysShowComment": false,
+      "preview": false,
       "params": {
-        "keep": false,
         "appliesTo": "COLUMNS",
         "columns": [
           "CODE_POSTAL_CONTREVENANT",
@@ -56,397 +401,59 @@
           "LIB_COURT_CORPS",
           "COD_CORPS",
           "COD_UNITE_PN"
-        ]
+        ],
+        "keep": false
       },
-      "metaType": "PROCESSOR",
-      "preview": false,
+      "type": "ColumnsSelector",
       "disabled": true,
-      "alwaysShowComment": false
+      "metaType": "PROCESSOR"
     },
     {
-      "type": "PythonUDF",
+      "alwaysShowComment": false,
+      "preview": false,
       "params": {
-        "mode": "CELL",
-        "pythonSourceCode": "# Modify the process function to fit your needs\ndef process(row):\n    # In \u0027cell\u0027 mode, the process function must return\n    # a single cell value for each row,\n    # which will be affected to a new column.\n    # The \u0027row\u0027 argument is a dictionary of columns of the row   \n    return str(row)\n",
-        "column": "PVE_ID",
+        "usePythonUnicode": true,
         "stopOnError": true,
-        "usePythonUnicode": true
+        "column": "PVE_ID",
+        "pythonSourceCode": "# Modify the process function to fit your needs\ndef process(row):\n    # In \u0027cell\u0027 mode, the process function must return\n    # a single cell value for each row,\n    # which will be affected to a new column.\n    # The \u0027row\u0027 argument is a dictionary of columns of the row   \n    return str(row)\n",
+        "mode": "CELL"
       },
-      "metaType": "PROCESSOR",
-      "preview": false,
+      "type": "PythonUDF",
       "disabled": false,
-      "alwaysShowComment": false
+      "metaType": "PROCESSOR"
     },
     {
-      "type": "CreateColumnWithGREL",
-      "params": {
-        "column": "PVE_ID",
-        "expression": "sha1(PVE_ID)"
-      },
-      "metaType": "PROCESSOR",
+      "alwaysShowComment": false,
       "preview": false,
+      "params": {
+        "expression": "sha1(PVE_ID)",
+        "column": "PVE_ID"
+      },
+      "type": "CreateColumnWithGREL",
       "disabled": false,
-      "alwaysShowComment": false
+      "metaType": "PROCESSOR"
     }
   ],
-  "tags": [],
-  "origin": "PREPARE_RECIPE",
-  "columnsSelection": {
-    "mode": "SELECT",
-    "list": [
-      {
-        "name": "MOTIF_STATUT_DOSSIER",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_STATUT_DOSSIER",
-        "d": false
-      },
-      {
-        "name": "ANNEE_PERMIS_CONTREVENANT",
-        "d": false
-      },
-      {
-        "name": "PAYS_RESIDENCE_CONTREVENANT",
-        "d": false
-      },
-      {
-        "name": "REGION_CONTREVENANT",
-        "d": true
-      },
-      {
-        "name": "DEPARTEMENT_CONTREVENANT",
-        "d": false
-      },
-      {
-        "name": "COMMUNE_CONTREVENANT",
-        "d": true
-      },
-      {
-        "name": "CODE_POSTAL_CONTREVENANT",
-        "d": true
-      },
-      {
-        "name": "CODE_INSEE_CONTREVENANT",
-        "d": true
-      },
-      {
-        "name": "LIBELLE_NPAI",
-        "d": false
-      },
-      {
-        "name": "EST_TITULAIRE",
-        "d": false
-      },
-      {
-        "name": "SEXE_CONTREVENANT",
-        "d": true
-      },
-      {
-        "name": "AGE_CONTREVENANT",
-        "d": true
-      },
-      {
-        "name": "ANNEE_NAISSANCE",
-        "d": true
-      },
-      {
-        "name": "COD_DISPOSITIF",
-        "d": true
-      },
-      {
-        "name": "ID_FAMILLE",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_FAMILLE",
-        "d": false
-      },
-      {
-        "name": "ID_CLASSE",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_CLASSE",
-        "d": false
-      },
-      {
-        "name": "CODE_NATURE_INFRA",
-        "d": true
-      },
-      {
-        "name": "LIBELLE_NATURE",
-        "d": false
-      },
-      {
-        "name": "NBR_POINTS_RETIRES",
-        "d": false
-      },
-      {
-        "name": "MNT_AF_MINOREE",
-        "d": false
-      },
-      {
-        "name": "MNT_AF",
-        "d": false
-      },
-      {
-        "name": "MNT_AF_MAJOREE",
-        "d": false
-      },
-      {
-        "name": "REGION_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "DEPARTEMENT_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "COMMUNE_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "CODE_INSEE_INFRACTION",
-        "d": true
-      },
-      {
-        "name": "CODE_POSTAL_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "NUM_ARRONDISSEMENT",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_TYPE_VOIE",
-        "d": false
-      },
-      {
-        "name": "VOIE_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "LIB_LOCALITE_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_ENLEVEMENT_DEMANDE",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_FICHE_IMMO_ETABLIE",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_ECHANGE_PERMIS",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_INTERCEPTION",
-        "d": false
-      },
-      {
-        "name": "VAL_VITESSE_RETENUE",
-        "d": false
-      },
-      {
-        "name": "VAL_VITESSE_VLA",
-        "d": false
-      },
-      {
-        "name": "LIB_TRANCHE_DEPASSEMENT",
-        "d": false
-      },
-      {
-        "name": "DATE_JOUR_REEL_INFRACTION",
-        "d": true
-      },
-      {
-        "name": "ANNEE_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "MOIS_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "NUM_ANNEE_MOIS_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "SEMAINE_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_JOUR_INFRACTION",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_NUIT",
-        "d": false
-      },
-      {
-        "name": "SEMAINE_INFRAC",
-        "d": false
-      },
-      {
-        "name": "VACS_ZONE_A",
-        "d": false
-      },
-      {
-        "name": "VACS_ZONE_B",
-        "d": false
-      },
-      {
-        "name": "VACS_ZONE_C",
-        "d": false
-      },
-      {
-        "name": "LIBELLE_PLAGE_HORAIRE",
-        "d": false
-      },
-      {
-        "name": "DATE_JOUR_REEL_INTEGRATION",
-        "d": false
-      },
-      {
-        "name": "ANNEE_INTEGRATION",
-        "d": false
-      },
-      {
-        "name": "MOIS_INTEGRATION",
-        "d": false
-      },
-      {
-        "name": "SEMAINE_INTEGRATION",
-        "d": false
-      },
-      {
-        "name": "COD_UNITE",
-        "d": true
-      },
-      {
-        "name": "LIBELLE_UNITE",
-        "d": true
-      },
-      {
-        "name": "COD_ENTITE",
-        "d": true
-      },
-      {
-        "name": "LIB_ENTITE",
-        "d": true
-      },
-      {
-        "name": "LIB_COURT_ENTITE",
-        "d": true
-      },
-      {
-        "name": "COD_CORPS",
-        "d": true
-      },
-      {
-        "name": "LIBELLE_CORPS",
-        "d": true
-      },
-      {
-        "name": "LIB_COURT_CORPS",
-        "d": true
-      },
-      {
-        "name": "LIB_ETAT_UNITE",
-        "d": true
-      },
-      {
-        "name": "LIB_TYPE_UNITE",
-        "d": true
-      },
-      {
-        "name": "COD_UNITE_PN",
-        "d": true
-      },
-      {
-        "name": "COD_DEPARTEMENT_UNITE",
-        "d": true
-      },
-      {
-        "name": "LIB_DEPARTEMENT_UNITE",
-        "d": true
-      },
-      {
-        "name": "LIB_REGION_UNITE",
-        "d": true
-      },
-      {
-        "name": "LIB_ZONE_CRS",
-        "d": true
-      },
-      {
-        "name": "LIB_ZONE_PAF",
-        "d": true
-      },
-      {
-        "name": "MARQUE",
-        "d": false
-      },
-      {
-        "name": "TYPE_PLAQUE",
-        "d": false
-      },
-      {
-        "name": "NATIONALITE_PLAQUE",
-        "d": false
-      },
-      {
-        "name": "COD_GENRE",
-        "d": false
-      },
-      {
-        "name": "GENRE",
-        "d": false
-      },
-      {
-        "name": "REGROUPEMENT_GENRE",
-        "d": false
-      },
-      {
-        "name": "PVE_ID",
-        "d": true
-      }
-    ]
-  },
-  "coloring": {
-    "scheme": "ALL_COLUMNS_VALUES",
-    "individualColumns": [],
-    "valueColoringMode": "HASH"
-  },
-  "analysisColumnData": {},
-  "explorationSampling": {
-    "selection": {
-      "samplingMethod": "HEAD_SEQUENTIAL",
-      "partitionSelectionMethod": "ALL",
-      "maxRecords": 10000,
-      "targetRatio": 0.02
-    },
-    "autoRefreshSample": false,
-    "_refreshTrigger": 0
-  },
-  "vizSampling": {
-    "autoRefreshSample": false,
-    "_refreshTrigger": 0
-  },
   "exploreUIParams": {
     "autoRefresh": true
   },
-  "globalSearchQuery": "",
-  "explorationFilters": [
-    {
-      "type": "global_search",
-      "$$hashKey": "G0P"
-    }
-  ],
   "previewMode": "ALL_ROWS",
-  "charts": [],
-  "chartsEngine": "LINO"
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false,
+    "selection": {
+      "targetRatio": 0.02,
+      "maxRecords": 10000,
+      "maxStoredBytes": -1,
+      "partitionSelectionMethod": "ALL",
+      "withinFirstN": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "latestPartitionsN": 1,
+      "maxReadUncompressedBytes": -1,
+      "filter": {
+        "enabled": false,
+        "distinct": false
+      }
+    }
+  }
 }
