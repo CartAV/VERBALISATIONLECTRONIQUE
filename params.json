@@ -1,19 +1,14 @@
 {
-  "projectType": "REGULAR",
-  "owner": "antoinefa",
-  "permissions": [],
-  "tutorialProject": false,
-  "settings": {
-    "flowAnchorSourcesAndSinks": true,
-    "exposedComputables": [
+  "dashboardAuthorizations": {
+    "allAuthorized": false,
+    "authorizations": []
+  },
+  "exposedObjects": {
+    "objects": [
       {
         "type": "DATASET",
         "localName": "2010-2015_pve_sr",
         "rules": [
-          {
-            "targetProject": "VERBALISATIONLECTRONIQUEDSCR",
-            "appearOnFlow": true
-          },
           {
             "targetProject": "VERBALISATIONLECTRONIQUEPARTAGE",
             "appearOnFlow": true
@@ -24,12 +19,57 @@
           }
         ]
       }
-    ],
+    ]
+  },
+  "projectType": "REGULAR",
+  "owner": "antoinefa",
+  "permissions": [],
+  "additionalDashboardUsers": {
+    "users": []
+  },
+  "tutorialProject": false,
+  "settings": {
+    "flowAnchorSourcesAndSinks": true,
     "gitCommitMode": "AUTO",
-    "disableAutomaticTriggers": false
+    "disableAutomaticTriggers": false,
+    "integrations": {
+      "integrations": []
+    },
+    "flowBuildSettings": {
+      "mergeSparkPipelines": false,
+      "pruneBeforeSparkPipelines": true
+    },
+    "limitsSettings": {
+      "memSampleBytes": {
+        "soft": -1,
+        "hard": -1
+      },
+      "shakerMemTableBytes": {
+        "soft": -1,
+        "hard": -1
+      }
+    },
+    "relocationSettings": {
+      "sqlLikeRecipesInitializationMode": "RESOLVED_TABLE_REFERENCES"
+    },
+    "recipeEnginesPreferences": {
+      "forbiddenEngines": [],
+      "enginesPreferenceOrder": [],
+      "forbiddenByRecipeType": {},
+      "preferenceByRecipeType": {}
+    }
   },
   "name": "verbalisation électronique dataprep source",
+  "projectStatus": "In use",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "antoinefa"
+    },
+    "lastModifiedOn": 1490722874862
+  },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
+  "tags": [],
   "checklists": {
     "checklists": [
       {
@@ -95,7 +135,5 @@
         ]
       }
     ]
-  },
-  "tags": [],
-  "projectStatus": "In use"
+  }
 }
