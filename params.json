@@ -23,7 +23,22 @@
   },
   "projectType": "REGULAR",
   "owner": "antoinefa",
-  "permissions": [],
+  "permissions": [
+    {
+      "group": "eig",
+      "admin": true,
+      "readProjectContent": false,
+      "writeProjectContent": true,
+      "exportDatasetsData": true,
+      "readDashboards": false,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false
+    }
+  ],
   "additionalDashboardUsers": {
     "users": []
   },
@@ -62,11 +77,11 @@
   "name": "verbalisation électronique dataprep source",
   "projectStatus": "In use",
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1490722874862
+    "lastModifiedOn": 1497537165872
   },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
   "tags": [],
