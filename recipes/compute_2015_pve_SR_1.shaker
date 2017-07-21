@@ -1,0 +1,104 @@
+{
+  "tags": [],
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "analysisColumnData": {},
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "origin": "PREPARE_RECIPE",
+  "steps": [
+    {
+      "alwaysShowComment": false,
+      "preview": false,
+      "params": {
+        "matchingMode": "FULL_STRING",
+        "values": [
+          "Vitesse",
+          "Alcool",
+          "Règles de conduite",
+          "Priorité de passage - intersections",
+          "Ceinture et casque",
+          "Etat ou équipement des utilisateurs et des véhicules",
+          "Eclairage et signalisation",
+          "Croisements et dépassements",
+          "Autres infractions à la circulation routière"
+        ],
+        "booleanMode": "AND",
+        "normalizationMode": "EXACT",
+        "appliesTo": "SINGLE_COLUMN",
+        "columns": [
+          "LIBELLE_FAMILLE"
+        ],
+        "action": "KEEP_ROW"
+      },
+      "type": "FilterOnValue",
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    },
+    {
+      "alwaysShowComment": false,
+      "preview": true,
+      "params": {
+        "appliesTo": "COLUMNS",
+        "columns": [
+          "CODE_POSTAL_CONTREVENANT",
+          "COD_UNITE",
+          "COD_ENTITE",
+          "COD_CORPS",
+          "COD_DISPOSITIF",
+          "COD_UNITE_PN",
+          "COD_DEPARTEMENT_UNITE",
+          "COMMUNE_CONTREVENANT",
+          "REGION_CONTREVENANT",
+          "CODE_INSEE_CONTREVENANT",
+          "LIBELLE_UNITE",
+          "LIB_ETAT_UNITE",
+          "LIB_TYPE_UNITE",
+          "LIB_DEPARTEMENT_UNITE",
+          "LIB_REGION_UNITE",
+          "LIB_ENTITE",
+          "LIB_COURT_ENTITE",
+          "LIBELLE_CORPS",
+          "LIB_COURT_CORPS",
+          "LIB_ZONE_CRS",
+          "LIB_ZONE_PAF"
+        ],
+        "keep": false
+      },
+      "type": "ColumnsSelector",
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    }
+  ],
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "explorationFilters": [
+    {
+      "$$hashKey": "G0P",
+      "type": "global_search"
+    }
+  ],
+  "charts": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "individualColumns": [],
+    "scheme": "MEANING_AND_STATUS",
+    "valueColoringMode": "HASH"
+  },
+  "previewMode": "ALL_ROWS",
+  "chartsEngine": "LINO",
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false,
+    "selection": {
+      "targetRatio": 0.02,
+      "maxRecords": 10000,
+      "partitionSelectionMethod": "ALL",
+      "samplingMethod": "HEAD_SEQUENTIAL"
+    }
+  }
+}
