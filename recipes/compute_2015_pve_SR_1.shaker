@@ -1,14 +1,27 @@
 {
-  "tags": [],
+  "explorationFilters": [
+    {
+      "$$hashKey": "G0P",
+      "type": "global_search"
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "analysisColumnData": {},
   "columnsSelection": {
     "mode": "ALL"
   },
-  "analysisColumnData": {},
+  "globalSearchQuery": "",
   "vizSampling": {
     "_refreshTrigger": 0,
     "autoRefreshSample": false
   },
   "origin": "PREPARE_RECIPE",
+  "sorting": [],
+  "coloring": {
+    "individualColumns": [],
+    "scheme": "MEANING_AND_STATUS",
+    "valueColoringMode": "HASH"
+  },
   "steps": [
     {
       "alwaysShowComment": false,
@@ -16,23 +29,15 @@
       "params": {
         "matchingMode": "FULL_STRING",
         "values": [
-          "Vitesse",
-          "Alcool",
-          "Règles de conduite",
-          "Priorité de passage - intersections",
-          "Ceinture et casque",
-          "Etat ou équipement des utilisateurs et des véhicules",
-          "Eclairage et signalisation",
-          "Croisements et dépassements",
-          "Autres infractions à la circulation routière"
+          "VAO Stationnement"
         ],
         "booleanMode": "AND",
         "normalizationMode": "EXACT",
         "appliesTo": "SINGLE_COLUMN",
         "columns": [
-          "LIBELLE_FAMILLE"
+          "FI_Libelle"
         ],
-        "action": "KEEP_ROW"
+        "action": "REMOVE_ROW"
       },
       "type": "FilterOnValue",
       "disabled": false,
@@ -40,9 +45,10 @@
     },
     {
       "alwaysShowComment": false,
-      "preview": true,
+      "preview": false,
       "params": {
-        "appliesTo": "COLUMNS",
+        "appliesToPattern": "UNITE_.*",
+        "appliesTo": "PATTERN",
         "columns": [
           "CODE_POSTAL_CONTREVENANT",
           "COD_UNITE",
@@ -71,34 +77,68 @@
       "type": "ColumnsSelector",
       "disabled": false,
       "metaType": "PROCESSOR"
+    },
+    {
+      "alwaysShowComment": false,
+      "preview": false,
+      "params": {
+        "matching": "FULL_STRING",
+        "stopAfterFirstMatch": false,
+        "appliesTo": "ALL",
+        "normalization": "EXACT",
+        "columns": [],
+        "mapping": [
+          {
+            "to": "",
+            "from": "NULL"
+          }
+        ],
+        "output": ""
+      },
+      "type": "FindReplace",
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    },
+    {
+      "alwaysShowComment": false,
+      "preview": true,
+      "params": {
+        "appliesTo": "COLUMNS",
+        "columns": [
+          "MI_DateHeureInfraction",
+          "MI_DateHeureIntegration"
+        ],
+        "timezone_id": "UTC",
+        "lang": "auto",
+        "formats": [
+          "yyyy-MM-dd HH:mm:ss"
+        ]
+      },
+      "type": "DateParser",
+      "disabled": false,
+      "metaType": "PROCESSOR"
     }
   ],
   "exploreUIParams": {
     "autoRefresh": true
   },
-  "explorationFilters": [
-    {
-      "$$hashKey": "G0P",
-      "type": "global_search"
-    }
-  ],
-  "charts": [],
-  "globalSearchQuery": "",
-  "coloring": {
-    "individualColumns": [],
-    "scheme": "MEANING_AND_STATUS",
-    "valueColoringMode": "HASH"
-  },
   "previewMode": "ALL_ROWS",
-  "chartsEngine": "LINO",
   "explorationSampling": {
     "_refreshTrigger": 0,
     "autoRefreshSample": false,
     "selection": {
       "targetRatio": 0.02,
       "maxRecords": 10000,
+      "maxStoredBytes": -1,
       "partitionSelectionMethod": "ALL",
-      "samplingMethod": "HEAD_SEQUENTIAL"
+      "withinFirstN": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "latestPartitionsN": 1,
+      "maxReadUncompressedBytes": -1,
+      "filter": {
+        "enabled": false,
+        "distinct": false
+      }
     }
   }
 }

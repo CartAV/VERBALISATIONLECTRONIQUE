@@ -13,7 +13,12 @@
           "conf": []
         },
         "readParams": {
-          "map": {}
+          "map": {
+            "201720_PVE_echantillon_csv": {
+              "repartition": 10,
+              "cache": false
+            }
+          }
         }
       },
       "hadoopConfigKeys": [],
@@ -45,11 +50,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1500653089218
+    "lastModifiedOn": 1500653477896
   },
   "creationTag": {
     "versionNumber": 0,
