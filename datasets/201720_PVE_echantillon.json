@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1500653024118
+    "lastModifiedOn": 1500653477685
   },
   "creationTag": {
     "versionNumber": 0,
@@ -388,29 +388,8 @@
       },
       {
         "name": "MI_DateHeureIntegration",
-        "type": "string",
-        "meaning": "Text",
-        "timestampNoTzAsDate": false,
-        "maxLength": 16200
-      },
-      {
-        "name": "UNITE_Code",
-        "type": "string",
-        "meaning": "Text",
-        "timestampNoTzAsDate": false,
-        "maxLength": 16200
-      },
-      {
-        "name": "UNITE_Libelle",
-        "type": "string",
-        "meaning": "Text",
-        "timestampNoTzAsDate": false,
-        "maxLength": 16200
-      },
-      {
-        "name": "UNITE_ServiceSaisieSouche",
-        "type": "string",
-        "meaning": "Text",
+        "type": "date",
+        "meaning": "Date",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
