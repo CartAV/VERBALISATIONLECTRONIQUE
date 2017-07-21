@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1500649093954
+    "lastModifiedOn": 1500652643474
   },
   "creationTag": {
     "versionNumber": 0,
@@ -178,28 +178,28 @@
       },
       {
         "name": "NI_NombrePoints",
-        "type": "date",
+        "type": "bigint",
         "meaning": "Date",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "NI_MontantForfaitaireMinore",
-        "type": "date",
+        "type": "double",
         "meaning": "Date",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "NI_MontantForfaitaire",
-        "type": "date",
+        "type": "double",
         "meaning": "Date",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "NI_MontantForfaitaireMajore",
-        "type": "date",
+        "type": "double",
         "meaning": "Date",
         "timestampNoTzAsDate": false,
         "maxLength": -1
