@@ -47,11 +47,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1500651470085
+    "lastModifiedOn": 1500652867980
   },
   "creationTag": {
     "versionNumber": 0,
@@ -198,29 +198,29 @@
       },
       {
         "name": "NI_NombrePoints",
-        "type": "bigint",
-        "meaning": "LongMeaning",
+        "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "NI_MontantForfaitaireMinore",
-        "type": "double",
-        "meaning": "DoubleMeaning",
+        "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "NI_MontantForfaitaire",
-        "type": "double",
-        "meaning": "DoubleMeaning",
+        "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "NI_MontantForfaitaireMajore",
-        "type": "double",
-        "meaning": "DoubleMeaning",
+        "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
@@ -401,15 +401,15 @@
       },
       {
         "name": "MI_DateHeureInfraction",
-        "type": "date",
-        "meaning": "Date",
+        "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
       {
         "name": "MI_DateHeureIntegration",
-        "type": "date",
-        "meaning": "Date",
+        "type": "string",
+        "meaning": "Text",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
