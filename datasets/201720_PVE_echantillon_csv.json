@@ -14,7 +14,7 @@
     "crossProjectBuildBehavior": "DEFAULT"
   },
   "formatParams": {
-    "style": "excel",
+    "style": "no_escape_no_quote",
     "charset": "iso-8859-15",
     "separator": "\t",
     "quoteChar": "\"",
@@ -47,11 +47,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1500652867980
+    "lastModifiedOn": 1500652995185
   },
   "creationTag": {
     "versionNumber": 0,
