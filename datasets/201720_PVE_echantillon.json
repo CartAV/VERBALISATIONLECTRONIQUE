@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1500653494023
+    "lastModifiedOn": 1500653553564
   },
   "creationTag": {
     "versionNumber": 0,
@@ -164,10 +164,10 @@
       },
       {
         "name": "NI_CodeNatinf",
-        "type": "bigint",
+        "type": "string",
         "meaning": "Text",
         "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "maxLength": 16200
       },
       {
         "name": "NI_Qualification",
