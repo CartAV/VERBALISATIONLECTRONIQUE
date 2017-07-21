@@ -1,0 +1,549 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 2
+    },
+    "vizSampling": {
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [
+    {
+      "copySelectionFromScript": true,
+      "engineType": "SQL",
+      "refreshableSelection": {
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "samplingMethod": "FULL",
+          "maxRecords": 10000,
+          "targetRatio": 0.02,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        },
+        "autoRefreshSample": false,
+        "_refreshTrigger": 0
+      },
+      "def": {
+        "type": "stacked_columns",
+        "variant": "normal",
+        "name": "Avg. of NBR_POINTS_RETIRES by DATE_JOUR_REEL_INFRACTION",
+        "userEditedName": false,
+        "genericDimension0": [
+          {
+            "column": "DATE_JOUR_REEL_INFRACTION",
+            "type": "DATE",
+            "dateParams": {
+              "mode": "DAY_OF_WEEK"
+            },
+            "maxValues": 0,
+            "generateOthersCategory": true,
+            "oneTickPerBin": false,
+            "filters": [],
+            "isA": "dimension",
+            "possibleSorts": [
+              {
+                "sortAscending": true,
+                "type": "NATURAL",
+                "label": "Natural ordering"
+              },
+              {
+                "label": "Average of NBR_POINTS_RETIRES, descending",
+                "type": "AGGREGATION",
+                "measureIdx": 0
+              },
+              {
+                "measureIdx": 0,
+                "type": "AGGREGATION",
+                "label": "Average of NBR_POINTS_RETIRES, ascending",
+                "sortAscending": true
+              }
+            ],
+            "sort": {
+              "sortAscending": true,
+              "type": "NATURAL",
+              "label": "Natural ordering"
+            }
+          }
+        ],
+        "genericDimension1": [
+          {
+            "column": "LIBELLE_NATURE",
+            "type": "ALPHANUM",
+            "maxValues": 10,
+            "generateOthersCategory": true,
+            "oneTickPerBin": false,
+            "filters": [],
+            "isA": "dimension",
+            "possibleSorts": [
+              {
+                "sortAscending": true,
+                "type": "NATURAL",
+                "label": "Natural ordering"
+              },
+              {
+                "label": "Average of NBR_POINTS_RETIRES, descending",
+                "type": "AGGREGATION",
+                "measureIdx": 0
+              },
+              {
+                "measureIdx": 0,
+                "type": "AGGREGATION",
+                "label": "Average of NBR_POINTS_RETIRES, ascending",
+                "sortAscending": true
+              }
+            ],
+            "sort": {
+              "label": "Average of NBR_POINTS_RETIRES, descending",
+              "type": "AGGREGATION",
+              "measureIdx": 0
+            }
+          }
+        ],
+        "genericMeasures": [
+          {
+            "column": "NBR_POINTS_RETIRES",
+            "function": "AVG",
+            "type": "NUMERICAL",
+            "displayed": true,
+            "isA": "measure",
+            "displayAxis": "axis1",
+            "displayType": "column",
+            "computeMode": "NORMAL",
+            "computeModeDim": 0
+          }
+        ],
+        "xDimension": [],
+        "yDimension": [],
+        "uaXDimension": [],
+        "uaYDimension": [],
+        "uaSize": [],
+        "uaShape": [],
+        "uaColor": [],
+        "uaTooltip": [],
+        "groupDimension": [],
+        "xMeasure": [],
+        "yMeasure": [],
+        "colorMeasure": [],
+        "sizeMeasure": [],
+        "geometry": [],
+        "tooltipMeasures": [],
+        "boxplotBreakdownDim": [],
+        "boxplotValue": [],
+        "filters": [],
+        "axis1LogScale": false,
+        "axis2LogScale": false,
+        "includeZero": true,
+        "smoothing": false,
+        "showLegend": true,
+        "showXAxis": false,
+        "strokeWidth": 1,
+        "hexbinRadius": 20,
+        "hexbinNumber": 0,
+        "colorOptions": {
+          "singleColor": "#659a88",
+          "transparency": 0.75,
+          "colorPalette": "default",
+          "ccScaleMode": "NORMAL"
+        },
+        "colorPaletteType": "LINEAR",
+        "bubblesOptions": {
+          "defaultRadius": 5.0
+        },
+        "computeMode": "NORMAL",
+        "xAxisMode": "NORMAL",
+        "yAxisMode": "NORMAL",
+        "pieOptions": {
+          "donutHoleSize": 50.0
+        },
+        "scatterOptions": {
+          "equalScales": false,
+          "identityLine": false
+        },
+        "mapOptions": {
+          "tilesLayer": "cartodb-positron",
+          "lockSquareGrid": false
+        },
+        "mapGridOptions": {
+          "gridLonDeg": 0.6,
+          "gridLatDeg": 0.6
+        },
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAABZ0lEQVRoge3WsUoDQRAG4LyAeQLRRoiSe5OAXXwBizxCzip2ogSrRK5IkVaLYCCFEMh0lydIKiFt8CXWToYZZZzd5bJcZmGqn+Xfb+8OrtE49jXsdgDPITqqOMPPKt+3gOcQHVWcodKyWoHp6zi86bxqOyoFj3orwENz6fuihy3nGwaWOqQ86pLKtE/HwP/oCH3LaP7cvb74E+yKF8CjBdPDjnorBpY6Qs/wy6X7g7VPx8CpgbetS8CjBdP9m9YVA0sdoWeg+fgW/MHS7Rs4dXCxewI8WjDdX+weGVjqiJ2PPx/8wdLtGzh1cDbNAI8WTPdn04yBpY7YeXvS9gdLt2vg1MFumQMeLZjud8s7/qcldMTO3UfuD5Zu18AGTg08OAE86jKy3w2aHCx1RM7dfdPABjZwXcGz9R7whOaz9Z6BY3dI+Vv5ZWADHw34vL8APKH5WX/BwLE7pPw0nxvYwAauK9hWzdY30+vmBLM3UKwAAAAASUVORK5CYII\u003d",
+        "disableSafetyLimits": false,
+        "useLiveProcessingIfAvailable": true
+      }
+    },
+    {
+      "copySelectionFromScript": true,
+      "engineType": "SQL",
+      "refreshableSelection": {
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "samplingMethod": "FULL",
+          "maxRecords": 10000,
+          "targetRatio": 0.02,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        },
+        "autoRefreshSample": false,
+        "_refreshTrigger": 0
+      },
+      "def": {
+        "type": "grouped_columns",
+        "variant": "normal",
+        "name": "Sum of MNT_AF by LIBELLE_CORPS",
+        "userEditedName": false,
+        "genericDimension0": [
+          {
+            "column": "LIBELLE_CORPS",
+            "type": "ALPHANUM",
+            "maxValues": 20,
+            "generateOthersCategory": true,
+            "oneTickPerBin": false,
+            "filters": [],
+            "isA": "dimension",
+            "possibleSorts": [
+              {
+                "label": "Natural ordering",
+                "type": "NATURAL",
+                "sortAscending": true
+              },
+              {
+                "measureIdx": 0,
+                "type": "AGGREGATION",
+                "label": "Sum of MNT_AF, descending"
+              },
+              {
+                "sortAscending": true,
+                "type": "AGGREGATION",
+                "measureIdx": 0,
+                "label": "Sum of MNT_AF, ascending"
+              }
+            ],
+            "sort": {
+              "measureIdx": 0,
+              "type": "AGGREGATION",
+              "label": "Sum of MNT_AF, descending"
+            }
+          }
+        ],
+        "genericDimension1": [
+          {
+            "column": "LIBELLE_FAMILLE",
+            "type": "ALPHANUM",
+            "maxValues": 20,
+            "generateOthersCategory": true,
+            "oneTickPerBin": false,
+            "filters": [],
+            "isA": "dimension",
+            "possibleSorts": [
+              {
+                "label": "Natural ordering",
+                "type": "NATURAL",
+                "sortAscending": true
+              },
+              {
+                "measureIdx": 0,
+                "type": "AGGREGATION",
+                "label": "Sum of MNT_AF, descending"
+              },
+              {
+                "sortAscending": true,
+                "type": "AGGREGATION",
+                "measureIdx": 0,
+                "label": "Sum of MNT_AF, ascending"
+              }
+            ],
+            "sort": {
+              "measureIdx": 0,
+              "type": "AGGREGATION",
+              "label": "Sum of MNT_AF, descending"
+            }
+          }
+        ],
+        "genericMeasures": [
+          {
+            "column": "MNT_AF",
+            "function": "SUM",
+            "type": "NUMERICAL",
+            "displayed": true,
+            "isA": "measure",
+            "displayAxis": "axis1",
+            "displayType": "column",
+            "computeMode": "NORMAL",
+            "computeModeDim": 0
+          }
+        ],
+        "xDimension": [],
+        "yDimension": [],
+        "uaXDimension": [],
+        "uaYDimension": [],
+        "uaSize": [],
+        "uaShape": [],
+        "uaColor": [],
+        "uaTooltip": [],
+        "groupDimension": [],
+        "xMeasure": [],
+        "yMeasure": [],
+        "colorMeasure": [],
+        "sizeMeasure": [],
+        "geometry": [],
+        "tooltipMeasures": [],
+        "boxplotBreakdownDim": [],
+        "boxplotValue": [],
+        "filters": [],
+        "axis1LogScale": false,
+        "axis2LogScale": false,
+        "includeZero": true,
+        "smoothing": false,
+        "showLegend": true,
+        "showXAxis": false,
+        "strokeWidth": 1,
+        "hexbinRadius": 20,
+        "hexbinNumber": 0,
+        "colorOptions": {
+          "singleColor": "#659a88",
+          "transparency": 0.75,
+          "colorPalette": "default",
+          "ccScaleMode": "NORMAL"
+        },
+        "colorPaletteType": "LINEAR",
+        "bubblesOptions": {
+          "defaultRadius": 5.0
+        },
+        "computeMode": "NORMAL",
+        "xAxisMode": "NORMAL",
+        "yAxisMode": "NORMAL",
+        "pieOptions": {
+          "donutHoleSize": 50.0
+        },
+        "scatterOptions": {
+          "equalScales": false,
+          "identityLine": false
+        },
+        "mapOptions": {
+          "tilesLayer": "cartodb-positron",
+          "lockSquareGrid": false
+        },
+        "mapGridOptions": {
+          "gridLonDeg": 0.6,
+          "gridLatDeg": 0.6
+        },
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAAw0lEQVRoge3YMQ6CQBBAUS7AGSjRhLN4Bm+BhYnWHoBQWJjYUxEbTej0BNracou1MiFUOyQrzuz//YR5G7LFJgkRmSwr227uHX4aYOsBth5g6wG2HmDrAbYeYEHNo9d3WFnZds29v02Z1QueuDhgDQEWBFhDgAUB1lC0YHfdiJePEuz26TrAWuECLChO8Hl1DLFXsIbg+n0Qob/g4lToubwACxqCX/nCe3bWZ6Ux+JkvL76zY7Crq63vN90u1fNX0B/2Aer1C/9T4231AAAAAElFTkSuQmCC",
+        "disableSafetyLimits": false,
+        "useLiveProcessingIfAvailable": true
+      }
+    },
+    {
+      "copySelectionFromScript": true,
+      "engineType": "SQL",
+      "refreshableSelection": {
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "samplingMethod": "FULL",
+          "maxRecords": 10000,
+          "targetRatio": 0.02,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        },
+        "autoRefreshSample": false,
+        "_refreshTrigger": 0
+      },
+      "def": {
+        "type": "stacked_columns",
+        "variant": "normal",
+        "name": "Count by LIBELLE_FAMILLE",
+        "userEditedName": false,
+        "genericDimension0": [
+          {
+            "column": "LIBELLE_FAMILLE",
+            "type": "ALPHANUM",
+            "maxValues": 20,
+            "generateOthersCategory": true,
+            "oneTickPerBin": false,
+            "filters": [],
+            "isA": "dimension",
+            "possibleSorts": [
+              {
+                "sortAscending": true,
+                "type": "NATURAL",
+                "label": "Natural ordering"
+              },
+              {
+                "label": "Count of records, descending",
+                "type": "AGGREGATION",
+                "measureIdx": 0
+              },
+              {
+                "label": "Count of records, ascending",
+                "type": "AGGREGATION",
+                "sortAscending": true,
+                "measureIdx": 0
+              }
+            ],
+            "sort": {
+              "label": "Count of records, descending",
+              "type": "AGGREGATION",
+              "measureIdx": 0
+            }
+          }
+        ],
+        "genericDimension1": [
+          {
+            "column": "LIBELLE_NATURE",
+            "type": "ALPHANUM",
+            "maxValues": 10,
+            "generateOthersCategory": true,
+            "oneTickPerBin": false,
+            "filters": [],
+            "isA": "dimension",
+            "possibleSorts": [
+              {
+                "sortAscending": true,
+                "type": "NATURAL",
+                "label": "Natural ordering"
+              },
+              {
+                "label": "Count of records, descending",
+                "type": "AGGREGATION",
+                "measureIdx": 0
+              },
+              {
+                "label": "Count of records, ascending",
+                "type": "AGGREGATION",
+                "sortAscending": true,
+                "measureIdx": 0
+              }
+            ],
+            "sort": {
+              "label": "Count of records, descending",
+              "type": "AGGREGATION",
+              "measureIdx": 0
+            }
+          }
+        ],
+        "genericMeasures": [
+          {
+            "function": "COUNT",
+            "type": "NUMERICAL",
+            "displayed": true,
+            "isA": "measure",
+            "displayAxis": "axis1",
+            "displayType": "column",
+            "computeMode": "NORMAL",
+            "computeModeDim": 0
+          }
+        ],
+        "xDimension": [],
+        "yDimension": [],
+        "uaXDimension": [],
+        "uaYDimension": [],
+        "uaSize": [],
+        "uaShape": [],
+        "uaColor": [],
+        "uaTooltip": [],
+        "groupDimension": [],
+        "xMeasure": [],
+        "yMeasure": [],
+        "colorMeasure": [],
+        "sizeMeasure": [],
+        "geometry": [],
+        "tooltipMeasures": [],
+        "boxplotBreakdownDim": [],
+        "boxplotValue": [],
+        "filters": [],
+        "axis1LogScale": false,
+        "axis2LogScale": false,
+        "includeZero": true,
+        "smoothing": false,
+        "showLegend": true,
+        "showXAxis": false,
+        "strokeWidth": 1,
+        "hexbinRadius": 20,
+        "hexbinNumber": 0,
+        "colorOptions": {
+          "singleColor": "#659a88",
+          "transparency": 0.75,
+          "colorPalette": "default",
+          "ccScaleMode": "NORMAL"
+        },
+        "colorPaletteType": "LINEAR",
+        "bubblesOptions": {
+          "defaultRadius": 5.0
+        },
+        "computeMode": "NORMAL",
+        "xAxisMode": "NORMAL",
+        "yAxisMode": "NORMAL",
+        "pieOptions": {
+          "donutHoleSize": 50.0
+        },
+        "scatterOptions": {
+          "equalScales": false,
+          "identityLine": false
+        },
+        "mapOptions": {
+          "tilesLayer": "cartodb-positron",
+          "lockSquareGrid": false
+        },
+        "mapGridOptions": {
+          "gridLonDeg": 0.6,
+          "gridLatDeg": 0.6
+        },
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAA/0lEQVRoge2YMQ4BQRiF5wJOoKCj2BM4gWSUS9zAEegkKmHRWNlSrRCFTuLvuMFWEq1brOqXX7IFMdlZM+9LXvOq981ss6OU70RdTRzbWwoBwq6TJ7zsdqoyNvcZJ09Yds7dPISVh8KXQ0oyNvcZB8LKQ+G00SQZm/uMsx6cicMdhF0Cwspx4ew0Ig53wTYgGZv7jANhBWG3hPfXB3G4qw2PJGNzn3EgrCDsr7D80ViEumVn8Y+YEP6r15FvhLNkQ6/EMYS9Fi7tQ6AJ4WxcIQ53Tggn9xlx4tsUwp8Iy24e6kkRjm+URbiwr6HMwlFP7/L6Vb9dlzF+KAAAAAriCZNS8YvjW07gAAAAAElFTkSuQmCC",
+        "disableSafetyLimits": false,
+        "useLiveProcessingIfAvailable": true
+      }
+    }
+  ]
+}
