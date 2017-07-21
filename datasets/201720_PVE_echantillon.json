@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1500653477685
+    "lastModifiedOn": 1500653494023
   },
   "creationTag": {
     "versionNumber": 0,
@@ -52,10 +52,10 @@
     "columns": [
       {
         "name": "DI_Id",
-        "type": "bigint",
+        "type": "string",
         "meaning": "Text",
         "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "maxLength": 16200
       },
       {
         "name": "SD_Libelle",
