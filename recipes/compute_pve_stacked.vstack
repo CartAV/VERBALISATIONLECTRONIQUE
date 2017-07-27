@@ -15,6 +15,11 @@
         "enabled": false,
         "distinct": false
       }
+    },
+    {
+      "index": 2,
+      "originLabel": "2011_07_12_PVE_GDI_EXTRACT_STAT",
+      "preFilter": {}
     }
   ],
   "engineParams": {
@@ -43,11 +48,11 @@
     },
     "lowerCaseSchemaIfEngineRequiresIt": true
   },
+  "originColumnName": "original_dataset",
   "postFilter": {
     "enabled": false,
     "distinct": false
   },
-  "originColumnName": "original_dataset",
   "selectedColumns": [
     "DI_Id",
     "SD_Libelle",
