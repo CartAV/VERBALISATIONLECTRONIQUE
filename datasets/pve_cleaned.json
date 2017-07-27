@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "grabenertr"
     },
-    "lastModifiedOn": 1501171069221
+    "lastModifiedOn": 1501171213349
   },
   "creationTag": {
     "versionNumber": 0,
@@ -95,7 +95,7 @@
       },
       {
         "name": "CODE_INSEE_INFRACTION",
-        "type": "bigint",
+        "type": "string",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
