@@ -17,6 +17,10 @@
             "201720_PVE_echantillon_csv": {
               "repartition": 10,
               "cache": false
+            },
+            "pve_stacked": {
+              "repartition": 10,
+              "cache": false
             }
           }
         }
@@ -50,11 +54,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "grabenertr"
     },
-    "lastModifiedOn": 1501163770678
+    "lastModifiedOn": 1501171070517
   },
   "creationTag": {
     "versionNumber": 0,

@@ -6,23 +6,69 @@
     }
   ],
   "maxProcessedMemTableBytes": -1,
+  "analysisColumnData": {},
   "columnsSelection": {
     "mode": "ALL"
   },
-  "analysisColumnData": {},
   "globalSearchQuery": "",
   "vizSampling": {
     "_refreshTrigger": 0,
     "autoRefreshSample": false
   },
   "origin": "PREPARE_RECIPE",
+  "sorting": [],
   "coloring": {
     "individualColumns": [],
     "scheme": "MEANING_AND_STATUS",
     "valueColoringMode": "HASH"
   },
-  "sorting": [],
   "steps": [
+    {
+      "alwaysShowComment": false,
+      "preview": false,
+      "params": {
+        "appliesTo": "COLUMNS",
+        "columns": [
+          "MI_DateHeureIntegration",
+          "MIFVAO_CoordUTM",
+          "MIFVAO_CoordComplement",
+          "MIFVAO_CoordAltitude",
+          "MI_NombreRecherchesRepereKilometrique",
+          "NI_NombrePoints",
+          "NI_ClasseInfraction",
+          "FI_Id",
+          "EQUIPEMENT_IdentifiantEquipement",
+          "AC_CodePostal",
+          "AC_Commune",
+          "AC_Departement",
+          "AC_CodeInsee",
+          "AC_Npai",
+          "TCV_Libelle",
+          "CV_DatePermisConduire",
+          "MD_Libelle",
+          "SD_Libelle",
+          "NI_MontantForfaitaireMinore",
+          "MI_Arrondissement",
+          "NI_MontantForfaitaireMajore",
+          "NI_MontantForfaitaire",
+          "IS_PERSONNE_INTERCEPTEE",
+          "MIFVAO_EchangePermisConduire",
+          "MIFVAO_FicheImmobilisationEtablie",
+          "MIFVAOVIT_VitesseRetenue",
+          "MIFVAOVIT_VitesseLegaleAutorisee",
+          "CORPSUNITE_Code",
+          "MIFVAO_VehiculeMarque",
+          "GV_Code",
+          "GV_Libelle",
+          "DI_TypeImmatriculation",
+          "UNITE_ServiceSaisieSouche"
+        ],
+        "keep": false
+      },
+      "type": "ColumnsSelector",
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    },
     {
       "alwaysShowComment": false,
       "preview": false,
@@ -31,52 +77,17 @@
         "values": [
           "VAO Stationnement"
         ],
-        "normalizationMode": "EXACT",
         "booleanMode": "AND",
+        "normalizationMode": "EXACT",
         "appliesTo": "SINGLE_COLUMN",
-        "action": "REMOVE_ROW",
         "columns": [
           "FI_Libelle"
-        ]
+        ],
+        "action": "REMOVE_ROW"
       },
       "type": "FilterOnValue",
-      "metaType": "PROCESSOR",
-      "disabled": false
-    },
-    {
-      "alwaysShowComment": false,
-      "preview": false,
-      "params": {
-        "appliesToPattern": "UNITE_.*",
-        "appliesTo": "PATTERN",
-        "columns": [
-          "CODE_POSTAL_CONTREVENANT",
-          "COD_UNITE",
-          "COD_ENTITE",
-          "COD_CORPS",
-          "COD_DISPOSITIF",
-          "COD_UNITE_PN",
-          "COD_DEPARTEMENT_UNITE",
-          "COMMUNE_CONTREVENANT",
-          "REGION_CONTREVENANT",
-          "CODE_INSEE_CONTREVENANT",
-          "LIBELLE_UNITE",
-          "LIB_ETAT_UNITE",
-          "LIB_TYPE_UNITE",
-          "LIB_DEPARTEMENT_UNITE",
-          "LIB_REGION_UNITE",
-          "LIB_ENTITE",
-          "LIB_COURT_ENTITE",
-          "LIBELLE_CORPS",
-          "LIB_COURT_CORPS",
-          "LIB_ZONE_CRS",
-          "LIB_ZONE_PAF"
-        ],
-        "keep": false
-      },
-      "type": "ColumnsSelector",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -84,8 +95,8 @@
       "params": {
         "matching": "FULL_STRING",
         "stopAfterFirstMatch": false,
-        "normalization": "EXACT",
         "appliesTo": "ALL",
+        "normalization": "EXACT",
         "columns": [],
         "mapping": [
           {
@@ -96,17 +107,16 @@
         "output": ""
       },
       "type": "FindReplace",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
-      "preview": true,
+      "preview": false,
       "params": {
-        "appliesTo": "COLUMNS",
+        "appliesTo": "SINGLE_COLUMN",
         "columns": [
-          "MI_DateHeureInfraction",
-          "MI_DateHeureIntegration"
+          "MI_DateHeureInfraction"
         ],
         "timezone_id": "UTC",
         "lang": "auto",
@@ -115,30 +125,213 @@
         ]
       },
       "type": "DateParser",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    },
+    {
+      "alwaysShowComment": false,
+      "preview": false,
+      "params": {
+        "renamings": [
+          {
+            "to": "PVE_ID",
+            "from": "DI_Id"
+          },
+          {
+            "to": "LIB_LOCALITE_INFRACTION",
+            "from": "MI_Ville"
+          },
+          {
+            "to": "CODE_INSEE_INFRACTION",
+            "from": "MI_CodeInsee"
+          },
+          {
+            "to": "DEPARTEMENT_INFRACTION",
+            "from": "MI_Departement"
+          },
+          {
+            "to": "LIBELLE_CORPS",
+            "from": "CORPSUNITE_Libelle"
+          },
+          {
+            "to": "COD_GENRE",
+            "from": "MIFVAO_GenreVehiculeId"
+          }
+        ]
+      },
+      "type": "ColumnRenamer",
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    },
+    {
+      "alwaysShowComment": false,
+      "preview": false,
+      "params": {
+        "outputColumn": "VOIE_INFRACTION",
+        "columns": [
+          "MI_Numero",
+          "MI_BisTer",
+          "MI_NatureVoie",
+          "MI_NomVoie"
+        ],
+        "join": ""
+      },
+      "type": "ColumnsConcat",
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    },
+    {
+      "alwaysShowComment": false,
+      "preview": false,
+      "params": {
+        "outYearColumn": "ANNEE",
+        "outDayOfWeekColumn": "LIBELLE_JOUR_INFRACTION",
+        "outHourColumn": "LIBELLE_PLAGE_HORAIRE",
+        "column": "MI_DateHeureInfraction",
+        "timezone_id": "UTC",
+        "outMonthColumn": "MOIS",
+        "outDayColumn": ""
+      },
+      "type": "DateComponentsExtractor",
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    },
+    {
+      "alwaysShowComment": false,
+      "preview": false,
+      "params": {
+        "matching": "FULL_STRING",
+        "stopAfterFirstMatch": true,
+        "appliesTo": "SINGLE_COLUMN",
+        "normalization": "EXACT",
+        "columns": [
+          "LIBELLE_PLAGE_HORAIRE"
+        ],
+        "mapping": [
+          {
+            "to": "00 - 01 h",
+            "from": "0"
+          },
+          {
+            "to": "01 - 02 h",
+            "from": "1"
+          },
+          {
+            "to": "02 - 03 h",
+            "from": "2"
+          },
+          {
+            "to": "03 - 04 h",
+            "from": "3"
+          },
+          {
+            "to": "04 - 05 h",
+            "from": "4"
+          },
+          {
+            "to": "05 - 06 h",
+            "from": "5"
+          },
+          {
+            "to": "06 - 07 h",
+            "from": "6"
+          },
+          {
+            "to": "07 - 08 h",
+            "from": "7"
+          },
+          {
+            "to": "08 - 09 h",
+            "from": "8"
+          },
+          {
+            "to": "09 - 10 h",
+            "from": "9"
+          },
+          {
+            "to": "10 - 11 h",
+            "from": "10"
+          },
+          {
+            "to": "11 - 12 h",
+            "from": "11"
+          },
+          {
+            "to": "12 - 13 h",
+            "from": "12"
+          },
+          {
+            "to": "13 - 14 h",
+            "from": "13"
+          },
+          {
+            "to": "14 - 15 h",
+            "from": "14"
+          },
+          {
+            "to": "15 - 16 h",
+            "from": "15"
+          },
+          {
+            "to": "16 - 17 h",
+            "from": "16"
+          },
+          {
+            "to": "17 - 18 h",
+            "from": "17"
+          },
+          {
+            "to": "18 - 19 h",
+            "from": "18"
+          },
+          {
+            "to": "19 - 20 h",
+            "from": "19"
+          },
+          {
+            "to": "20 - 21 h",
+            "from": "20"
+          },
+          {
+            "to": "21- 22 h",
+            "from": "21"
+          },
+          {
+            "to": "22 - 23 h",
+            "from": "22"
+          },
+          {
+            "to": "23 - 24 h",
+            "from": "23"
+          }
+        ],
+        "output": ""
+      },
+      "type": "FindReplace",
+      "disabled": false,
+      "metaType": "PROCESSOR"
     }
   ],
   "exploreUIParams": {
     "autoRefresh": true
   },
-  "previewMode": "ALL_ROWS",
+  "previewMode": "IMPACTED_ONLY",
   "explorationSampling": {
     "_refreshTrigger": 0,
+    "autoRefreshSample": false,
     "selection": {
-      "maxStoredBytes": -1,
-      "maxRecords": 10000,
       "targetRatio": 0.02,
+      "maxRecords": 10000,
+      "maxStoredBytes": -1,
       "partitionSelectionMethod": "ALL",
       "withinFirstN": -1,
-      "latestPartitionsN": 1,
       "samplingMethod": "HEAD_SEQUENTIAL",
+      "latestPartitionsN": 1,
       "maxReadUncompressedBytes": -1,
       "filter": {
         "enabled": false,
         "distinct": false
       }
-    },
-    "autoRefreshSample": false
+    }
   }
 }
