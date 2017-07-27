@@ -1,7 +1,15 @@
 {
   "dashboardAuthorizations": {
     "allAuthorized": false,
-    "authorizations": []
+    "authorizations": [
+      {
+        "objectRef": {
+          "objectId": "pve_cleaned",
+          "objectType": "DATASET"
+        },
+        "modes": []
+      }
+    ]
   },
   "exposedObjects": {
     "objects": [
@@ -15,6 +23,16 @@
           },
           {
             "targetProject": "CROISEMENTACCIDENTSVERBALISATION",
+            "appearOnFlow": true
+          }
+        ]
+      },
+      {
+        "type": "DATASET",
+        "localName": "pve_cleaned",
+        "rules": [
+          {
+            "targetProject": "VERBALISATIONLECTRONIQUEPARTAGE",
             "appearOnFlow": true
           }
         ]
@@ -77,11 +95,11 @@
   "name": "verbalisation électronique dataprep source",
   "projectStatus": "In use",
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
-      "login": "antoinefa"
+      "login": "grabenertr"
     },
-    "lastModifiedOn": 1497537165872
+    "lastModifiedOn": 1501173413034
   },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
   "tags": [],
