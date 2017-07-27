@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "grabenertr"
     },
-    "lastModifiedOn": 1501171213349
+    "lastModifiedOn": 1501171374293
   },
   "creationTag": {
     "versionNumber": 0,
@@ -89,7 +89,7 @@
       },
       {
         "name": "DEPARTEMENT_INFRACTION",
-        "type": "bigint",
+        "type": "string",
         "timestampNoTzAsDate": false,
         "maxLength": -1
       },
