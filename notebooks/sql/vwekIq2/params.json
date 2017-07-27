@@ -1,0 +1,24 @@
+{
+  "connection": "datalabmaster",
+  "name": "grabenertr\u0027s notebook on datalabmaster",
+  "cells": [],
+  "automationLocal": false,
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "grabenertr"
+    },
+    "lastModifiedOn": 1501170841681
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "grabenertr"
+    },
+    "lastModifiedOn": 1501170841681
+  },
+  "tags": [],
+  "checklists": {
+    "checklists": []
+  }
+}
