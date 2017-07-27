@@ -1,0 +1,28 @@
+{
+  "queries": {
+    "mkrr2d3r41h": [
+      {
+        "mode": "SQL",
+        "id": "f2QTogZdFGuw",
+        "runOn": 1501170864338,
+        "runIn": -1,
+        "runBy": "grabenertr",
+        "connection": "datalabmaster",
+        "state": "RUNNING",
+        "futureId": "P7n0BG8oZIuadcQG",
+        "hash": "4b9bba822e2631f9c7a6741fef29f354",
+        "querySettings": {
+          "addLimitToStatement": true,
+          "statementsOutOfTransaction": false,
+          "inheritConf": "default",
+          "extraConf": [],
+          "addDkuUdf": false,
+          "statementsParseMode": "SPLIT",
+          "statementsExecutionMode": "PREPARED"
+        },
+        "sql": "select distinct(\"CODE_NATURE_INFRA\", \"LIBELLE_FAMILLE\") from \"2010-2015_pve_sr\"",
+        "expandedSql": "select distinct(\"CODE_NATURE_INFRA\", \"LIBELLE_FAMILLE\") from \"2010-2015_pve_sr\""
+      }
+    ]
+  }
+}
