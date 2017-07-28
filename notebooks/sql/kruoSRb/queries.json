@@ -22,6 +22,28 @@
         },
         "sql": "select count(*) from pve_stacked",
         "expandedSql": "select count(*) from pve_stacked"
+      },
+      {
+        "mode": "SQL",
+        "id": "gKHcbKqju8fo",
+        "runOn": 1501235121535,
+        "runIn": 11314,
+        "runBy": "grabenertr",
+        "connection": "postgis",
+        "state": "RUNNING",
+        "futureId": "qIfilFIn5KcCPx4x",
+        "hash": "b55e9108c2e58c9c12cf2d4b489d2076",
+        "querySettings": {
+          "addLimitToStatement": true,
+          "statementsOutOfTransaction": false,
+          "inheritConf": "default",
+          "extraConf": [],
+          "addDkuUdf": false,
+          "statementsParseMode": "SPLIT",
+          "statementsExecutionMode": "PREPARED"
+        },
+        "sql": "select * from pve_stacked",
+        "expandedSql": "select * from pve_stacked"
       }
     ]
   }
