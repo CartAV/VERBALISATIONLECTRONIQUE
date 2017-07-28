@@ -12,6 +12,16 @@
       "index": 1,
       "originLabel": "2016_02_PVE_GDI_EXTRACT_STAT",
       "preFilter": {}
+    },
+    {
+      "index": 2,
+      "originLabel": "2011_01_06_PVE_GDI_EXTRACT_STAT",
+      "preFilter": {}
+    },
+    {
+      "index": 3,
+      "originLabel": "2011_07_12_PVE_GDI_EXTRACT_STAT",
+      "preFilter": {}
     }
   ],
   "engineParams": {
@@ -40,11 +50,11 @@
     },
     "lowerCaseSchemaIfEngineRequiresIt": true
   },
-  "originColumnName": "original_dataset",
   "postFilter": {
     "enabled": false,
     "distinct": false
   },
+  "originColumnName": "original_dataset",
   "selectedColumns": [
     "DI_Id",
     "SD_Libelle",
