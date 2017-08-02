@@ -11,7 +11,18 @@
       "items": [
         {
           "ref": "PVE_2016",
-          "deps": []
+          "deps": [
+            {
+              "idim": "Year",
+              "func": "all_available",
+              "params": {}
+            },
+            {
+              "idim": "Month",
+              "func": "all_available",
+              "params": {}
+            }
+          ]
         },
         {
           "ref": "2010_PVE_GDI_EXTRACT_STAT",
@@ -31,11 +42,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "grabenertr"
     },
-    "lastModifiedOn": 1501684209652
+    "lastModifiedOn": 1501689135698
   },
   "creationTag": {
     "versionNumber": 0,

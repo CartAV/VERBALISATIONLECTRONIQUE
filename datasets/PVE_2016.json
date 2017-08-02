@@ -43,15 +43,27 @@
     "compress": ""
   },
   "partitioning": {
+    "filePathPattern": "/%{Year}_%{Month}_PVE_GDI_EXTRACT_STAT.csv*",
     "ignoreNonMatchingFile": false,
-    "dimensions": []
+    "dimensions": [
+      {
+        "name": "Year",
+        "type": "value",
+        "params": {}
+      },
+      {
+        "name": "Month",
+        "type": "value",
+        "params": {}
+      }
+    ]
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "grabenertr"
     },
-    "lastModifiedOn": 1501684611826
+    "lastModifiedOn": 1501689135680
   },
   "creationTag": {
     "versionNumber": 0,
@@ -501,6 +513,16 @@
         "configuration": {
           "aggregates": []
         }
+      },
+      {
+        "type": "partitioning",
+        "enabled": true,
+        "computeOnBuildMode": "WHOLE_DATASET",
+        "meta": {
+          "name": "Partitioning statistics",
+          "level": 1
+        },
+        "configuration": {}
       }
     ],
     "engineConfig": {
