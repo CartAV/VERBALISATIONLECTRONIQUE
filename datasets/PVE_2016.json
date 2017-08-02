@@ -47,11 +47,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "grabenertr"
     },
-    "lastModifiedOn": 1501684600182
+    "lastModifiedOn": 1501684611826
   },
   "creationTag": {
     "versionNumber": 0,
@@ -539,9 +539,7 @@
       "partition": "NP",
       "columns": [],
       "metrics": [
-        "basic:COUNT_COLUMNS",
-        "basic:COUNT_FILES",
-        "basic:SIZE"
+        "basic:COUNT_FILES"
       ]
     }
   },
