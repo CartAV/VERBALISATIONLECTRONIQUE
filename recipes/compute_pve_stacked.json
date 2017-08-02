@@ -24,6 +24,14 @@
         {
           "ref": "2011_07_12_PVE_GDI_EXTRACT_STAT",
           "deps": []
+        },
+        {
+          "ref": "2016_06_PVE_GDI_EXTRACT_STAT",
+          "deps": []
+        },
+        {
+          "ref": "2016_08_PVE_GDI_EXTRACT_STAT",
+          "deps": []
         }
       ]
     }
@@ -39,11 +47,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 8,
+    "versionNumber": 9,
     "lastModifiedBy": {
       "login": "grabenertr"
     },
-    "lastModifiedOn": 1501247571463
+    "lastModifiedOn": 1501678238063
   },
   "creationTag": {
     "versionNumber": 0,
