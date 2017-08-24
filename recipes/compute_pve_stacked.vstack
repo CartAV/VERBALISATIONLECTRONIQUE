@@ -43,11 +43,11 @@
     },
     "lowerCaseSchemaIfEngineRequiresIt": true
   },
-  "originColumnName": "original_dataset",
   "postFilter": {
     "enabled": false,
     "distinct": false
   },
+  "originColumnName": "original_dataset",
   "selectedColumns": [
     "DI_Id",
     "SD_Libelle",
