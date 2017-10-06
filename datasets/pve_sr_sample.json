@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1507285417201
+    "lastModifiedOn": 1507285573485
   },
   "creationTag": {
     "versionNumber": 0,
@@ -49,7 +49,248 @@
   },
   "schema": {
     "userModified": false,
-    "columns": []
+    "columns": [
+      {
+        "name": "PVE_ID",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "CI_Libelle",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "AC_Pays",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "FI_Libelle",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "NI_ClasseInfraction",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "NI_CodeNatinf",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "NI_Qualification",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "NI_NombrePoints",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "NI_MontantForfaitaire",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "DEPARTEMENT_INFRACTION",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "CODE_INSEE_INFRACTION",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MI_CodePostal",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MI_Numero",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MI_NatureVoie",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MI_NomVoie",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "VOIE_INFRACTION",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "LIB_LOCALITE_INFRACTION",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MI_RepereKilometrique",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MI_BisTer",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MI_SensCirculation",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MI_Pays",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "TYPEVOIE_Libelle",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAO_CoordSite",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAO_CoordGPSLatitude",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAO_CoordGPSLongitude",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAOVIT_VitesseRetenue",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MIFVAOVIT_VitesseLegaleAutorisee",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MI_DateHeureInfraction",
+        "type": "date",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "ANNEE",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MOIS",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_JOUR_INFRACTION",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "LIBELLE_PLAGE_HORAIRE",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "UNITE_Code",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "UNITE_Libelle",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "CORPSUNITE_Code",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "LIBELLE_CORPS",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAO_VehiculeMarque",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "COD_GENRE",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAO_VehiculePaysImmatriculation",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "LIBELLE_FAMILLE",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      }
+    ]
   },
   "metrics": {
     "probes": [
