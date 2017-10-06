@@ -323,7 +323,7 @@
   },
   "previewMode": "IMPACTED_ONLY",
   "explorationSampling": {
-    "_refreshTrigger": 0,
+    "_refreshTrigger": 1,
     "autoRefreshSample": false,
     "selection": {
       "targetRatio": 0.02,
