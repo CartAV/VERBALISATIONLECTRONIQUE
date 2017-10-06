@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1507279964657
+    "lastModifiedOn": 1507302988886
   },
   "creationTag": {
     "versionNumber": 0,
@@ -75,6 +75,12 @@
         "maxLength": 16200
       },
       {
+        "name": "NI_ClasseInfraction",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
         "name": "NI_CodeNatinf",
         "type": "bigint",
         "timestampNoTzAsDate": false,
@@ -85,6 +91,18 @@
         "type": "string",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
+      },
+      {
+        "name": "NI_NombrePoints",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "NI_MontantForfaitaire",
+        "type": "double",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
       },
       {
         "name": "DEPARTEMENT_INFRACTION",
@@ -183,6 +201,18 @@
         "maxLength": 16200
       },
       {
+        "name": "MIFVAOVIT_VitesseRetenue",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
+        "name": "MIFVAOVIT_VitesseLegaleAutorisee",
+        "type": "bigint",
+        "timestampNoTzAsDate": false,
+        "maxLength": -1
+      },
+      {
         "name": "MI_DateHeureInfraction",
         "type": "date",
         "timestampNoTzAsDate": false,
@@ -232,6 +262,12 @@
       },
       {
         "name": "LIBELLE_CORPS",
+        "type": "string",
+        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAO_VehiculeMarque",
         "type": "string",
         "timestampNoTzAsDate": false,
         "maxLength": 16200
