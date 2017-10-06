@@ -6,22 +6,22 @@
     }
   ],
   "maxProcessedMemTableBytes": -1,
+  "analysisColumnData": {},
   "columnsSelection": {
     "mode": "ALL"
   },
-  "analysisColumnData": {},
   "globalSearchQuery": "",
   "vizSampling": {
     "_refreshTrigger": 0,
     "autoRefreshSample": false
   },
   "origin": "PREPARE_RECIPE",
+  "sorting": [],
   "coloring": {
     "individualColumns": [],
     "scheme": "MEANING_AND_STATUS",
     "valueColoringMode": "HASH"
   },
-  "sorting": [],
   "steps": [
     {
       "alwaysShowComment": false,
@@ -59,8 +59,8 @@
         "keep": false
       },
       "type": "ColumnsSelector",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -70,17 +70,17 @@
         "values": [
           "VAO Stationnement"
         ],
-        "normalizationMode": "EXACT",
         "booleanMode": "AND",
+        "normalizationMode": "EXACT",
         "appliesTo": "SINGLE_COLUMN",
-        "action": "REMOVE_ROW",
         "columns": [
           "FI_Libelle"
-        ]
+        ],
+        "action": "REMOVE_ROW"
       },
       "type": "FilterOnValue",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -88,8 +88,8 @@
       "params": {
         "matching": "FULL_STRING",
         "stopAfterFirstMatch": false,
-        "normalization": "EXACT",
         "appliesTo": "ALL",
+        "normalization": "EXACT",
         "columns": [],
         "mapping": [
           {
@@ -100,8 +100,8 @@
         "output": ""
       },
       "type": "FindReplace",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -118,8 +118,8 @@
         ]
       },
       "type": "DateParser",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -153,8 +153,8 @@
         ]
       },
       "type": "ColumnRenamer",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -170,8 +170,8 @@
         "join": " "
       },
       "type": "ColumnsConcat",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -179,15 +179,15 @@
       "params": {
         "outYearColumn": "ANNEE",
         "outDayOfWeekColumn": "LIBELLE_JOUR_INFRACTION",
-        "column": "MI_DateHeureInfraction",
         "outHourColumn": "LIBELLE_PLAGE_HORAIRE",
-        "outMonthColumn": "MOIS",
+        "column": "MI_DateHeureInfraction",
         "timezone_id": "UTC",
+        "outMonthColumn": "MOIS",
         "outDayColumn": ""
       },
       "type": "DateComponentsExtractor",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -195,8 +195,8 @@
       "params": {
         "matching": "FULL_STRING",
         "stopAfterFirstMatch": true,
-        "normalization": "EXACT",
         "appliesTo": "SINGLE_COLUMN",
+        "normalization": "EXACT",
         "columns": [
           "LIBELLE_PLAGE_HORAIRE"
         ],
@@ -301,12 +301,12 @@
         "output": ""
       },
       "type": "FindReplace",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
-      "preview": true,
+      "preview": false,
       "params": {
         "usePythonUnicode": true,
         "stopOnError": true,
@@ -315,30 +315,41 @@
         "mode": "CELL"
       },
       "type": "PythonUDF",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
+    },
+    {
+      "alwaysShowComment": false,
+      "preview": true,
+      "params": {
+        "expression": "rand() \u003c 0.1",
+        "action": "KEEP_ROW"
+      },
+      "type": "FilterOnCustomFormula",
+      "disabled": false,
+      "metaType": "PROCESSOR"
     }
   ],
   "exploreUIParams": {
     "autoRefresh": true
   },
-  "previewMode": "IMPACTED_ONLY",
+  "previewMode": "ALL_ROWS",
   "explorationSampling": {
     "_refreshTrigger": 0,
+    "autoRefreshSample": false,
     "selection": {
-      "maxStoredBytes": -1,
-      "maxRecords": 10000,
       "targetRatio": 0.02,
+      "maxRecords": 10000,
+      "maxStoredBytes": -1,
       "partitionSelectionMethod": "ALL",
       "withinFirstN": -1,
-      "latestPartitionsN": 1,
       "samplingMethod": "HEAD_SEQUENTIAL",
+      "latestPartitionsN": 1,
       "maxReadUncompressedBytes": -1,
       "filter": {
         "enabled": false,
         "distinct": false
       }
-    },
-    "autoRefreshSample": false
+    }
   }
 }
