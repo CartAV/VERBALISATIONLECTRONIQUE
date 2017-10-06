@@ -18,11 +18,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1507282153918
+    "lastModifiedOn": 1507285322615
   },
   "creationTag": {
     "versionNumber": 0,
@@ -100,12 +100,6 @@
       },
       {
         "name": "NI_MontantForfaitaire",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
-      },
-      {
-        "name": "NI_MontantForfaitaireMajore",
         "type": "double",
         "timestampNoTzAsDate": false,
         "maxLength": -1
