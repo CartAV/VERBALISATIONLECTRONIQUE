@@ -6,22 +6,22 @@
     }
   ],
   "maxProcessedMemTableBytes": -1,
+  "analysisColumnData": {},
   "columnsSelection": {
     "mode": "ALL"
   },
-  "analysisColumnData": {},
   "globalSearchQuery": "",
   "vizSampling": {
     "_refreshTrigger": 0,
     "autoRefreshSample": false
   },
   "origin": "PREPARE_RECIPE",
+  "sorting": [],
   "coloring": {
     "individualColumns": [],
     "scheme": "MEANING_AND_STATUS",
     "valueColoringMode": "HASH"
   },
-  "sorting": [],
   "steps": [
     {
       "alwaysShowComment": false,
@@ -34,8 +34,6 @@
           "MIFVAO_CoordComplement",
           "MIFVAO_CoordAltitude",
           "MI_NombreRecherchesRepereKilometrique",
-          "NI_NombrePoints",
-          "NI_ClasseInfraction",
           "FI_Id",
           "EQUIPEMENT_IdentifiantEquipement",
           "AC_CodePostal",
@@ -49,14 +47,9 @@
           "SD_Libelle",
           "NI_MontantForfaitaireMinore",
           "MI_Arrondissement",
-          "NI_MontantForfaitaireMajore",
-          "NI_MontantForfaitaire",
           "IS_PERSONNE_INTERCEPTEE",
           "MIFVAO_EchangePermisConduire",
           "MIFVAO_FicheImmobilisationEtablie",
-          "MIFVAOVIT_VitesseRetenue",
-          "MIFVAOVIT_VitesseLegaleAutorisee",
-          "MIFVAO_VehiculeMarque",
           "GV_Code",
           "GV_Libelle",
           "DI_TypeImmatriculation",
@@ -65,8 +58,8 @@
         "keep": false
       },
       "type": "ColumnsSelector",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -76,17 +69,17 @@
         "values": [
           "VAO Stationnement"
         ],
-        "normalizationMode": "EXACT",
         "booleanMode": "AND",
+        "normalizationMode": "EXACT",
         "appliesTo": "SINGLE_COLUMN",
-        "action": "REMOVE_ROW",
         "columns": [
           "FI_Libelle"
-        ]
+        ],
+        "action": "REMOVE_ROW"
       },
       "type": "FilterOnValue",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -94,8 +87,8 @@
       "params": {
         "matching": "FULL_STRING",
         "stopAfterFirstMatch": false,
-        "normalization": "EXACT",
         "appliesTo": "ALL",
+        "normalization": "EXACT",
         "columns": [],
         "mapping": [
           {
@@ -106,8 +99,8 @@
         "output": ""
       },
       "type": "FindReplace",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -124,8 +117,8 @@
         ]
       },
       "type": "DateParser",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -159,8 +152,8 @@
         ]
       },
       "type": "ColumnRenamer",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -176,8 +169,8 @@
         "join": " "
       },
       "type": "ColumnsConcat",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -185,15 +178,15 @@
       "params": {
         "outYearColumn": "ANNEE",
         "outDayOfWeekColumn": "LIBELLE_JOUR_INFRACTION",
-        "column": "MI_DateHeureInfraction",
         "outHourColumn": "LIBELLE_PLAGE_HORAIRE",
-        "outMonthColumn": "MOIS",
+        "column": "MI_DateHeureInfraction",
         "timezone_id": "UTC",
+        "outMonthColumn": "MOIS",
         "outDayColumn": ""
       },
       "type": "DateComponentsExtractor",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -201,8 +194,8 @@
       "params": {
         "matching": "FULL_STRING",
         "stopAfterFirstMatch": true,
-        "normalization": "EXACT",
         "appliesTo": "SINGLE_COLUMN",
+        "normalization": "EXACT",
         "columns": [
           "LIBELLE_PLAGE_HORAIRE"
         ],
@@ -307,8 +300,8 @@
         "output": ""
       },
       "type": "FindReplace",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     },
     {
       "alwaysShowComment": false,
@@ -321,8 +314,8 @@
         "mode": "CELL"
       },
       "type": "PythonUDF",
-      "metaType": "PROCESSOR",
-      "disabled": false
+      "disabled": false,
+      "metaType": "PROCESSOR"
     }
   ],
   "exploreUIParams": {
@@ -331,20 +324,20 @@
   "previewMode": "IMPACTED_ONLY",
   "explorationSampling": {
     "_refreshTrigger": 0,
+    "autoRefreshSample": false,
     "selection": {
-      "maxStoredBytes": -1,
-      "maxRecords": 10000,
       "targetRatio": 0.02,
+      "maxRecords": 10000,
+      "maxStoredBytes": -1,
       "partitionSelectionMethod": "ALL",
       "withinFirstN": -1,
-      "latestPartitionsN": 1,
       "samplingMethod": "HEAD_SEQUENTIAL",
+      "latestPartitionsN": 1,
       "maxReadUncompressedBytes": -1,
       "filter": {
         "enabled": false,
         "distinct": false
       }
-    },
-    "autoRefreshSample": false
+    }
   }
 }
