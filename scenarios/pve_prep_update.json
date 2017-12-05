@@ -3,22 +3,56 @@
   "id": "pve_prep_update",
   "type": "step_based",
   "name": "pve_prep_update",
-  "active": false,
+  "active": true,
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1512495310858
+    "lastModifiedOn": 1512495369676
   },
   "checklists": {
     "checklists": []
   },
   "tags": [],
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "tVQncrnb",
+      "type": "ds_modified",
+      "delay": 300,
+      "active": true,
+      "params": {
+        "watches": [
+          {
+            "type": "DATASET",
+            "itemId": "PVE_2016",
+            "partitionsSpec": ""
+          }
+        ]
+      }
+    }
+  ],
   "reporters": [],
   "params": {
-    "steps": []
+    "steps": [
+      {
+        "id": "build_0_true_d_pve_cleaned",
+        "type": "build_flowitem",
+        "name": "update_pve_cleaned_for_CartAV",
+        "params": {
+          "builds": [
+            {
+              "type": "DATASET",
+              "itemId": "pve_cleaned",
+              "partitionsSpec": ""
+            }
+          ],
+          "jobType": "RECURSIVE_BUILD",
+          "refreshHiveMetastore": true,
+          "proceedOnFailure": false
+        }
+      }
+    ]
   },
   "automationLocal": false
 }
