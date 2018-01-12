@@ -5,11 +5,11 @@
   "name": "pve_prep_update",
   "active": true,
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1515778739889
+    "lastModifiedOn": 1515779062222
   },
   "checklists": {
     "checklists": []
@@ -42,7 +42,31 @@
       }
     }
   ],
-  "reporters": [],
+  "reporters": [
+    {
+      "active": true,
+      "messaging": {
+        "type": "mail-scenario",
+        "configuration": {
+          "channelId": "datalab-smtp",
+          "subject": "Cartav : mise à jour des données PVE initié sur DSS ${scenarioName}: ${outcome}",
+          "sender": "datalab@interieur.gouv.fr",
+          "recipient": "fabien.antoine@interieur.gouv.fr",
+          "sendAsHTML": false,
+          "attachments": [],
+          "messageSource": "INLINE",
+          "templateFormat": "FORMULA",
+          "templateName": "default.ftl",
+          "message": "* "
+        }
+      },
+      "id": "oS7uDbxK",
+      "name": "mail fabien",
+      "runConditionEnabled": false,
+      "runCondition": "outcome !\u003d \u0027SUCCESS\u0027",
+      "phase": "START"
+    }
+  ],
   "params": {
     "steps": [
       {
