@@ -43,15 +43,14 @@
     },
     "lowerCaseSchemaIfEngineRequiresIt": true
   },
-  "originColumnName": "original_dataset",
   "postFilter": {
     "enabled": true,
     "uiData": {
       "conditions": [
         {
-          "num": 0,
-          "col": "SD_Libelle",
           "input": "FI_Libelle",
+          "col": "SD_Libelle",
+          "num": 0,
           "string": "VAO Stationnement",
           "operator": "!\u003d [string]"
         }
@@ -60,6 +59,7 @@
     },
     "distinct": false
   },
+  "originColumnName": "original_dataset",
   "selectedColumns": [
     "DI_Id",
     "SD_Libelle",

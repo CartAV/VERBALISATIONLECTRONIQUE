@@ -13,6 +13,15 @@
     "rebuildBehavior": "NORMAL",
     "crossProjectBuildBehavior": "DEFAULT"
   },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
   "formatParams": {
     "style": "no_escape_no_quote",
     "charset": "utf8",
@@ -43,16 +52,25 @@
     "compress": ""
   },
   "partitioning": {
-    "filePathPattern": "",
+    "filePathPattern": "%Y_%M_PVE_GDI_EXTRACT_STAT.csv",
     "ignoreNonMatchingFile": false,
-    "dimensions": []
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": [
+      {
+        "name": "date",
+        "params": {
+          "period": "MONTH"
+        },
+        "type": "time"
+      }
+    ]
   },
   "versionTag": {
-    "versionNumber": 5,
+    "versionNumber": 6,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1511539492722
+    "lastModifiedOn": 1515778275640
   },
   "creationTag": {
     "versionNumber": 0,
@@ -66,10 +84,17 @@
   ],
   "params": {
     "connection": "filesystem_root",
-    "path": "/data/dsr/verbalisation/PVE"
+    "path": "/data/dsr/verbalisation/PVE",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    }
   },
   "schema": {
-    "userModified": false,
+    "userModified": true,
     "columns": [
       {
         "name": "DI_Id",
@@ -531,6 +556,10 @@
           },
           "partitionSelectionMethod": "ALL",
           "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
           "samplingMethod": "FULL",
           "maxRecords": -1,
           "targetRatio": 0.02,
