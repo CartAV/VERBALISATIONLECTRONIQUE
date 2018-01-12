@@ -5,14 +5,19 @@
   "name": "pve_prep_update",
   "active": true,
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1512495443021
+    "lastModifiedOn": 1515778447177
   },
   "checklists": {
     "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
   },
   "tags": [],
   "triggers": [
@@ -30,6 +35,10 @@
             "partitionsSpec": ""
           }
         ]
+      },
+      "graceDelaySettings": {
+        "delay": 150,
+        "checkAgainAfterGraceDelay": false
       }
     }
   ],
@@ -45,6 +54,11 @@
             {
               "type": "DATASET",
               "itemId": "pve_cleaned",
+              "partitionsSpec": ""
+            },
+            {
+              "type": "DATASET",
+              "itemId": "pve_sr_tableau",
               "partitionsSpec": ""
             }
           ],
