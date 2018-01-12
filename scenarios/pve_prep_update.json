@@ -5,11 +5,11 @@
   "name": "pve_prep_update",
   "active": true,
   "versionTag": {
-    "versionNumber": 3,
+    "versionNumber": 4,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1515778447177
+    "lastModifiedOn": 1515778739889
   },
   "checklists": {
     "checklists": []
@@ -32,7 +32,7 @@
           {
             "type": "DATASET",
             "itemId": "PVE_2016",
-            "partitionsSpec": ""
+            "partitionsSpec": "PREVIOUS_MONTH"
           }
         ]
       },
