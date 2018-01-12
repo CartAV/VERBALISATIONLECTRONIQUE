@@ -15,7 +15,7 @@
           "deps": [
             {
               "idim": "date",
-              "func": "all_available",
+              "func": "latest_available",
               "params": {}
             }
           ]
@@ -38,11 +38,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 10,
+    "versionNumber": 11,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1515778275662
+    "lastModifiedOn": 1515778329935
   },
   "creationTag": {
     "versionNumber": 0,
