@@ -66,6 +66,28 @@
         },
         "sql": "select * from pve_stacked\nwhere \"MI_DateHeureIntegration\" \u003e \u00272017-09\u0027",
         "expandedSql": "select * from pve_stacked\nwhere \"MI_DateHeureIntegration\" \u003e \u00272017-09\u0027"
+      },
+      {
+        "mode": "SQL",
+        "id": "ZFEMGmzFyhlU",
+        "runOn": 1515779870564,
+        "runIn": 468,
+        "runBy": "antoinefa",
+        "connection": "postgis",
+        "state": "RUNNING",
+        "futureId": "5YOGpEWE",
+        "hash": "3a851c1af5cad1ba371f82484750a791",
+        "querySettings": {
+          "addLimitToStatement": true,
+          "statementsOutOfTransaction": false,
+          "inheritConf": "default",
+          "extraConf": [],
+          "addDkuUdf": false,
+          "statementsParseMode": "SPLIT",
+          "statementsExecutionMode": "PREPARED"
+        },
+        "sql": "select DI_id from pve_stacked\nwhere \"MI_DateHeureIntegration\" \u003e \u00272017-09\u0027",
+        "expandedSql": "select DI_id from pve_stacked\nwhere \"MI_DateHeureIntegration\" \u003e \u00272017-09\u0027"
       }
     ]
   }
