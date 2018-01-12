@@ -132,6 +132,28 @@
         },
         "sql": "select \"DI_Id\", \"MI_DateHeureIntegration\" from pve_stacked\nwhere \"MI_DateHeureIntegration\" \u003e \u00272017-09\u0027",
         "expandedSql": "select \"DI_Id\", \"MI_DateHeureIntegration\" from pve_stacked\nwhere \"MI_DateHeureIntegration\" \u003e \u00272017-09\u0027"
+      },
+      {
+        "mode": "SQL",
+        "id": "57AWDudAx2Fm",
+        "runOn": 1515779927498,
+        "runIn": 79,
+        "runBy": "antoinefa",
+        "connection": "postgis",
+        "state": "RUNNING",
+        "futureId": "k86riWSH",
+        "hash": "99e235ffc94891915afe0b7dafcc0254",
+        "querySettings": {
+          "addLimitToStatement": true,
+          "statementsOutOfTransaction": false,
+          "inheritConf": "default",
+          "extraConf": [],
+          "addDkuUdf": false,
+          "statementsParseMode": "SPLIT",
+          "statementsExecutionMode": "PREPARED"
+        },
+        "sql": "select \"DI_Id\", \"MI_DateHeureIntegration\", count(*) from pve_stacked\nwhere \"MI_DateHeureIntegration\" \u003e \u00272017-09\u0027\ngroup by \"DI_Id\", \"MI_DateHeureIntegration\"",
+        "expandedSql": "select \"DI_Id\", \"MI_DateHeureIntegration\", count(*) from pve_stacked\nwhere \"MI_DateHeureIntegration\" \u003e \u00272017-09\u0027\ngroup by \"DI_Id\", \"MI_DateHeureIntegration\""
       }
     ]
   }
