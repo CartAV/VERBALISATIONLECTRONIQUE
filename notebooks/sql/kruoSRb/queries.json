@@ -49,10 +49,10 @@
         "mode": "SQL",
         "id": "hK7XzDX4luWN",
         "runOn": 1515779849463,
-        "runIn": 1601,
+        "runIn": 468,
         "runBy": "antoinefa",
         "connection": "postgis",
-        "state": "RUNNING",
+        "state": "DONE",
         "futureId": "zjthW3Zk",
         "hash": "22af04cd530861aadaa4bcf67ddf0aec",
         "querySettings": {
