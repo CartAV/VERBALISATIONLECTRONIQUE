@@ -5,11 +5,11 @@
   "name": "pve_prep_update",
   "active": true,
   "versionTag": {
-    "versionNumber": 6,
+    "versionNumber": 7,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1515779453507
+    "lastModifiedOn": 1515780090719
   },
   "checklists": {
     "checklists": []
@@ -25,7 +25,7 @@
       "id": "tVQncrnb",
       "type": "ds_modified",
       "name": "pve CNT",
-      "delay": 1,
+      "delay": 300,
       "active": true,
       "params": {
         "watches": [
@@ -37,7 +37,7 @@
         ]
       },
       "graceDelaySettings": {
-        "delay": 1,
+        "delay": 150,
         "checkAgainAfterGraceDelay": false
       }
     }
