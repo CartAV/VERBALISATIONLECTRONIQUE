@@ -662,7 +662,7 @@
       "def": {
         "type": "stacked_columns",
         "variant": "normal",
-        "name": "Count by DATE_JOUR_REEL_INFRACTION and LIBELLE_FAMILLE",
+        "name": "Sum of MNT_AF_MINOREE by DATE_JOUR_REEL_INFRACTION and LIBELLE_FAMILLE",
         "userEditedName": false,
         "genericDimension0": [
           {
@@ -688,12 +688,12 @@
               {
                 "type": "AGGREGATION",
                 "measureIdx": 0,
-                "label": "Count of records, descending"
+                "label": "Sum of MNT_AF_MINOREE, descending"
               },
               {
                 "type": "AGGREGATION",
                 "measureIdx": 0,
-                "label": "Count of records, ascending",
+                "label": "Sum of MNT_AF_MINOREE, ascending",
                 "sortAscending": true
               }
             ],
@@ -725,19 +725,19 @@
               {
                 "type": "AGGREGATION",
                 "measureIdx": 0,
-                "label": "Count of records, descending"
+                "label": "Sum of MNT_AF_MINOREE, descending"
               },
               {
                 "type": "AGGREGATION",
                 "measureIdx": 0,
-                "label": "Count of records, ascending",
+                "label": "Sum of MNT_AF_MINOREE, ascending",
                 "sortAscending": true
               }
             ],
             "sort": {
               "type": "AGGREGATION",
               "measureIdx": 0,
-              "label": "Count of records, descending"
+              "label": "Sum of MNT_AF_MINOREE, descending"
             }
           }
         ],
@@ -745,14 +745,15 @@
         "animationDimension": [],
         "genericMeasures": [
           {
-            "function": "COUNT",
+            "column": "MNT_AF_MINOREE",
+            "function": "SUM",
             "type": "NUMERICAL",
             "displayed": true,
             "isA": "measure",
             "displayAxis": "axis1",
             "displayType": "column",
             "computeMode": "NORMAL",
-            "computeModeDim": 1
+            "computeModeDim": 0
           }
         ],
         "xDimension": [],
@@ -774,75 +775,12 @@
         "boxplotValue": [],
         "filters": [
           {
-            "filterType": "DATE_FACET",
-            "column": "DATE_JOUR_REEL_INFRACTION",
-            "columnType": "DATE",
-            "dateFilterType": "DAY_OF_MONTH",
+            "filterType": "NUMERICAL_FACET",
+            "column": "ANNEE_INFRACTION",
+            "columnType": "NUMERICAL",
+            "minValue": 2014.738,
             "isA": "filter",
-            "excludedValues": {
-              "1": true,
-              "3": true,
-              "4": true,
-              "5": true,
-              "6": true,
-              "7": true,
-              "8": true,
-              "9": true,
-              "10": true,
-              "11": true,
-              "12": true,
-              "13": true,
-              "14": true,
-              "15": true,
-              "16": true,
-              "17": true,
-              "18": true,
-              "19": true,
-              "20": true
-            },
-            "explicitExclude": false
-          },
-          {
-            "filterType": "DATE_FACET",
-            "column": "DATE_JOUR_REEL_INFRACTION",
-            "columnType": "DATE",
-            "dateFilterType": "RANGE",
-            "minValue": 1.367421009449E12,
-            "maxValue": 1.369161807874E12,
-            "isA": "filter",
-            "excludedValues": {
-              "0": true,
-              "1": true,
-              "2": true,
-              "3": true,
-              "4": true,
-              "5": true,
-              "6": true,
-              "7": true,
-              "8": true,
-              "9": true,
-              "10": true,
-              "11": true,
-              "12": true,
-              "13": true,
-              "14": true,
-              "15": true,
-              "16": true,
-              "17": true,
-              "18": true,
-              "19": true,
-              "20": true,
-              "21": true,
-              "22": true,
-              "23": true,
-              "24": true,
-              "25": true,
-              "26": true,
-              "27": true,
-              "28": true,
-              "29": true,
-              "30": true
-            },
+            "excludedValues": {},
             "explicitExclude": false
           }
         ],
@@ -904,7 +842,7 @@
           "gridLonDeg": 0.6,
           "gridLatDeg": 0.6
         },
-        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAACP0lEQVRoge3YPWvCQBgH8NC1OvZlKZmczDfpWIcOhS7dMpdIhJYOSnASp2ooTYOUvpFQLIi19Zy0X8DBRXEoteB3uC4+wZ4x3Gma5KwPHIi5S/6/3KnxBGFd0ahSX5MvB3l0OcijsLMEUtPgfwFPGklZMiQkGRK/YJbg02Bof53P92IJjl8VGTfSCDfSazA3BQCqvmcxGZ/HET6PIxjH3WcZAFR9XcBaV7W1rmr/dU7fCgA0M/ULPGncLW2W4CsFpvksW+0v2eqMkNUZIZZxkShYwg5gUTDDd0CoBUuRBLj1dW4Oz2CYURqwc3OmwDTjIlUkGJpnX67Bk6DLgr3GRaqYwNCXZzBL8JUCi8oLEpUXz+BwbE+pymT/fwuGny69n90J2jK3IFSpr8l+g51NgVspOmDDSt0bVur+xjo4JsHQ3MbRgOGbHL+p0QE7oV6VmRn2AsMxT7AmPmFNfMK53a2gXXPLeRQ8i8mJTK2eyNTqi4JJuHNudTM6M+zMSPtrJviyYGjPH9+rDSbha3CYRQsmt3tWHowfDqv44bAKcG7BenNY0ZvDiv42PPICk7+t3IJpggvC7B8LmnHQttXn8MHZx/2r7OP+VVBgjPEGxngjNDA8FNCC5x2jBoe9k8kyU36A4Xq9nHnRy5kXbpneT+/099M73TXwsneMJbifYLf9Lrt8guzyifdeGJzMbH02zNZnQxAEYVzUK+OiXmGBBgWG125wcrVRBXd7Ty2Y12rBvJ6+YNhgmnPTr9N18Vs/k81e8gyIAdkAAAAASUVORK5CYII\u003d",
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAAIElEQVRoge3BMQEAAADCoPVPbQo/oAAAAAAAAAAAAHgaJagAAXCxjHYAAAAASUVORK5CYII\u003d",
         "disableSafetyLimits": false,
         "useLiveProcessingIfAvailable": true,
         "legendPlacement": "OUTER_RIGHT"
