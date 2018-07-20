@@ -134,6 +134,9 @@
     "impalaEngineCreationSettings": {
       "useGlobal": true,
       "streamMode": true
+    },
+    "cluster": {
+      "clusterMode": "INHERIT"
     }
   },
   "name": "verbalisation électronique dataprep source",
@@ -189,11 +192,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
-      "login": "antoinefa"
+      "login": "kemgneab"
     },
-    "lastModifiedOn": 1527756174597
+    "lastModifiedOn": 1532094470088
   },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
   "tags": [],
