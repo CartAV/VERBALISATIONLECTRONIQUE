@@ -1,0 +1,54 @@
+{
+  "explorationFilters": [],
+  "maxProcessedMemTableBytes": -1,
+  "analysisColumnData": {
+    "DEPARTEMENT_INFRACTION": {
+      "meaning": "Text"
+    },
+    "CODE_INSEE_INFRACTION": {
+      "meaning": "Text"
+    },
+    "MI_CodePostal": {
+      "meaning": "Text"
+    }
+  },
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "globalSearchQuery": "",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "sorting": [],
+  "coloring": {
+    "individualColumns": [],
+    "scheme": "MEANING_AND_STATUS",
+    "valueColoringMode": "HASH"
+  },
+  "steps": [],
+  "exploreUIParams": {},
+  "previewMode": "ALL_ROWS",
+  "explorationSampling": {
+    "_refreshTrigger": 1,
+    "autoRefreshSample": false,
+    "selection": {
+      "targetRatio": 0.02,
+      "maxRecords": 10000,
+      "maxStoredBytes": -1,
+      "partitionSelectionMethod": "ALL",
+      "withinFirstN": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "latestPartitionsN": 1,
+      "ordering": {
+        "enabled": false,
+        "rules": []
+      },
+      "maxReadUncompressedBytes": -1,
+      "filter": {
+        "enabled": false,
+        "distinct": false
+      }
+    }
+  }
+}
