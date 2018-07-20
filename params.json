@@ -8,6 +8,13 @@
           "objectType": "DATASET"
         },
         "modes": []
+      },
+      {
+        "objectRef": {
+          "objectId": "20161122_pve",
+          "objectType": "DATASET"
+        },
+        "modes": []
       }
     ]
   },
@@ -33,6 +40,16 @@
         "rules": [
           {
             "targetProject": "VERBALISATIONLECTRONIQUEPARTAGE",
+            "appearOnFlow": true
+          }
+        ]
+      },
+      {
+        "type": "DATASET",
+        "localName": "20161122_pve",
+        "rules": [
+          {
+            "targetProject": "TESTS_AKE",
             "appearOnFlow": true
           }
         ]
@@ -192,11 +209,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 6,
+    "versionNumber": 7,
     "lastModifiedBy": {
       "login": "kemgneab"
     },
-    "lastModifiedOn": 1532094740983
+    "lastModifiedOn": 1532095014680
   },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
   "tags": [],
