@@ -5,11 +5,11 @@
   "name": "pve_prep_update",
   "active": true,
   "versionTag": {
-    "versionNumber": 7,
+    "versionNumber": 8,
     "lastModifiedBy": {
-      "login": "antoinefa"
+      "login": "dupontlau"
     },
-    "lastModifiedOn": 1515780090719
+    "lastModifiedOn": 1533290210944
   },
   "checklists": {
     "checklists": []
@@ -73,6 +73,12 @@
         "id": "build_0_true_d_pve_cleaned",
         "type": "build_flowitem",
         "name": "update_pve_cleaned_for_CartAV",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "resetScenarioStatus": false,
         "params": {
           "builds": [
             {
