@@ -136,10 +136,14 @@
         "preventOverride": false
       }
     },
+    "container": {
+      "containerMode": "NONE"
+    },
     "datasetsCreationSettings": {
       "useGlobal": true,
       "preferedStorageFormats": "CSV_ESCAPING_NOGZIP_FORHIVE,CSV_EXCEL_GZIP,PARQUET_HIVE",
-      "virtualizable": false
+      "virtualizable": false,
+      "allowUploadsWithoutConnection": true
     },
     "hiveEngineCreationSettings": {
       "useGlobal": true,
@@ -152,9 +156,13 @@
       "useGlobal": true,
       "streamMode": true
     },
+    "wikiSettings": {
+      "promoted": false
+    },
     "cluster": {
       "clusterMode": "INHERIT"
-    }
+    },
+    "path": "/Verbalisations"
   },
   "name": "verbalisation électronique dataprep source",
   "projectStatus": "In use",
@@ -209,11 +217,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 7,
+    "versionNumber": 8,
     "lastModifiedBy": {
-      "login": "kemgneab"
+      "login": "antoinefa"
     },
-    "lastModifiedOn": 1532095014680
+    "lastModifiedOn": 1533462787892
   },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
   "tags": [],
