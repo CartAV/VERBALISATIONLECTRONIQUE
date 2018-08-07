@@ -60,17 +60,17 @@
       "items": [
         {
           "ref": "pve_sr",
-          "appendMode": true
+          "appendMode": false
         }
       ]
     }
   },
   "versionTag": {
-    "versionNumber": 5,
+    "versionNumber": 6,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1533657199329
+    "lastModifiedOn": 1533658776709
   },
   "creationTag": {
     "versionNumber": 0,
