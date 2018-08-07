@@ -1,33 +1,46 @@
 {
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": -1,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL"
+    },
+    "autoRefreshSample": false
+  },
   "explorationFilters": [
     {
       "$$hashKey": "G0P",
       "type": "global_search"
     }
   ],
-  "maxProcessedMemTableBytes": -1,
-  "analysisColumnData": {},
-  "columnsSelection": {
-    "mode": "ALL"
-  },
-  "globalSearchQuery": "",
-  "vizSampling": {
-    "_refreshTrigger": 0,
-    "autoRefreshSample": false
-  },
   "origin": "PREPARE_RECIPE",
-  "sorting": [],
-  "coloring": {
-    "individualColumns": [],
-    "scheme": "MEANING_AND_STATUS",
-    "valueColoringMode": "HASH"
+  "exploreUIParams": {
+    "autoRefresh": true
   },
   "steps": [
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
       "params": {
-        "appliesTo": "COLUMNS",
         "columns": [
           "MI_DateHeureIntegration",
           "MIFVAO_CoordUTM",
@@ -56,109 +69,110 @@
           "DI_TypeImmatriculation",
           "UNITE_ServiceSaisieSouche"
         ],
-        "keep": false
+        "keep": false,
+        "appliesTo": "COLUMNS"
       },
-      "type": "ColumnsSelector",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FilterOnValue",
       "params": {
-        "matchingMode": "FULL_STRING",
-        "values": [
-          "VAO Stationnement"
-        ],
-        "booleanMode": "AND",
         "normalizationMode": "EXACT",
-        "appliesTo": "SINGLE_COLUMN",
+        "booleanMode": "AND",
         "columns": [
           "FI_Libelle"
         ],
-        "action": "REMOVE_ROW"
+        "values": [
+          "VAO Stationnement"
+        ],
+        "matchingMode": "FULL_STRING",
+        "action": "REMOVE_ROW",
+        "appliesTo": "SINGLE_COLUMN"
       },
-      "type": "FilterOnValue",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
       "params": {
-        "matching": "FULL_STRING",
-        "stopAfterFirstMatch": false,
-        "appliesTo": "ALL",
-        "normalization": "EXACT",
-        "columns": [],
+        "output": "",
         "mapping": [
           {
-            "to": "",
-            "from": "NULL"
+            "from": "NULL",
+            "to": ""
           }
         ],
-        "output": ""
+        "normalization": "EXACT",
+        "columns": [],
+        "appliesTo": "ALL",
+        "stopAfterFirstMatch": false,
+        "matching": "FULL_STRING"
       },
-      "type": "FindReplace",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
       "params": {
-        "appliesTo": "SINGLE_COLUMN",
+        "formats": [
+          "yyyy-MM-dd HH:mm:ss"
+        ],
         "columns": [
           "MI_DateHeureInfraction"
         ],
         "timezone_id": "UTC",
-        "lang": "auto",
-        "formats": [
-          "yyyy-MM-dd HH:mm:ss"
-        ]
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto"
       },
-      "type": "DateParser",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnRenamer",
       "params": {
         "renamings": [
           {
-            "to": "PVE_ID",
-            "from": "DI_Id"
+            "from": "DI_Id",
+            "to": "PVE_ID"
           },
           {
-            "to": "LIB_LOCALITE_INFRACTION",
-            "from": "MI_Ville"
+            "from": "MI_Ville",
+            "to": "LIB_LOCALITE_INFRACTION"
           },
           {
-            "to": "CODE_INSEE_INFRACTION",
-            "from": "MI_CodeInsee"
+            "from": "MI_CodeInsee",
+            "to": "CODE_INSEE_INFRACTION"
           },
           {
-            "to": "DEPARTEMENT_INFRACTION",
-            "from": "MI_Departement"
+            "from": "MI_Departement",
+            "to": "DEPARTEMENT_INFRACTION"
           },
           {
-            "to": "LIBELLE_CORPS",
-            "from": "CORPSUNITE_Libelle"
+            "from": "CORPSUNITE_Libelle",
+            "to": "LIBELLE_CORPS"
           },
           {
-            "to": "COD_GENRE",
-            "from": "MIFVAO_GenreVehiculeId"
+            "from": "MIFVAO_GenreVehiculeId",
+            "to": "COD_GENRE"
           }
         ]
       },
-      "type": "ColumnRenamer",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsConcat",
       "params": {
         "outputColumn": "VOIE_INFRACTION",
         "columns": [
@@ -169,180 +183,166 @@
         ],
         "join": " "
       },
-      "type": "ColumnsConcat",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateComponentsExtractor",
       "params": {
-        "outYearColumn": "ANNEE",
-        "outDayOfWeekColumn": "LIBELLE_JOUR_INFRACTION",
-        "outHourColumn": "LIBELLE_PLAGE_HORAIRE",
-        "column": "MI_DateHeureInfraction",
-        "timezone_id": "UTC",
         "outMonthColumn": "MOIS",
+        "outHourColumn": "LIBELLE_PLAGE_HORAIRE",
+        "outYearColumn": "ANNEE",
+        "column": "MI_DateHeureInfraction",
+        "outDayOfWeekColumn": "LIBELLE_JOUR_INFRACTION",
+        "timezone_id": "UTC",
         "outDayColumn": ""
       },
-      "type": "DateComponentsExtractor",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
       "params": {
-        "matching": "FULL_STRING",
-        "stopAfterFirstMatch": true,
-        "appliesTo": "SINGLE_COLUMN",
+        "output": "",
+        "mapping": [
+          {
+            "from": "0",
+            "to": "00 - 01 h"
+          },
+          {
+            "from": "1",
+            "to": "01 - 02 h"
+          },
+          {
+            "from": "2",
+            "to": "02 - 03 h"
+          },
+          {
+            "from": "3",
+            "to": "03 - 04 h"
+          },
+          {
+            "from": "4",
+            "to": "04 - 05 h"
+          },
+          {
+            "from": "5",
+            "to": "05 - 06 h"
+          },
+          {
+            "from": "6",
+            "to": "06 - 07 h"
+          },
+          {
+            "from": "7",
+            "to": "07 - 08 h"
+          },
+          {
+            "from": "8",
+            "to": "08 - 09 h"
+          },
+          {
+            "from": "9",
+            "to": "09 - 10 h"
+          },
+          {
+            "from": "10",
+            "to": "10 - 11 h"
+          },
+          {
+            "from": "11",
+            "to": "11 - 12 h"
+          },
+          {
+            "from": "12",
+            "to": "12 - 13 h"
+          },
+          {
+            "from": "13",
+            "to": "13 - 14 h"
+          },
+          {
+            "from": "14",
+            "to": "14 - 15 h"
+          },
+          {
+            "from": "15",
+            "to": "15 - 16 h"
+          },
+          {
+            "from": "16",
+            "to": "16 - 17 h"
+          },
+          {
+            "from": "17",
+            "to": "17 - 18 h"
+          },
+          {
+            "from": "18",
+            "to": "18 - 19 h"
+          },
+          {
+            "from": "19",
+            "to": "19 - 20 h"
+          },
+          {
+            "from": "20",
+            "to": "20 - 21 h"
+          },
+          {
+            "from": "21",
+            "to": "21 - 22 h"
+          },
+          {
+            "from": "22",
+            "to": "22 - 23 h"
+          },
+          {
+            "from": "23",
+            "to": "23 - 24 h"
+          }
+        ],
         "normalization": "EXACT",
         "columns": [
           "LIBELLE_PLAGE_HORAIRE"
         ],
-        "mapping": [
-          {
-            "to": "00 - 01 h",
-            "from": "0"
-          },
-          {
-            "to": "01 - 02 h",
-            "from": "1"
-          },
-          {
-            "to": "02 - 03 h",
-            "from": "2"
-          },
-          {
-            "to": "03 - 04 h",
-            "from": "3"
-          },
-          {
-            "to": "04 - 05 h",
-            "from": "4"
-          },
-          {
-            "to": "05 - 06 h",
-            "from": "5"
-          },
-          {
-            "to": "06 - 07 h",
-            "from": "6"
-          },
-          {
-            "to": "07 - 08 h",
-            "from": "7"
-          },
-          {
-            "to": "08 - 09 h",
-            "from": "8"
-          },
-          {
-            "to": "09 - 10 h",
-            "from": "9"
-          },
-          {
-            "to": "10 - 11 h",
-            "from": "10"
-          },
-          {
-            "to": "11 - 12 h",
-            "from": "11"
-          },
-          {
-            "to": "12 - 13 h",
-            "from": "12"
-          },
-          {
-            "to": "13 - 14 h",
-            "from": "13"
-          },
-          {
-            "to": "14 - 15 h",
-            "from": "14"
-          },
-          {
-            "to": "15 - 16 h",
-            "from": "15"
-          },
-          {
-            "to": "16 - 17 h",
-            "from": "16"
-          },
-          {
-            "to": "17 - 18 h",
-            "from": "17"
-          },
-          {
-            "to": "18 - 19 h",
-            "from": "18"
-          },
-          {
-            "to": "19 - 20 h",
-            "from": "19"
-          },
-          {
-            "to": "20 - 21 h",
-            "from": "20"
-          },
-          {
-            "to": "21 - 22 h",
-            "from": "21"
-          },
-          {
-            "to": "22 - 23 h",
-            "from": "22"
-          },
-          {
-            "to": "23 - 24 h",
-            "from": "23"
-          }
-        ],
-        "output": ""
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": true,
+        "matching": "FULL_STRING"
       },
-      "type": "FindReplace",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": true,
-      "params": {
-        "usePythonUnicode": true,
-        "stopOnError": true,
-        "column": "LIBELLE_FAMILLE",
-        "pythonSourceCode": "mapping \u003d {\n     202: \"Priorité de passage - intersections\", \n     203: \"Priorité de passage - intersections\", \n     207: \"Priorité de passage - intersections\", \n     210: \"Priorité de passage - intersections\", \n     213: \"Vitesse\", \n     215: \"Autres infractions à la circulation routière\", \n     217: \"Règles de conduite\", \n     221: \"Priorité de passage - intersections\", \n     237: \"Autres infractions à la circulation routière\", \n     238: \"Eclairage et signalisation\", \n     256: \"Règles de conduite\", \n     697: \"Règles administratives\", \n     2002: \"Règles administratives\", \n     3708: \"Règles administratives\", \n     5678: \"Règles administratives\", \n     6053: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6081: \"Autres infractions à la circulation routière\", \n     6087: \"Règles de conduite\", \n     6090: \"Règles de conduite\", \n     6091: \"Priorité de passage - intersections\", \n     6092: \"Règles de conduite\", \n     6093: \"Règles de conduite\", \n     6094: \"Règles de conduite\", \n     6096: \"Règles de conduite\", \n     6099: \"Règles administratives\", \n     6102: \"Croisements et dépassements\", \n     6105: \"Croisements et dépassements\", \n     6108: \"Croisements et dépassements\", \n     6109: \"Croisements et dépassements\", \n     6110: \"Croisements et dépassements\", \n     6111: \"Priorité de passage - intersections\", \n     6112: \"Priorité de passage - intersections\", \n     6114: \"Eclairage et signalisation\", \n     6115: \"Priorité de passage - intersections\", \n     6116: \"Règles de conduite\", \n     6117: \"Règles de conduite\", \n     6118: \"Priorité de passage - intersections\", \n     6124: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6125: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6126: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6128: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6129: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6134: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6139: \"Autres infractions à la circulation routière\", \n     6164: \"Règles administratives\", \n     6166: \"Règles administratives\", \n     6168: \"Règles administratives\", \n     6175: \"Règles de conduite\", \n     6186: \"Autres infractions à la circulation routière\", \n     6189: \"Vitesse\", \n     6194: \"Autres infractions à la circulation routière\", \n     6196: \"Autres infractions à la circulation routière\", \n     6198: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6199: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6204: \"Règles administratives\", \n     6207: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6208: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6209: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6210: \"Règles administratives\", \n     6212: \"Règles de conduite\", \n     6223: \"Priorité de passage - intersections\", \n     6224: \"Règles administratives\", \n     6227: \"Règles administratives\", \n     6229: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6234: \"Règles administratives\", \n     6235: \"Règles administratives\", \n     6237: \"Règles administratives\", \n     6238: \"Règles administratives\", \n     6241: \"Règles administratives\", \n     6249: \"Règles de conduite\", \n     6289: \"Vitesse\", \n     6290: \"Eclairage et signalisation\", \n     6292: \"Règles de conduite\", \n     6446: \"Règles administratives\", \n     7081: \"Règles administratives\", \n     7082: \"Règles administratives\", \n     7083: \"Règles administratives\", \n     7538: \"Règles administratives\", \n     7541: \"Règles administratives\", \n     7542: \"Règles administratives\", \n     7543: \"Règles administratives\", \n     7544: \"Règles administratives\", \n     7548: \"Règles administratives\", \n     7549: \"Règles administratives\", \n     7551: \"Règles administratives\", \n     7553: \"Règles administratives\", \n     7554: \"Règles administratives\", \n     7555: \"Règles administratives\", \n     7574: \"Eclairage et signalisation\", \n     7635: \"Etat ou équipement des utilisateurs et des véhicules\", \n     7691: \"Règles administratives\", \n     9920: \"Etat ou équipement des utilisateurs et des véhicules\", \n     9921: \"Autres infractions à la circulation routière\", \n     10093: \"Priorité de passage - intersections\", \n     10094: \"Vitesse\", \n     10095: \"Règles de conduite\", \n     10096: \"Croisements et dépassements\", \n     10097: \"Croisements et dépassements\", \n     10205: \"Règles de conduite\", \n     11052: \"Eclairage et signalisation\", \n     11053: \"Eclairage et signalisation\", \n     11054: \"Croisements et dépassements\", \n     11055: \"Croisements et dépassements\", \n     11056: \"Croisements et dépassements\", \n     11057: \"Croisements et dépassements\", \n     11058: \"Croisements et dépassements\", \n     11059: \"Priorité de passage - intersections\", \n     11060: \"Priorité de passage - intersections\", \n     11062: \"Priorité de passage - intersections\", \n     11063: \"Priorité de passage - intersections\", \n     11064: \"Priorité de passage - intersections\", \n     11065: \"Ceinture et casque\", \n     11066: \"Croisements et dépassements\", \n     11067: \"Croisements et dépassements\", \n     11068: \"Croisements et dépassements\", \n     11069: \"Croisements et dépassements\", \n     11070: \"Croisements et dépassements\", \n     11073: \"Croisements et dépassements\", \n     11077: \"Priorité de passage - intersections\", \n     11080: \"Autres infractions à la circulation routière\", \n     11081: \"Règles de conduite\", \n     11083: \"Règles de conduite\", \n     11084: \"Règles de conduite\", \n     11085: \"Règles de conduite\", \n     11301: \"Vitesse\", \n     11302: \"Vitesse\", \n     11325: \"Règles de conduite\", \n     11326: \"Règles de conduite\", \n     11384: \"Règles de conduite\", \n     11385: \"Règles administratives\", \n     11429: \"Etat ou équipement des utilisateurs et des véhicules\", \n     12518: \"Autres infractions à la circulation routière\", \n     12520: \"Règles administratives\", \n     12521: \"Règles administratives\", \n     12522: \"Règles administratives\", \n     12523: \"Règles administratives\", \n     12524: \"Règles administratives\", \n     12525: \"Règles administratives\", \n     12568: \"Autres infractions à la circulation routière\", \n     12867: \"Règles de conduite\", \n     12868: \"Priorité de passage - intersections\", \n     12883: \"Etat ou équipement des utilisateurs et des véhicules\", \n     12927: \"Vitesse\", \n     12929: \"Ceinture et casque\", \n     12930: \"Ceinture et casque\", \n     12931: \"Ceinture et casque\", \n     12932: \"Ceinture et casque\", \n     12933: \"Ceinture et casque\", \n     13107: \"Eclairage et signalisation\", \n     13108: \"Eclairage et signalisation\", \n     13109: \"Eclairage et signalisation\", \n     13110: \"Eclairage et signalisation\", \n     13185: \"Règles de conduite\", \n     13197: \"Règles administratives\", \n     13198: \"Règles administratives\", \n     13318: \"Règles de conduite\", \n     13319: \"Règles de conduite\", \n     13322: \"Alcool\", \n     20430: \"Règles administratives\", \n     20449: \"Règles administratives\", \n     20519: \"Règles administratives\", \n     20808: \"Autres infractions à la circulation routière\", \n     21188: \"Règles administratives\", \n     21189: \"Règles administratives\", \n     21190: \"Règles administratives\", \n     21191: \"Règles administratives\", \n     21213: \"Règles administratives\", \n     21214: \"Règles de conduite\", \n     21215: \"Autres infractions à la circulation routière\", \n     21217: \"Etat ou équipement des utilisateurs et des véhicules\", \n     21254: \"Règles administratives\", \n     21467: \"Règles administratives\", \n     21468: \"Règles administratives\", \n     21527: \"Vitesse\", \n     21541: \"Vitesse\", \n     21631: \"Règles de conduite\", \n     21632: \"Règles administratives\", \n     21633: \"Autres infractions à la circulation routière\", \n     21762: \"Etat ou équipement des utilisateurs et des véhicules\", \n     21944: \"Règles administratives\", \n     22029: \"Règles administratives\", \n     22031: \"Règles administratives\", \n     22060: \"Croisements et dépassements\", \n     22061: \"Règles de conduite\", \n     22064: \"Autres infractions à la circulation routière\", \n     22153: \"Règles administratives\", \n     22158: \"Règles administratives\", \n     22159: \"Règles administratives\", \n     22166: \"Règles administratives\", \n     22167: \"Règles administratives\", \n     22168: \"Règles administratives\", \n     22169: \"Règles administratives\", \n     22170: \"Règles administratives\", \n     22568: \"Règles administratives\", \n     22570: \"Règles administratives\", \n     22572: \"Règles administratives\", \n     22574: \"Règles administratives\", \n     22576: \"Règles administratives\", \n     22578: \"Règles administratives\", \n     22580: \"Règles administratives\", \n     22582: \"Règles administratives\", \n     22583: \"Règles administratives\", \n     22584: \"Règles administratives\", \n     22585: \"Règles administratives\", \n     22586: \"Règles administratives\", \n     22587: \"Règles administratives\", \n     22591: \"Règles administratives\", \n     22593: \"Règles administratives\", \n     22595: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22596: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22597: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22599: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22600: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22601: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22615: \"Eclairage et signalisation\", \n     22616: \"Eclairage et signalisation\", \n     22617: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22618: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22619: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22620: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22621: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22622: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22624: \"Autres infractions à la circulation routière\", \n     22625: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22626: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22627: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22628: \"Règles administratives\", \n     22629: \"Règles administratives\", \n     22630: \"Règles administratives\", \n     22631: \"Règles administratives\", \n     22632: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22648: \"Autres infractions à la circulation routière\", \n     22649: \"Autres infractions à la circulation routière\", \n     22655: \"Autres infractions à la circulation routière\", \n     22656: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22657: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22658: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22672: \"Règles administratives\", \n     22733: \"Règles administratives\", \n     22734: \"Règles administratives\", \n     22735: \"Règles administratives\", \n     22736: \"Règles administratives\", \n     22737: \"Règles administratives\", \n     22738: \"Règles administratives\", \n     22739: \"Règles administratives\", \n     22740: \"Règles administratives\", \n     22741: \"Règles administratives\", \n     22742: \"Règles administratives\", \n     22743: \"Règles administratives\", \n     22746: \"Règles administratives\", \n     22766: \"Règles administratives\", \n     22771: \"Eclairage et signalisation\", \n     22772: \"Eclairage et signalisation\", \n     22773: \"Règles de conduite\", \n     22774: \"Règles de conduite\", \n     22775: \"Règles de conduite\", \n     22776: \"Règles de conduite\", \n     22781: \"Règles administratives\", \n     22782: \"Autres infractions à la circulation routière\", \n     22783: \"Autres infractions à la circulation routière\", \n     22784: \"Règles administratives\", \n     22785: \"Règles administratives\", \n     22788: \"Autres infractions à la circulation routière\", \n     22789: \"Autres infractions à la circulation routière\", \n     22790: \"Autres infractions à la circulation routière\", \n     22791: \"Autres infractions à la circulation routière\", \n     22792: \"Autres infractions à la circulation routière\", \n     22793: \"Autres infractions à la circulation routière\", \n     22794: \"Autres infractions à la circulation routière\", \n     22795: \"Priorité de passage - intersections\", \n     22796: \"Eclairage et signalisation\", \n     22797: \"Eclairage et signalisation\", \n     22798: \"Eclairage et signalisation\", \n     22799: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22803: \"Autres infractions à la circulation routière\", \n     22804: \"Autres infractions à la circulation routière\", \n     22805: \"Autres infractions à la circulation routière\", \n     22814: \"Règles administratives\", \n     22816: \"Règles administratives\", \n     22818: \"Règles administratives\", \n     22820: \"Règles administratives\", \n     22822: \"Eclairage et signalisation\", \n     22823: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22824: \"Autres infractions à la circulation routière\", \n     22825: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22826: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22828: \"Eclairage et signalisation\", \n     22829: \"Eclairage et signalisation\", \n     22830: \"Eclairage et signalisation\", \n     22831: \"Autres infractions à la circulation routière\", \n     22832: \"Eclairage et signalisation\", \n     22833: \"Eclairage et signalisation\", \n     22834: \"Eclairage et signalisation\", \n     22835: \"Eclairage et signalisation\", \n     22836: \"Eclairage et signalisation\", \n     22837: \"Eclairage et signalisation\", \n     22838: \"Eclairage et signalisation\", \n     22839: \"Eclairage et signalisation\", \n     22840: \"Eclairage et signalisation\", \n     22841: \"Eclairage et signalisation\", \n     22842: \"Eclairage et signalisation\", \n     22843: \"Eclairage et signalisation\", \n     22844: \"Eclairage et signalisation\", \n     22845: \"Autres infractions à la circulation routière\", \n     22846: \"Eclairage et signalisation\", \n     22847: \"Eclairage et signalisation\", \n     22848: \"Eclairage et signalisation\", \n     22849: \"Autres infractions à la circulation routière\", \n     22850: \"Eclairage et signalisation\", \n     22851: \"Eclairage et signalisation\", \n     22852: \"Eclairage et signalisation\", \n     22853: \"Eclairage et signalisation\", \n     22854: \"Eclairage et signalisation\", \n     22855: \"Eclairage et signalisation\", \n     22856: \"Eclairage et signalisation\", \n     22857: \"Eclairage et signalisation\", \n     22858: \"Eclairage et signalisation\", \n     22859: \"Eclairage et signalisation\", \n     22860: \"Eclairage et signalisation\", \n     22861: \"Eclairage et signalisation\", \n     22869: \"Autres infractions à la circulation routière\", \n     22871: \"Autres infractions à la circulation routière\", \n     22874: \"Règles administratives\", \n     22875: \"Règles administratives\", \n     22876: \"Règles administratives\", \n     22877: \"Règles administratives\", \n     22878: \"Règles administratives\", \n     22879: \"Règles administratives\", \n     22880: \"Autres infractions à la circulation routière\", \n     22881: \"Autres infractions à la circulation routière\", \n     22885: \"Eclairage et signalisation\", \n     22886: \"Eclairage et signalisation\", \n     22887: \"Eclairage et signalisation\", \n     22888: \"Eclairage et signalisation\", \n     22889: \"Eclairage et signalisation\", \n     22890: \"Eclairage et signalisation\", \n     22891: \"Eclairage et signalisation\", \n     22892: \"Eclairage et signalisation\", \n     22893: \"Eclairage et signalisation\", \n     22894: \"Eclairage et signalisation\", \n     22895: \"Eclairage et signalisation\", \n     22896: \"Eclairage et signalisation\", \n     22897: \"Eclairage et signalisation\", \n     22898: \"Autres infractions à la circulation routière\", \n     22900: \"Croisements et dépassements\", \n     22901: \"Autres infractions à la circulation routière\", \n     22903: \"Autres infractions à la circulation routière\", \n     22904: \"Règles administratives\", \n     22905: \"Règles administratives\", \n     22906: \"Règles administratives\", \n     22910: \"Croisements et dépassements\", \n     22911: \"Croisements et dépassements\", \n     22912: \"Croisements et dépassements\", \n     22913: \"Croisements et dépassements\", \n     22914: \"Croisements et dépassements\", \n     22915: \"Priorité de passage - intersections\", \n     22916: \"Priorité de passage - intersections\", \n     22917: \"Priorité de passage - intersections\", \n     22918: \"Priorité de passage - intersections\", \n     22921: \"Ceinture et casque\", \n     22922: \"Ceinture et casque\", \n     22923: \"Autres infractions à la circulation routière\", \n     22924: \"Autres infractions à la circulation routière\", \n     22925: \"Autres infractions à la circulation routière\", \n     22926: \"Autres infractions à la circulation routière\", \n     22927: \"Autres infractions à la circulation routière\", \n     22928: \"Règles de conduite\", \n     22929: \"Règles de conduite\", \n     22930: \"Autres infractions à la circulation routière\", \n     22931: \"Autres infractions à la circulation routière\", \n     22947: \"Eclairage et signalisation\", \n     22975: \"Etat ou équipement des utilisateurs et des véhicules\", \n     23007: \"Règles administratives\", \n     23009: \"Règles administratives\", \n     23017: \"Etat ou équipement des utilisateurs et des véhicules\", \n     23082: \"Règles de conduite\", \n     23269: \"Croisements et dépassements\", \n     23270: \"Règles de conduite\", \n     23271: \"Croisements et dépassements\", \n     23273: \"Règles de conduite\", \n     23290: \"Règles administratives\", \n     23291: \"Règles administratives\", \n     23292: \"Règles administratives\", \n     23293: \"Règles administratives\", \n     23485: \"Règles administratives\", \n     23494: \"Règles administratives\", \n     23635: \"Règles administratives\", \n     23636: \"Règles administratives\", \n     23694: \"Vitesse\", \n     23703: \"Règles de conduite\", \n     23757: \"Règles de conduite\", \n     23800: \"Règles de conduite\", \n     24028: \"Règles administratives\", \n     24029: \"Règles administratives\", \n     24030: \"Règles administratives\", \n     24088: \"Règles de conduite\", \n     24089: \"Règles de conduite\", \n     24090: \"Règles de conduite\", \n     24091: \"Règles de conduite\", \n     25340: \"Autres infractions à la circulation routière\", \n     25341: \"Règles administratives\", \n     25386: \"Vitesse\", \n     25387: \"Vitesse\", \n     25391: \"Vitesse\", \n     25392: \"Vitesse\", \n     25393: \"Vitesse\", \n     25434: \"Alcool\", \n     25611: \"Règles administratives\", \n     26002: \"Règles administratives\", \n     26005: \"Règles administratives\", \n     26123: \"Autres infractions à la circulation routière\", \n     26124: \"Autres infractions à la circulation routière\", \n     26125: \"Autres infractions à la circulation routière\", \n     26126: \"Autres infractions à la circulation routière\", \n     26165: \"Eclairage et signalisation\", \n     26189: \"Règles administratives\", \n     26190: \"Règles administratives\", \n     26191: \"Règles administratives\", \n     26193: \"Règles administratives\", \n     26194: \"Règles administratives\", \n     26195: \"Règles administratives\", \n     26196: \"Règles administratives\", \n     26813: \"Ceinture et casque\", \n     26958: \"Priorité de passage - intersections\", \n     26959: \"Priorité de passage - intersections\", \n     26960: \"Priorité de passage - intersections\", \n     26963: \"Règles de conduite\", \n     26985: \"Etat ou équipement des utilisateurs et des véhicules\", \n     26986: \"Etat ou équipement des utilisateurs et des véhicules\", \n     26987: \"Etat ou équipement des utilisateurs et des véhicules\", \n     26988: \"Etat ou équipement des utilisateurs et des véhicules\", \n     26995: \"Règles administratives\", \n     27017: \"Règles administratives\", \n     27068: \"Règles administratives\", \n     27069: \"Règles administratives\", \n     27070: \"Eclairage et signalisation\", \n     27071: \"Eclairage et signalisation\", \n     27072: \"Règles administratives\", \n     27193: \"Ceinture et casque\", \n     27196: \"Règles administratives\", \n     27375: \"Règles administratives\", \n     27377: \"Règles administratives\", \n     27449: \"Règles administratives\", \n     27450: \"Règles administratives\", \n     27451: \"Règles administratives\", \n     27452: \"Règles administratives\", \n     27453: \"Règles administratives\", \n     27454: \"Règles administratives\", \n     27462: \"Règles administratives\", \n     27463: \"Règles administratives\", \n     27464: \"Règles administratives\", \n     27465: \"Règles administratives\", \n     27746: \"Règles administratives\", \n     27912: \"Etat ou équipement des utilisateurs et des véhicules\", \n     27935: \"Autres infractions à la circulation routière\", \n     27937: \"Autres infractions à la circulation routière\", \n     27949: \"Règles administratives\", \n     27950: \"Règles administratives\", \n     28028: \"Etat ou équipement des utilisateurs et des véhicules\", \n     28029: \"Etat ou équipement des utilisateurs et des véhicules\", \n     28030: \"Priorité de passage - intersections\", \n     28031: \"Priorité de passage - intersections\", \n     28094: \"Règles administratives\", \n     28095: \"Règles administratives\", \n     28096: \"Règles administratives\", \n     28097: \"Règles administratives\", \n     28146: \"Autres infractions à la circulation routière\", \n     28147: \"Règles administratives\", \n     28148: \"Règles administratives\", \n     28149: \"Règles administratives\", \n     28150: \"Règles administratives\", \n     28156: \"Règles administratives\", \n     28157: \"Règles administratives\", \n     28158: \"Etat ou équipement des utilisateurs et des véhicules\", \n     28159: \"Règles administratives\", \n     28203: \"Règles de conduite\", \n     28213: \"Règles administratives\", \n     28214: \"Règles administratives\", \n     28258: \"Règles administratives\", \n     28259: \"Règles administratives\", \n     28266: \"Règles administratives\", \n     28267: \"Règles administratives\", \n     28268: \"Règles administratives\", \n     28269: \"Règles administratives\", \n     28270: \"Règles administratives\", \n     28271: \"Règles administratives\", \n     28272: \"Règles administratives\", \n     28273: \"Règles administratives\", \n     28274: \"Règles administratives\", \n     28275: \"Règles administratives\", \n     28276: \"Règles administratives\", \n     28277: \"Règles administratives\", \n     28278: \"Règles administratives\", \n     28279: \"Règles administratives\", \n     28280: \"Règles administratives\", \n     28281: \"Règles administratives\", \n     28297: \"Règles administratives\", \n     28298: \"Règles administratives\", \n     28299: \"Règles administratives\", \n     28300: \"Règles administratives\", \n     28316: \"Règles administratives\", \n     28317: \"Règles administratives\", \n     28318: \"Règles administratives\", \n     28319: \"Règles administratives\", \n     28322: \"Règles administratives\", \n     28360: \"Règles administratives\", \n     28361: \"Règles administratives\", \n     28362: \"Règles administratives\", \n     28365: \"Règles administratives\", \n     28366: \"Règles administratives\", \n     28372: \"Règles administratives\", \n     28375: \"Règles administratives\", \n     28376: \"Règles administratives\", \n     28377: \"Règles administratives\", \n     28378: \"Règles administratives\", \n     28379: \"Règles administratives\", \n     28380: \"Règles administratives\", \n     28381: \"Règles administratives\", \n     28382: \"Règles administratives\", \n     28383: \"Règles administratives\", \n     28384: \"Règles administratives\", \n     28648: \"Règles de conduite\", \n     28649: \"Règles de conduite\", \n     28670: \"Alcool\", \n     28671: \"Alcool\", \n     28673: \"Alcool\", \n     29101: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29102: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29144: \"Règles administratives\", \n     29266: \"Règles administratives\", \n     29267: \"Règles administratives\", \n     29268: \"Règles administratives\", \n     29269: \"Règles administratives\", \n     29371: \"Règles administratives\", \n     29372: \"Règles administratives\", \n     29388: \"Règles administratives\", \n     29389: \"Règles administratives\", \n     29390: \"Règles administratives\", \n     29391: \"Règles administratives\", \n     29516: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29517: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29518: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29783: \"Règles administratives\", \n     29787: \"Règles administratives\", \n     29801: \"Règles administratives\", \n     29814: \"Règles administratives\", \n     29875: \"Règles administratives\", \n     29904: \"Règles administratives\", \n     29966: \"Règles administratives\", \n     29967: \"Règles administratives\", \n     30005: \"Règles administratives\", \n     30006: \"Règles administratives\", \n     30007: \"Règles administratives\", \n     30008: \"Règles administratives\", \n     30020: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30021: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30329: \"Règles administratives\", \n     30330: \"Règles administratives\", \n     30332: \"Règles administratives\", \n     30335: \"Règles administratives\", \n     30339: \"Règles administratives\", \n     30341: \"Règles administratives\", \n     30346: \"Vitesse\", \n     30389: \"Règles de conduite\", \n     30400: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30403: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30404: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30487: \"Eclairage et signalisation\", \n     30585: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30760: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30763: \"Règles administratives\", \n     30764: \"Règles administratives\", \n     30781: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30897: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30898: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30899: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30900: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30956: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30957: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30992: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30995: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30998: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30999: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31000: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31001: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31002: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31003: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31060: \"Alcool\", \n     31061: \"Alcool\", \n     31062: \"Alcool\", \n     31063: \"Règles de conduite\", \n     31147: \"Etat ou équipement des utilisateurs et des véhicules\" \n}\ndef process(row):\n    natinf \u003d int(row[\"NI_CodeNatinf\"])\n    if natinf in mapping:\n        return mapping[natinf]\n    else:\n        return \"Autres infractions à la circulation routière\"\n",
-        "mode": "CELL"
-      },
-      "type": "PythonUDF",
+      "metaType": "PROCESSOR",
       "disabled": false,
-      "metaType": "PROCESSOR"
+      "type": "PythonUDF",
+      "params": {
+        "mode": "CELL",
+        "stopOnError": true,
+        "pythonSourceCode": "mapping \u003d {\n     202: \"Priorité de passage - intersections\", \n     203: \"Priorité de passage - intersections\", \n     207: \"Priorité de passage - intersections\", \n     210: \"Priorité de passage - intersections\", \n     213: \"Vitesse\", \n     215: \"Autres infractions à la circulation routière\", \n     217: \"Règles de conduite\", \n     221: \"Priorité de passage - intersections\", \n     237: \"Autres infractions à la circulation routière\", \n     238: \"Eclairage et signalisation\", \n     256: \"Règles de conduite\", \n     697: \"Règles administratives\", \n     2002: \"Règles administratives\", \n     3708: \"Règles administratives\", \n     5678: \"Règles administratives\", \n     6053: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6081: \"Autres infractions à la circulation routière\", \n     6087: \"Règles de conduite\", \n     6090: \"Règles de conduite\", \n     6091: \"Priorité de passage - intersections\", \n     6092: \"Règles de conduite\", \n     6093: \"Règles de conduite\", \n     6094: \"Règles de conduite\", \n     6096: \"Règles de conduite\", \n     6099: \"Règles administratives\", \n     6102: \"Croisements et dépassements\", \n     6105: \"Croisements et dépassements\", \n     6108: \"Croisements et dépassements\", \n     6109: \"Croisements et dépassements\", \n     6110: \"Croisements et dépassements\", \n     6111: \"Priorité de passage - intersections\", \n     6112: \"Priorité de passage - intersections\", \n     6114: \"Eclairage et signalisation\", \n     6115: \"Priorité de passage - intersections\", \n     6116: \"Règles de conduite\", \n     6117: \"Règles de conduite\", \n     6118: \"Priorité de passage - intersections\", \n     6124: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6125: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6126: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6128: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6129: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6134: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6139: \"Autres infractions à la circulation routière\", \n     6164: \"Règles administratives\", \n     6166: \"Règles administratives\", \n     6168: \"Règles administratives\", \n     6175: \"Règles de conduite\", \n     6186: \"Autres infractions à la circulation routière\", \n     6189: \"Vitesse\", \n     6194: \"Autres infractions à la circulation routière\", \n     6196: \"Autres infractions à la circulation routière\", \n     6198: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6199: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6204: \"Règles administratives\", \n     6207: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6208: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6209: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6210: \"Règles administratives\", \n     6212: \"Règles de conduite\", \n     6223: \"Priorité de passage - intersections\", \n     6224: \"Règles administratives\", \n     6227: \"Règles administratives\", \n     6229: \"Etat ou équipement des utilisateurs et des véhicules\", \n     6234: \"Règles administratives\", \n     6235: \"Règles administratives\", \n     6237: \"Règles administratives\", \n     6238: \"Règles administratives\", \n     6241: \"Règles administratives\", \n     6249: \"Règles de conduite\", \n     6289: \"Vitesse\", \n     6290: \"Eclairage et signalisation\", \n     6292: \"Règles de conduite\", \n     6446: \"Règles administratives\", \n     7081: \"Règles administratives\", \n     7082: \"Règles administratives\", \n     7083: \"Règles administratives\", \n     7538: \"Règles administratives\", \n     7541: \"Règles administratives\", \n     7542: \"Règles administratives\", \n     7543: \"Règles administratives\", \n     7544: \"Règles administratives\", \n     7548: \"Règles administratives\", \n     7549: \"Règles administratives\", \n     7551: \"Règles administratives\", \n     7553: \"Règles administratives\", \n     7554: \"Règles administratives\", \n     7555: \"Règles administratives\", \n     7574: \"Eclairage et signalisation\", \n     7635: \"Etat ou équipement des utilisateurs et des véhicules\", \n     7691: \"Règles administratives\", \n     9920: \"Etat ou équipement des utilisateurs et des véhicules\", \n     9921: \"Autres infractions à la circulation routière\", \n     10093: \"Priorité de passage - intersections\", \n     10094: \"Vitesse\", \n     10095: \"Règles de conduite\", \n     10096: \"Croisements et dépassements\", \n     10097: \"Croisements et dépassements\", \n     10205: \"Règles de conduite\", \n     11052: \"Eclairage et signalisation\", \n     11053: \"Eclairage et signalisation\", \n     11054: \"Croisements et dépassements\", \n     11055: \"Croisements et dépassements\", \n     11056: \"Croisements et dépassements\", \n     11057: \"Croisements et dépassements\", \n     11058: \"Croisements et dépassements\", \n     11059: \"Priorité de passage - intersections\", \n     11060: \"Priorité de passage - intersections\", \n     11062: \"Priorité de passage - intersections\", \n     11063: \"Priorité de passage - intersections\", \n     11064: \"Priorité de passage - intersections\", \n     11065: \"Ceinture et casque\", \n     11066: \"Croisements et dépassements\", \n     11067: \"Croisements et dépassements\", \n     11068: \"Croisements et dépassements\", \n     11069: \"Croisements et dépassements\", \n     11070: \"Croisements et dépassements\", \n     11073: \"Croisements et dépassements\", \n     11077: \"Priorité de passage - intersections\", \n     11080: \"Autres infractions à la circulation routière\", \n     11081: \"Règles de conduite\", \n     11083: \"Règles de conduite\", \n     11084: \"Règles de conduite\", \n     11085: \"Règles de conduite\", \n     11301: \"Vitesse\", \n     11302: \"Vitesse\", \n     11325: \"Règles de conduite\", \n     11326: \"Règles de conduite\", \n     11384: \"Règles de conduite\", \n     11385: \"Règles administratives\", \n     11429: \"Etat ou équipement des utilisateurs et des véhicules\", \n     12518: \"Autres infractions à la circulation routière\", \n     12520: \"Règles administratives\", \n     12521: \"Règles administratives\", \n     12522: \"Règles administratives\", \n     12523: \"Règles administratives\", \n     12524: \"Règles administratives\", \n     12525: \"Règles administratives\", \n     12568: \"Autres infractions à la circulation routière\", \n     12867: \"Règles de conduite\", \n     12868: \"Priorité de passage - intersections\", \n     12883: \"Etat ou équipement des utilisateurs et des véhicules\", \n     12927: \"Vitesse\", \n     12929: \"Ceinture et casque\", \n     12930: \"Ceinture et casque\", \n     12931: \"Ceinture et casque\", \n     12932: \"Ceinture et casque\", \n     12933: \"Ceinture et casque\", \n     13107: \"Eclairage et signalisation\", \n     13108: \"Eclairage et signalisation\", \n     13109: \"Eclairage et signalisation\", \n     13110: \"Eclairage et signalisation\", \n     13185: \"Règles de conduite\", \n     13197: \"Règles administratives\", \n     13198: \"Règles administratives\", \n     13318: \"Règles de conduite\", \n     13319: \"Règles de conduite\", \n     13322: \"Alcool\", \n     20430: \"Règles administratives\", \n     20449: \"Règles administratives\", \n     20519: \"Règles administratives\", \n     20808: \"Autres infractions à la circulation routière\", \n     21188: \"Règles administratives\", \n     21189: \"Règles administratives\", \n     21190: \"Règles administratives\", \n     21191: \"Règles administratives\", \n     21213: \"Règles administratives\", \n     21214: \"Règles de conduite\", \n     21215: \"Autres infractions à la circulation routière\", \n     21217: \"Etat ou équipement des utilisateurs et des véhicules\", \n     21254: \"Règles administratives\", \n     21467: \"Règles administratives\", \n     21468: \"Règles administratives\", \n     21527: \"Vitesse\", \n     21541: \"Vitesse\", \n     21631: \"Règles de conduite\", \n     21632: \"Règles administratives\", \n     21633: \"Autres infractions à la circulation routière\", \n     21762: \"Etat ou équipement des utilisateurs et des véhicules\", \n     21944: \"Règles administratives\", \n     22029: \"Règles administratives\", \n     22031: \"Règles administratives\", \n     22060: \"Croisements et dépassements\", \n     22061: \"Règles de conduite\", \n     22064: \"Autres infractions à la circulation routière\", \n     22153: \"Règles administratives\", \n     22158: \"Règles administratives\", \n     22159: \"Règles administratives\", \n     22166: \"Règles administratives\", \n     22167: \"Règles administratives\", \n     22168: \"Règles administratives\", \n     22169: \"Règles administratives\", \n     22170: \"Règles administratives\", \n     22568: \"Règles administratives\", \n     22570: \"Règles administratives\", \n     22572: \"Règles administratives\", \n     22574: \"Règles administratives\", \n     22576: \"Règles administratives\", \n     22578: \"Règles administratives\", \n     22580: \"Règles administratives\", \n     22582: \"Règles administratives\", \n     22583: \"Règles administratives\", \n     22584: \"Règles administratives\", \n     22585: \"Règles administratives\", \n     22586: \"Règles administratives\", \n     22587: \"Règles administratives\", \n     22591: \"Règles administratives\", \n     22593: \"Règles administratives\", \n     22595: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22596: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22597: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22599: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22600: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22601: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22615: \"Eclairage et signalisation\", \n     22616: \"Eclairage et signalisation\", \n     22617: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22618: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22619: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22620: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22621: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22622: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22624: \"Autres infractions à la circulation routière\", \n     22625: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22626: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22627: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22628: \"Règles administratives\", \n     22629: \"Règles administratives\", \n     22630: \"Règles administratives\", \n     22631: \"Règles administratives\", \n     22632: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22648: \"Autres infractions à la circulation routière\", \n     22649: \"Autres infractions à la circulation routière\", \n     22655: \"Autres infractions à la circulation routière\", \n     22656: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22657: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22658: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22672: \"Règles administratives\", \n     22733: \"Règles administratives\", \n     22734: \"Règles administratives\", \n     22735: \"Règles administratives\", \n     22736: \"Règles administratives\", \n     22737: \"Règles administratives\", \n     22738: \"Règles administratives\", \n     22739: \"Règles administratives\", \n     22740: \"Règles administratives\", \n     22741: \"Règles administratives\", \n     22742: \"Règles administratives\", \n     22743: \"Règles administratives\", \n     22746: \"Règles administratives\", \n     22766: \"Règles administratives\", \n     22771: \"Eclairage et signalisation\", \n     22772: \"Eclairage et signalisation\", \n     22773: \"Règles de conduite\", \n     22774: \"Règles de conduite\", \n     22775: \"Règles de conduite\", \n     22776: \"Règles de conduite\", \n     22781: \"Règles administratives\", \n     22782: \"Autres infractions à la circulation routière\", \n     22783: \"Autres infractions à la circulation routière\", \n     22784: \"Règles administratives\", \n     22785: \"Règles administratives\", \n     22788: \"Autres infractions à la circulation routière\", \n     22789: \"Autres infractions à la circulation routière\", \n     22790: \"Autres infractions à la circulation routière\", \n     22791: \"Autres infractions à la circulation routière\", \n     22792: \"Autres infractions à la circulation routière\", \n     22793: \"Autres infractions à la circulation routière\", \n     22794: \"Autres infractions à la circulation routière\", \n     22795: \"Priorité de passage - intersections\", \n     22796: \"Eclairage et signalisation\", \n     22797: \"Eclairage et signalisation\", \n     22798: \"Eclairage et signalisation\", \n     22799: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22803: \"Autres infractions à la circulation routière\", \n     22804: \"Autres infractions à la circulation routière\", \n     22805: \"Autres infractions à la circulation routière\", \n     22814: \"Règles administratives\", \n     22816: \"Règles administratives\", \n     22818: \"Règles administratives\", \n     22820: \"Règles administratives\", \n     22822: \"Eclairage et signalisation\", \n     22823: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22824: \"Autres infractions à la circulation routière\", \n     22825: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22826: \"Etat ou équipement des utilisateurs et des véhicules\", \n     22828: \"Eclairage et signalisation\", \n     22829: \"Eclairage et signalisation\", \n     22830: \"Eclairage et signalisation\", \n     22831: \"Autres infractions à la circulation routière\", \n     22832: \"Eclairage et signalisation\", \n     22833: \"Eclairage et signalisation\", \n     22834: \"Eclairage et signalisation\", \n     22835: \"Eclairage et signalisation\", \n     22836: \"Eclairage et signalisation\", \n     22837: \"Eclairage et signalisation\", \n     22838: \"Eclairage et signalisation\", \n     22839: \"Eclairage et signalisation\", \n     22840: \"Eclairage et signalisation\", \n     22841: \"Eclairage et signalisation\", \n     22842: \"Eclairage et signalisation\", \n     22843: \"Eclairage et signalisation\", \n     22844: \"Eclairage et signalisation\", \n     22845: \"Autres infractions à la circulation routière\", \n     22846: \"Eclairage et signalisation\", \n     22847: \"Eclairage et signalisation\", \n     22848: \"Eclairage et signalisation\", \n     22849: \"Autres infractions à la circulation routière\", \n     22850: \"Eclairage et signalisation\", \n     22851: \"Eclairage et signalisation\", \n     22852: \"Eclairage et signalisation\", \n     22853: \"Eclairage et signalisation\", \n     22854: \"Eclairage et signalisation\", \n     22855: \"Eclairage et signalisation\", \n     22856: \"Eclairage et signalisation\", \n     22857: \"Eclairage et signalisation\", \n     22858: \"Eclairage et signalisation\", \n     22859: \"Eclairage et signalisation\", \n     22860: \"Eclairage et signalisation\", \n     22861: \"Eclairage et signalisation\", \n     22869: \"Autres infractions à la circulation routière\", \n     22871: \"Autres infractions à la circulation routière\", \n     22874: \"Règles administratives\", \n     22875: \"Règles administratives\", \n     22876: \"Règles administratives\", \n     22877: \"Règles administratives\", \n     22878: \"Règles administratives\", \n     22879: \"Règles administratives\", \n     22880: \"Autres infractions à la circulation routière\", \n     22881: \"Autres infractions à la circulation routière\", \n     22885: \"Eclairage et signalisation\", \n     22886: \"Eclairage et signalisation\", \n     22887: \"Eclairage et signalisation\", \n     22888: \"Eclairage et signalisation\", \n     22889: \"Eclairage et signalisation\", \n     22890: \"Eclairage et signalisation\", \n     22891: \"Eclairage et signalisation\", \n     22892: \"Eclairage et signalisation\", \n     22893: \"Eclairage et signalisation\", \n     22894: \"Eclairage et signalisation\", \n     22895: \"Eclairage et signalisation\", \n     22896: \"Eclairage et signalisation\", \n     22897: \"Eclairage et signalisation\", \n     22898: \"Autres infractions à la circulation routière\", \n     22900: \"Croisements et dépassements\", \n     22901: \"Autres infractions à la circulation routière\", \n     22903: \"Autres infractions à la circulation routière\", \n     22904: \"Règles administratives\", \n     22905: \"Règles administratives\", \n     22906: \"Règles administratives\", \n     22910: \"Croisements et dépassements\", \n     22911: \"Croisements et dépassements\", \n     22912: \"Croisements et dépassements\", \n     22913: \"Croisements et dépassements\", \n     22914: \"Croisements et dépassements\", \n     22915: \"Priorité de passage - intersections\", \n     22916: \"Priorité de passage - intersections\", \n     22917: \"Priorité de passage - intersections\", \n     22918: \"Priorité de passage - intersections\", \n     22921: \"Ceinture et casque\", \n     22922: \"Ceinture et casque\", \n     22923: \"Autres infractions à la circulation routière\", \n     22924: \"Autres infractions à la circulation routière\", \n     22925: \"Autres infractions à la circulation routière\", \n     22926: \"Autres infractions à la circulation routière\", \n     22927: \"Autres infractions à la circulation routière\", \n     22928: \"Règles de conduite\", \n     22929: \"Règles de conduite\", \n     22930: \"Autres infractions à la circulation routière\", \n     22931: \"Autres infractions à la circulation routière\", \n     22947: \"Eclairage et signalisation\", \n     22975: \"Etat ou équipement des utilisateurs et des véhicules\", \n     23007: \"Règles administratives\", \n     23009: \"Règles administratives\", \n     23017: \"Etat ou équipement des utilisateurs et des véhicules\", \n     23082: \"Règles de conduite\", \n     23269: \"Croisements et dépassements\", \n     23270: \"Règles de conduite\", \n     23271: \"Croisements et dépassements\", \n     23273: \"Règles de conduite\", \n     23290: \"Règles administratives\", \n     23291: \"Règles administratives\", \n     23292: \"Règles administratives\", \n     23293: \"Règles administratives\", \n     23485: \"Règles administratives\", \n     23494: \"Règles administratives\", \n     23635: \"Règles administratives\", \n     23636: \"Règles administratives\", \n     23694: \"Vitesse\", \n     23703: \"Règles de conduite\", \n     23757: \"Règles de conduite\", \n     23800: \"Règles de conduite\", \n     24028: \"Règles administratives\", \n     24029: \"Règles administratives\", \n     24030: \"Règles administratives\", \n     24088: \"Règles de conduite\", \n     24089: \"Règles de conduite\", \n     24090: \"Règles de conduite\", \n     24091: \"Règles de conduite\", \n     25340: \"Autres infractions à la circulation routière\", \n     25341: \"Règles administratives\", \n     25386: \"Vitesse\", \n     25387: \"Vitesse\", \n     25391: \"Vitesse\", \n     25392: \"Vitesse\", \n     25393: \"Vitesse\", \n     25434: \"Alcool\", \n     25611: \"Règles administratives\", \n     26002: \"Règles administratives\", \n     26005: \"Règles administratives\", \n     26123: \"Autres infractions à la circulation routière\", \n     26124: \"Autres infractions à la circulation routière\", \n     26125: \"Autres infractions à la circulation routière\", \n     26126: \"Autres infractions à la circulation routière\", \n     26165: \"Eclairage et signalisation\", \n     26189: \"Règles administratives\", \n     26190: \"Règles administratives\", \n     26191: \"Règles administratives\", \n     26193: \"Règles administratives\", \n     26194: \"Règles administratives\", \n     26195: \"Règles administratives\", \n     26196: \"Règles administratives\", \n     26813: \"Ceinture et casque\", \n     26958: \"Priorité de passage - intersections\", \n     26959: \"Priorité de passage - intersections\", \n     26960: \"Priorité de passage - intersections\", \n     26963: \"Règles de conduite\", \n     26985: \"Etat ou équipement des utilisateurs et des véhicules\", \n     26986: \"Etat ou équipement des utilisateurs et des véhicules\", \n     26987: \"Etat ou équipement des utilisateurs et des véhicules\", \n     26988: \"Etat ou équipement des utilisateurs et des véhicules\", \n     26995: \"Règles administratives\", \n     27017: \"Règles administratives\", \n     27068: \"Règles administratives\", \n     27069: \"Règles administratives\", \n     27070: \"Eclairage et signalisation\", \n     27071: \"Eclairage et signalisation\", \n     27072: \"Règles administratives\", \n     27193: \"Ceinture et casque\", \n     27196: \"Règles administratives\", \n     27375: \"Règles administratives\", \n     27377: \"Règles administratives\", \n     27449: \"Règles administratives\", \n     27450: \"Règles administratives\", \n     27451: \"Règles administratives\", \n     27452: \"Règles administratives\", \n     27453: \"Règles administratives\", \n     27454: \"Règles administratives\", \n     27462: \"Règles administratives\", \n     27463: \"Règles administratives\", \n     27464: \"Règles administratives\", \n     27465: \"Règles administratives\", \n     27746: \"Règles administratives\", \n     27912: \"Etat ou équipement des utilisateurs et des véhicules\", \n     27935: \"Autres infractions à la circulation routière\", \n     27937: \"Autres infractions à la circulation routière\", \n     27949: \"Règles administratives\", \n     27950: \"Règles administratives\", \n     28028: \"Etat ou équipement des utilisateurs et des véhicules\", \n     28029: \"Etat ou équipement des utilisateurs et des véhicules\", \n     28030: \"Priorité de passage - intersections\", \n     28031: \"Priorité de passage - intersections\", \n     28094: \"Règles administratives\", \n     28095: \"Règles administratives\", \n     28096: \"Règles administratives\", \n     28097: \"Règles administratives\", \n     28146: \"Autres infractions à la circulation routière\", \n     28147: \"Règles administratives\", \n     28148: \"Règles administratives\", \n     28149: \"Règles administratives\", \n     28150: \"Règles administratives\", \n     28156: \"Règles administratives\", \n     28157: \"Règles administratives\", \n     28158: \"Etat ou équipement des utilisateurs et des véhicules\", \n     28159: \"Règles administratives\", \n     28203: \"Règles de conduite\", \n     28213: \"Règles administratives\", \n     28214: \"Règles administratives\", \n     28258: \"Règles administratives\", \n     28259: \"Règles administratives\", \n     28266: \"Règles administratives\", \n     28267: \"Règles administratives\", \n     28268: \"Règles administratives\", \n     28269: \"Règles administratives\", \n     28270: \"Règles administratives\", \n     28271: \"Règles administratives\", \n     28272: \"Règles administratives\", \n     28273: \"Règles administratives\", \n     28274: \"Règles administratives\", \n     28275: \"Règles administratives\", \n     28276: \"Règles administratives\", \n     28277: \"Règles administratives\", \n     28278: \"Règles administratives\", \n     28279: \"Règles administratives\", \n     28280: \"Règles administratives\", \n     28281: \"Règles administratives\", \n     28297: \"Règles administratives\", \n     28298: \"Règles administratives\", \n     28299: \"Règles administratives\", \n     28300: \"Règles administratives\", \n     28316: \"Règles administratives\", \n     28317: \"Règles administratives\", \n     28318: \"Règles administratives\", \n     28319: \"Règles administratives\", \n     28322: \"Règles administratives\", \n     28360: \"Règles administratives\", \n     28361: \"Règles administratives\", \n     28362: \"Règles administratives\", \n     28365: \"Règles administratives\", \n     28366: \"Règles administratives\", \n     28372: \"Règles administratives\", \n     28375: \"Règles administratives\", \n     28376: \"Règles administratives\", \n     28377: \"Règles administratives\", \n     28378: \"Règles administratives\", \n     28379: \"Règles administratives\", \n     28380: \"Règles administratives\", \n     28381: \"Règles administratives\", \n     28382: \"Règles administratives\", \n     28383: \"Règles administratives\", \n     28384: \"Règles administratives\", \n     28648: \"Règles de conduite\", \n     28649: \"Règles de conduite\", \n     28670: \"Alcool\", \n     28671: \"Alcool\", \n     28673: \"Alcool\", \n     29101: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29102: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29144: \"Règles administratives\", \n     29266: \"Règles administratives\", \n     29267: \"Règles administratives\", \n     29268: \"Règles administratives\", \n     29269: \"Règles administratives\", \n     29371: \"Règles administratives\", \n     29372: \"Règles administratives\", \n     29388: \"Règles administratives\", \n     29389: \"Règles administratives\", \n     29390: \"Règles administratives\", \n     29391: \"Règles administratives\", \n     29516: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29517: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29518: \"Etat ou équipement des utilisateurs et des véhicules\", \n     29783: \"Règles administratives\", \n     29787: \"Règles administratives\", \n     29801: \"Règles administratives\", \n     29814: \"Règles administratives\", \n     29875: \"Règles administratives\", \n     29904: \"Règles administratives\", \n     29966: \"Règles administratives\", \n     29967: \"Règles administratives\", \n     30005: \"Règles administratives\", \n     30006: \"Règles administratives\", \n     30007: \"Règles administratives\", \n     30008: \"Règles administratives\", \n     30020: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30021: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30329: \"Règles administratives\", \n     30330: \"Règles administratives\", \n     30332: \"Règles administratives\", \n     30335: \"Règles administratives\", \n     30339: \"Règles administratives\", \n     30341: \"Règles administratives\", \n     30346: \"Vitesse\", \n     30389: \"Règles de conduite\", \n     30400: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30403: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30404: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30487: \"Eclairage et signalisation\", \n     30585: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30760: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30763: \"Règles administratives\", \n     30764: \"Règles administratives\", \n     30781: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30897: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30898: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30899: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30900: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30956: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30957: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30992: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30995: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30998: \"Etat ou équipement des utilisateurs et des véhicules\", \n     30999: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31000: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31001: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31002: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31003: \"Etat ou équipement des utilisateurs et des véhicules\", \n     31060: \"Alcool\", \n     31061: \"Alcool\", \n     31062: \"Alcool\", \n     31063: \"Règles de conduite\", \n     31147: \"Etat ou équipement des utilisateurs et des véhicules\" \n}\ndef process(row):\n    natinf \u003d int(row[\"NI_CodeNatinf\"])\n    if natinf in mapping:\n        return mapping[natinf]\n    else:\n        return \"Autres infractions à la circulation routière\"\n",
+        "column": "LIBELLE_FAMILLE",
+        "usePythonUnicode": true
+      },
+      "alwaysShowComment": false
     }
   ],
-  "exploreUIParams": {
-    "autoRefresh": true
-  },
+  "maxProcessedMemTableBytes": -1,
   "previewMode": "IMPACTED_ONLY",
-  "explorationSampling": {
+  "vizSampling": {
     "_refreshTrigger": 0,
-    "autoRefreshSample": false,
-    "selection": {
-      "targetRatio": 0.02,
-      "maxRecords": 10000,
-      "maxStoredBytes": -1,
-      "partitionSelectionMethod": "ALL",
-      "withinFirstN": -1,
-      "samplingMethod": "HEAD_SEQUENTIAL",
-      "latestPartitionsN": 1,
-      "ordering": {
-        "enabled": false,
-        "rules": []
-      },
-      "maxReadUncompressedBytes": -1,
-      "filter": {
-        "enabled": false,
-        "distinct": false
-      }
-    }
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
   }
 }
