@@ -21,6 +21,10 @@
             "pve_stacked": {
               "repartition": 10,
               "cache": false
+            },
+            "PVE_2016": {
+              "repartition": 10,
+              "cache": false
             }
           }
         },
@@ -62,11 +66,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1533657196978
+    "lastModifiedOn": 1533657199329
   },
   "creationTag": {
     "versionNumber": 0,
