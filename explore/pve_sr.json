@@ -46,11 +46,33 @@
   "charts": [
     {
       "copySelectionFromScript": true,
-      "engineType": "LINO",
+      "engineType": "SQL",
+      "refreshableSelection": {
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        },
+        "autoRefreshSample": false,
+        "_refreshTrigger": 1
+      },
       "def": {
-        "type": "grouped_columns",
+        "type": "stacked_columns",
         "variant": "normal",
-        "name": "Count by MI_DateHeureInfraction",
+        "name": "Sum of NI_MontantForfaitaire by MI_DateHeureInfraction and LIBELLE_FAMILLE",
         "userEditedName": false,
         "genericDimension0": [
           {
@@ -76,12 +98,12 @@
               {
                 "type": "AGGREGATION",
                 "measureIdx": 0,
-                "label": "Count of records, descending"
+                "label": "Sum of NI_MontantForfaitaire, descending"
               },
               {
                 "type": "AGGREGATION",
                 "measureIdx": 0,
-                "label": "Count of records, ascending",
+                "label": "Sum of NI_MontantForfaitaire, ascending",
                 "sortAscending": true
               }
             ],
@@ -92,12 +114,49 @@
             }
           }
         ],
-        "genericDimension1": [],
+        "genericDimension1": [
+          {
+            "column": "LIBELLE_FAMILLE",
+            "type": "ALPHANUM",
+            "numParams": {
+              "emptyBinsMode": "ZEROS"
+            },
+            "maxValues": 20,
+            "generateOthersCategory": true,
+            "oneTickPerBin": false,
+            "filters": [],
+            "isA": "dimension",
+            "possibleSorts": [
+              {
+                "type": "NATURAL",
+                "label": "Natural ordering",
+                "sortAscending": true
+              },
+              {
+                "type": "AGGREGATION",
+                "measureIdx": 0,
+                "label": "Sum of NI_MontantForfaitaire, descending"
+              },
+              {
+                "type": "AGGREGATION",
+                "measureIdx": 0,
+                "label": "Sum of NI_MontantForfaitaire, ascending",
+                "sortAscending": true
+              }
+            ],
+            "sort": {
+              "type": "AGGREGATION",
+              "measureIdx": 0,
+              "label": "Sum of NI_MontantForfaitaire, descending"
+            }
+          }
+        ],
         "facetDimension": [],
         "animationDimension": [],
         "genericMeasures": [
           {
-            "function": "COUNT",
+            "column": "NI_MontantForfaitaire",
+            "function": "SUM",
             "type": "NUMERICAL",
             "displayed": true,
             "isA": "measure",
@@ -184,7 +243,7 @@
           "gridLonDeg": 0.6,
           "gridLatDeg": 0.6
         },
-        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAAmElEQVRoge3QTwpAQBiH4d/OIdTYO4urWAlrN3EEaWLpalY0CcPC3963lBjfzEOi9aLSDk+f4dYAH3z3qVwI4I11n+7NYN+ep840LfaBl+t837n3prSVJIV5m8wD0y4wWROvnckUtpakqLD91ty9Z7s/APDBYYABAwYMGDBgwIABAwYMGDBgwIABAwYM+FKwe/0KTERE9EwjxiRtBiFhacYAAAAASUVORK5CYII\u003d",
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAEoUlEQVRoge2WT2gjdRTH51jaBiQHBdlNIaUk7MwhhxU87WEv4mJZvOxZ9mCE0hqlm0w9pAMq7gYRpWk66646K1TX7SZtN5OYdmqf6Lap7EEEkxVkyV5kU3rwDywefx6S9+tvfvObySS1q6V58KPk5c177/N97zepJPXt/2sbb63c+q97eKJWj0RB5M/GNx3+bHwTRP4jZXojA5IkSUTP2UBEQtQjUXAT6MiYYiggSS0YMj8fQ78X8KFPeVHbunlYuRFYb2SgNjYWk6TWtHHyrOmNDOiNTG9TzsY34duvfv5C9N32St2xXgsTsO4nVpIkCZZ/fMpvH8RSgeg5UAwF5huZGNZDISRpf90VQwHFUKAeiQJ/BToaqiUC4BXUGxlYT73siCV6Tqh27cSJYHX1l9c69bC9UgdiqYCA8mdyDOsphkKhsMblpZdAMZTepuwGXI9EHX4sQvQcsBN1y/FBTQv+OTmZY32iidQjUSCWComdVz8hlkqBFUOhQmCdbHwTiKUCsVRQDAWu3X/nm66AcT34RlBdW7PtIqgs0XOwtVo/gzn43PJ1ObjQuFLm8/6VvFTEz9sr9ZaIswFAQLJ+yQaMYtI1ZoBFdYXG3wf+Z0GUjC2EU/1jYuKaKDYbh5R8XQ7Khlwmeq41mfYdZbcB15jMBlog6eEKAhNLpUJgTygOxvsGFq3H4utf5/VGBr58t7qK6t66fDdEgZkirFCYA+MeXrmRh4svJEjljaBsyGXciJtLk3leHHpPWeDFczZgYqmA95zGdgvMq4WfeYiPHmghnDxb6PnPYxSaB9YbGZBvyCmiDT9N1lNlxVDgw1/fFsZSH+ZOD1eINniaCtyux64y9be/8wX8W2WqKFLLBjEbAPmqHLq7XLvArxK7GdTPXAcKnA6UHXmZJomlAslfXPIEng3sD6dXYEezzEuD9ctX5VBtLDLFx9rAmaZ+WmsOtV48KgVmBcJY/C8JfYVq0xPYtvZcH/6AXdRyrE0xFTplnJoSFeJz2N6i6cA+sECcjTfPFx7PfWzi507ArvW7AnZrnk2uDYQ9gbnn6SR4YO7w7xAEzu/sVlZ/2KPAVAimfqHa3PcfCFh0tIEwWUtO2Yp7AG/cecUXMH91RMA8GA+M33UF7Jb09/efa/m1gTDRhhJesTY/TiIdSBW2mg7gv9+LrPErzgIgMFmYO8uDsX/Z0xMwD0J9AmA+XihEG/j29qOyqziCnAhc0i6cEQGLji9gURKRil7AjlgGbGnrEQX2EscNWP5UFk74QMBuh02ev7cbJtpQwisez3fmHfosD9xpOxwrvTZ91k/NfwXY1sC93fDyzp4vYPZ0CzySMu3A6cHxQwEeSZm0WCfgTrE88DPTBVdg/mDeUNK0Afup1xMwnxh9ImA+XvQ8Ap9MFssiMFGtkZQJoaRZOZksnSbpwXE3gXm/L2C+eR6ENqCa4eWdvYRXPJ7RmZKFz4aSJgV2q1GoNmF0pmSJgG9/3xwX9cQLNDpTsg4MbGtANcOhpOkLmGvcF7DgOSGw1zkSwB7PHU/gufLDF48V8LPTxeM14T5wH7hL4L71rW9961vfnqz9Az9lqqc0atTNAAAAAElFTkSuQmCC",
         "disableSafetyLimits": false,
         "useLiveProcessingIfAvailable": true,
         "legendPlacement": "OUTER_RIGHT"
