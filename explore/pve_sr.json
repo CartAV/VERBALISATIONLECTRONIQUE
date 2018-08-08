@@ -50,7 +50,7 @@
       "def": {
         "type": "grouped_columns",
         "variant": "normal",
-        "name": "Sum of NI_MontantForfaitaire by MI_DateHeureInfraction",
+        "name": "Count by MI_DateHeureInfraction",
         "userEditedName": false,
         "genericDimension0": [
           {
@@ -64,7 +64,7 @@
             },
             "maxValues": 0,
             "generateOthersCategory": true,
-            "oneTickPerBin": false,
+            "oneTickPerBin": true,
             "filters": [],
             "isA": "dimension",
             "possibleSorts": [
@@ -76,12 +76,12 @@
               {
                 "type": "AGGREGATION",
                 "measureIdx": 0,
-                "label": "Sum of NI_MontantForfaitaire, descending"
+                "label": "Count of records, descending"
               },
               {
                 "type": "AGGREGATION",
                 "measureIdx": 0,
-                "label": "Sum of NI_MontantForfaitaire, ascending",
+                "label": "Count of records, ascending",
                 "sortAscending": true
               }
             ],
@@ -97,8 +97,7 @@
         "animationDimension": [],
         "genericMeasures": [
           {
-            "column": "NI_MontantForfaitaire",
-            "function": "SUM",
+            "function": "COUNT",
             "type": "NUMERICAL",
             "displayed": true,
             "isA": "measure",
@@ -185,7 +184,7 @@
           "gridLonDeg": 0.6,
           "gridLatDeg": 0.6
         },
-        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAAuUlEQVRoge3ZMQrCMBSA4dAjONfkYoJnECRZcwHxKA59g1uu5qCViC00NcG0/X/oUPp45NsCVYr+k3ESsi70vsm6L3eAX2kr11kLvW+M7W4/HapExknon7HvKbveL0sE7213mQLuZwCvGfy1Yy3gobmhHe3pvgNcQyngsTnACnA9AY4CvHVwfMMCDLiSAEcBBgwYcOnzJwc4CjBgwIBLnz+5TYHbsxzmgLV7/mAzToK2clwMmIiI6LMHODK9C50RwMQAAAAASUVORK5CYII\u003d",
+        "thumbnailData": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAAmElEQVRoge3QTwpAQBiH4d/OIdTYO4urWAlrN3EEaWLpalY0CcPC3963lBjfzEOi9aLSDk+f4dYAH3z3qVwI4I11n+7NYN+ep840LfaBl+t837n3prSVJIV5m8wD0y4wWROvnckUtpakqLD91ty9Z7s/APDBYYABAwYMGDBgwIABAwYMGDBgwIABAwYM+FKwe/0KTERE9EwjxiRtBiFhacYAAAAASUVORK5CYII\u003d",
         "disableSafetyLimits": false,
         "useLiveProcessingIfAvailable": true,
         "legendPlacement": "OUTER_RIGHT"
