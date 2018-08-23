@@ -13,16 +13,26 @@
     "rebuildBehavior": "NORMAL",
     "crossProjectBuildBehavior": "DEFAULT"
   },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
   "partitioning": {
     "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 3,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1507285322615
+    "lastModifiedOn": 1535019575883
   },
   "creationTag": {
     "versionNumber": 0,
@@ -36,261 +46,330 @@
   ],
   "params": {
     "connection": "datalabmaster",
+    "notReadyIfEmpty": false,
     "mode": "table",
-    "partitioned": false,
     "partitioningType": "custom",
     "normalizeDoubles": true,
     "table": "pve_sr",
     "tableCreationMode": "auto",
     "writeInsertBatchSize": 10000,
     "writeJDBCBadDataBehavior": "DISCARD_ROW",
-    "hasColsWithUnknownTz": false,
-    "readColsWithUnknownTzAsDates": false
+    "readColsWithUnknownTzAsDates": false,
+    "readSQLDateColsAsDSSDates": true
   },
   "schema": {
-    "userModified": false,
     "columns": [
       {
         "name": "PVE_ID",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
+      },
+      {
+        "name": "SD_Libelle",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "MD_Libelle",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "CV_DatePermisConduire",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "TCV_Libelle",
+        "type": "string",
+        "maxLength": 16200
       },
       {
         "name": "CI_Libelle",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "AC_Pays",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
+      },
+      {
+        "name": "AC_Departement",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "AC_Commune",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "AC_CodePostal",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "AC_CodeInsee",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "AC_Npai",
+        "type": "bigint"
+      },
+      {
+        "name": "EQUIPEMENT_IdentifiantEquipement",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "FI_Id",
+        "type": "bigint"
       },
       {
         "name": "FI_Libelle",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "NI_ClasseInfraction",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
       },
       {
         "name": "NI_CodeNatinf",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
       },
       {
         "name": "NI_Qualification",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "NI_NombrePoints",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
+      },
+      {
+        "name": "NI_MontantForfaitaireMinore",
+        "type": "double"
       },
       {
         "name": "NI_MontantForfaitaire",
-        "type": "double",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "double"
+      },
+      {
+        "name": "NI_MontantForfaitaireMajore",
+        "type": "double"
       },
       {
         "name": "DEPARTEMENT_INFRACTION",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "CODE_INSEE_INFRACTION",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MI_CodePostal",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
+      },
+      {
+        "name": "MI_Arrondissement",
+        "type": "string",
+        "maxLength": 16200
       },
       {
         "name": "MI_Numero",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MI_NatureVoie",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MI_NomVoie",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "VOIE_INFRACTION",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "LIB_LOCALITE_INFRACTION",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MI_RepereKilometrique",
         "type": "string",
-        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MI_NombreRecherchesRepereKilometrique",
+        "type": "string",
         "maxLength": 16200
       },
       {
         "name": "MI_BisTer",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MI_SensCirculation",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MI_Pays",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "TYPEVOIE_Libelle",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MIFVAO_CoordSite",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MIFVAO_CoordGPSLatitude",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MIFVAO_CoordGPSLongitude",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
+        "name": "MIFVAO_CoordUTM",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAO_CoordAltitude",
+        "type": "bigint"
+      },
+      {
+        "name": "MIFVAO_CoordComplement",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "MIFVAO_FicheImmobilisationEtablie",
+        "type": "bigint"
+      },
+      {
+        "name": "MIFVAO_EchangePermisConduire",
+        "type": "bigint"
+      },
+      {
+        "name": "IS_PERSONNE_INTERCEPTEE",
+        "type": "bigint"
+      },
+      {
         "name": "MIFVAOVIT_VitesseRetenue",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
       },
       {
         "name": "MIFVAOVIT_VitesseLegaleAutorisee",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
       },
       {
         "name": "MI_DateHeureInfraction",
-        "type": "date",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "date"
       },
       {
         "name": "ANNEE",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
       },
       {
         "name": "MOIS",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
       },
       {
         "name": "LIBELLE_JOUR_INFRACTION",
-        "type": "bigint",
-        "timestampNoTzAsDate": false,
-        "maxLength": -1
+        "type": "bigint"
       },
       {
         "name": "LIBELLE_PLAGE_HORAIRE",
         "type": "string",
-        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "MI_DateHeureIntegration",
+        "type": "string",
         "maxLength": 16200
       },
       {
         "name": "UNITE_Code",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "UNITE_Libelle",
         "type": "string",
-        "timestampNoTzAsDate": false,
+        "maxLength": 16200
+      },
+      {
+        "name": "UNITE_ServiceSaisieSouche",
+        "type": "string",
         "maxLength": 16200
       },
       {
         "name": "CORPSUNITE_Code",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "LIBELLE_CORPS",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "MIFVAO_VehiculeMarque",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "COD_GENRE",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
+      },
+      {
+        "name": "GV_Code",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "GV_Libelle",
+        "type": "string",
+        "maxLength": 16200
+      },
+      {
+        "name": "DI_TypeImmatriculation",
+        "type": "bigint"
       },
       {
         "name": "MIFVAO_VehiculePaysImmatriculation",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       },
       {
         "name": "LIBELLE_FAMILLE",
         "type": "string",
-        "timestampNoTzAsDate": false,
         "maxLength": 16200
       }
-    ]
+    ],
+    "userModified": true
   },
   "metrics": {
     "probes": [
