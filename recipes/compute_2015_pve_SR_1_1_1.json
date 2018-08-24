@@ -31,7 +31,7 @@
         "useGlobalMetastore": false
       },
       "hadoopConfigKeys": [],
-      "maxThreads": 8
+      "maxThreads": 4
     }
   },
   "customMeta": {
@@ -66,11 +66,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 7,
+    "versionNumber": 8,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1535019576641
+    "lastModifiedOn": 1535114695391
   },
   "creationTag": {
     "versionNumber": 0,
