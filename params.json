@@ -29,16 +29,6 @@
             "appearOnFlow": true
           }
         ]
-      },
-      {
-        "type": "DATASET",
-        "localName": "20161122_pve",
-        "rules": [
-          {
-            "targetProject": "TESTS_AKE",
-            "appearOnFlow": true
-          }
-        ]
       }
     ]
   },
@@ -203,11 +193,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 16,
+    "versionNumber": 17,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1535120147315
+    "lastModifiedOn": 1535120147625
   },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
   "tags": [],
