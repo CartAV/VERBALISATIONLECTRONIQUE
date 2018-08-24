@@ -124,30 +124,32 @@
             "isA": "dimension",
             "possibleSorts": [
               {
+                "type": "NATURAL",
                 "label": "Natural ordering",
-                "sortAscending": true,
-                "type": "NATURAL"
+                "sortAscending": true
               },
               {
-                "label": "Count of records, descending",
+                "type": "AGGREGATION",
                 "measureIdx": 0,
-                "type": "AGGREGATION"
+                "label": "Count of records, descending"
               },
               {
+                "type": "AGGREGATION",
+                "measureIdx": 0,
                 "label": "Count of records, ascending",
-                "measureIdx": 0,
-                "sortAscending": true,
-                "type": "AGGREGATION"
+                "sortAscending": true
               }
             ],
             "sort": {
-              "label": "Count of records, descending",
+              "type": "AGGREGATION",
               "measureIdx": 0,
-              "type": "AGGREGATION"
+              "label": "Count of records, descending"
             }
           }
         ],
         "genericDimension1": [],
+        "facetDimension": [],
+        "animationDimension": [],
         "genericMeasures": [
           {
             "function": "COUNT",
@@ -193,10 +195,10 @@
         "hexbinRadius": 20,
         "hexbinNumber": 20,
         "hexbinRadiusMode": "NUM_HEXAGONS",
-        "chartHeight": 0,
+        "chartHeight": 200,
         "singleXAxis": false,
         "multiTooltips": false,
-        "animationFrameDuration": 0,
+        "animationFrameDuration": 3000,
         "animationRepeat": true,
         "colorOptions": {
           "singleColor": "#659a88",
@@ -211,6 +213,7 @@
             "fixedValues": false
           },
           "paletteType": "CONTINUOUS",
+          "quantizationMode": "NONE",
           "numQuantizeSteps": 5,
           "paletteMiddleValue": 0.0
         },
