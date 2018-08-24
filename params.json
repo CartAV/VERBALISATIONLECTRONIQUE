@@ -22,20 +22,6 @@
     "objects": [
       {
         "type": "DATASET",
-        "localName": "2010-2015_pve_sr",
-        "rules": [
-          {
-            "targetProject": "VERBALISATIONLECTRONIQUEPARTAGE",
-            "appearOnFlow": true
-          },
-          {
-            "targetProject": "CROISEMENTACCIDENTSVERBALISATION",
-            "appearOnFlow": true
-          }
-        ]
-      },
-      {
-        "type": "DATASET",
         "localName": "pve_cleaned",
         "rules": [
           {
@@ -217,11 +203,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 9,
+    "versionNumber": 10,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1535120041410
+    "lastModifiedOn": 1535120042125
   },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
   "tags": [],
