@@ -193,11 +193,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 24,
+    "versionNumber": 25,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1535120149283
+    "lastModifiedOn": 1535120149483
   },
   "shortDesc": "The project *verbalisation électronique* was created by Fabien Antoine on Nov 23rd 2016",
   "tags": [],
