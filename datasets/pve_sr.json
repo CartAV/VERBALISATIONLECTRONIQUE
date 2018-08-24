@@ -28,11 +28,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 3,
+    "versionNumber": 4,
     "lastModifiedBy": {
       "login": "antoinefa"
     },
-    "lastModifiedOn": 1535019575883
+    "lastModifiedOn": 1535121859976
   },
   "creationTag": {
     "versionNumber": 0,
@@ -45,7 +45,7 @@
     "creator:antoinefa"
   ],
   "params": {
-    "connection": "datalabmaster",
+    "connection": "vertica-vitesses",
     "notReadyIfEmpty": false,
     "mode": "table",
     "partitioningType": "custom",
@@ -411,6 +411,10 @@
           },
           "partitionSelectionMethod": "ALL",
           "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
           "samplingMethod": "FULL",
           "maxRecords": -1,
           "targetRatio": 0.02,
