@@ -2,6 +2,51 @@
   "script": {
     "steps": [],
     "maxProcessedMemTableBytes": -1,
+    "fullSampleStatistics": {
+      "engineConfig": {
+        "padRunsWithMetrics": false,
+        "hive": {
+          "active": true,
+          "extraConf": []
+        },
+        "basic": {},
+        "dss": {
+          "active": true,
+          "selection": {
+            "useMemTable": false,
+            "filter": {
+              "distinct": false,
+              "enabled": false
+            },
+            "partitionSelectionMethod": "ALL",
+            "latestPartitionsN": 1,
+            "ordering": {
+              "enabled": false,
+              "rules": []
+            },
+            "samplingMethod": "FULL",
+            "maxRecords": -1,
+            "targetRatio": 0.02,
+            "withinFirstN": -1,
+            "maxReadUncompressedBytes": -1
+          }
+        },
+        "sql": {
+          "active": true
+        },
+        "impala": {
+          "active": true
+        },
+        "python": {}
+      },
+      "basic": true,
+      "countDistinct": true,
+      "advanced": true,
+      "percentile": false,
+      "validity": false,
+      "updateOnAnalyzeBoxOpen": false,
+      "computeCostFreeMetrics": false
+    },
     "columnsSelection": {
       "mode": "ALL"
     },
@@ -70,6 +115,41 @@
           "column": "AC_Pays",
           "params": {
             "type": "CountryMeaning",
+            "ok": true,
+            "nok": true,
+            "empty": true
+          }
+        }
+      },
+      {
+        "column": "FI_Libelle",
+        "type": "columnFilter",
+        "currentMode": "FACET",
+        "active": true,
+        "facet": {
+          "type": "facet",
+          "column": "FI_Libelle",
+          "columnType": "ALPHANUM",
+          "currentMode": "ALPHANUM",
+          "sort": "count",
+          "selectedValues": {
+            "VAO Autre": true
+          }
+        },
+        "alphanumFilter": {
+          "type": "alphanum",
+          "column": "FI_Libelle",
+          "values": [],
+          "params": {
+            "mode": "full_string",
+            "normalization": "exact"
+          }
+        },
+        "validityFilter": {
+          "type": "validity",
+          "column": "FI_Libelle",
+          "params": {
+            "type": "Text",
             "ok": true,
             "nok": true,
             "empty": true
