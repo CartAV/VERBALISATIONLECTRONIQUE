@@ -15,8 +15,8 @@
         "enabled": false,
         "rules": []
       },
-      "samplingMethod": "RANDOM_FIXED_NB",
-      "maxRecords": 100000,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "maxRecords": 10000,
       "targetRatio": 0.02,
       "withinFirstN": -1,
       "maxReadUncompressedBytes": -1
@@ -75,11 +75,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "kemgneab"
     },
-    "lastModifiedOn": 1538145459642
+    "lastModifiedOn": 1538146169138
   },
   "creationTag": {
     "versionNumber": 0,
