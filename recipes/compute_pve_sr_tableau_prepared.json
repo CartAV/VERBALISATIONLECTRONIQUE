@@ -12,7 +12,12 @@
           "conf": []
         },
         "readParams": {
-          "map": {}
+          "map": {
+            "pve_sr_tableau": {
+              "repartition": 10,
+              "cache": false
+            }
+          }
         },
         "useGlobalMetastore": false
       },
@@ -46,11 +51,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "kemgneab"
     },
-    "lastModifiedOn": 1541003336290
+    "lastModifiedOn": 1541003445963
   },
   "creationTag": {
     "versionNumber": 0,
