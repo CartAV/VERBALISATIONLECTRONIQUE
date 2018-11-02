@@ -28,11 +28,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "kemgneab"
     },
-    "lastModifiedOn": 1541003336288
+    "lastModifiedOn": 1541149211430
   },
   "creationTag": {
     "versionNumber": 0,
@@ -49,7 +49,8 @@
     "partitioningType": "custom",
     "normalizeDoubles": true,
     "table": "pve_sr_tableau_prepared",
-    "tableCreationMode": "auto",
+    "tableCreationMode": "custom",
+    "customCreateStatement": "CREATE TABLE \"pve_sr_tableau_prepared\" (\n\t\"PVE_ID\" bigint,\n\t\"SD_Libelle\" varchar(16200),\n\t\"MD_Libelle\" varchar(16200),\n\t\"CV_DatePermisConduire\" varchar(16200),\n\t\"TCV_Libelle\" varchar(16200),\n\t\"CI_Libelle\" varchar(16200),\n\t\"AC_Pays\" varchar(16200),\n\t\"AC_Departement\" varchar(16200),\n\t\"AC_Commune\" varchar(16200),\n\t\"AC_CodePostal\" bigint,\n\t\"AC_CodeInsee\" varchar(16200),\n\t\"AC_Npai\" bigint,\n\t\"EQUIPEMENT_IdentifiantEquipement\" varchar(16200),\n\t\"FI_Id\" bigint,\n\t\"FI_Libelle\" varchar(16200),\n\t\"NI_ClasseInfraction\" bigint,\n\t\"NI_CodeNatinf\" bigint,\n\t\"NI_Qualification\" varchar(16200),\n\t\"NI_NombrePoints\" bigint,\n\t\"NI_MontantForfaitaireMinore\" float,\n\t\"NI_MontantForfaitaire\" float,\n\t\"NI_MontantForfaitaireMajore\" float,\n\t\"DEPARTEMENT_INFRACTION\" varchar(16200),\n\t\"CODE_INSEE_INFRACTION\" varchar(16200),\n\t\"MI_CodePostal\" bigint,\n\t\"MI_Arrondissement\" bigint,\n\t\"MI_Numero\" varchar(16200),\n\t\"MI_NatureVoie\" varchar(16200),\n\t\"MI_NomVoie\" varchar(16200),\n\t\"VOIE_INFRACTION\" varchar(16200),\n\t\"LIB_LOCALITE_INFRACTION\" varchar(16200),\n\t\"MI_RepereKilometrique\" varchar(16200),\n\t\"MI_NombreRecherchesRepereKilometrique\" varchar(16200),\n\t\"MI_BisTer\" varchar(16200),\n\t\"MI_SensCirculation\" varchar(16200),\n\t\"MI_Pays\" varchar(16200),\n\t\"TYPEVOIE_Libelle\" varchar(16200),\n\t\"MIFVAO_CoordSite\" varchar(16200),\n\t\"MIFVAO_CoordGPSLatitude\" float,\n\t\"MIFVAO_CoordGPSLongitude\" float,\n\t\"MIFVAO_CoordUTM\" varchar(16200),\n\t\"MIFVAO_CoordAltitude\" bigint,\n\t\"MIFVAO_CoordComplement\" varchar(16200),\n\t\"MIFVAO_FicheImmobilisationEtablie\" bigint,\n\t\"MIFVAO_EchangePermisConduire\" bigint,\n\t\"IS_PERSONNE_INTERCEPTEE\" bigint,\n\t\"MIFVAOVIT_VitesseRetenue\" bigint,\n\t\"MIFVAOVIT_VitesseLegaleAutorisee\" bigint,\n\t\"MI_DateHeureInfraction\" timestamptz,\n\t\"ANNEE\" bigint,\n\t\"MOIS\" bigint,\n\t\"LIBELLE_JOUR_INFRACTION\" bigint,\n\t\"LIBELLE_PLAGE_HORAIRE\" varchar(16200),\n\t\"MI_DateHeureIntegration\" varchar(16200),\n\t\"UNITE_Code\" varchar(16200),\n\t\"UNITE_Libelle\" varchar(16200),\n\t\"UNITE_ServiceSaisieSouche\" varchar(16200),\n\t\"CORPSUNITE_Code\" varchar(16200),\n\t\"LIBELLE_CORPS\" varchar(16200),\n\t\"MIFVAO_VehiculeMarque\" varchar(16200),\n\t\"COD_GENRE\" varchar(16200),\n\t\"GV_Code\" varchar(16200),\n\t\"GV_Libelle\" varchar(16200),\n\t\"DI_TypeImmatriculation\" bigint,\n\t\"MIFVAO_VehiculePaysImmatriculation\" varchar(16200),\n\t\"LIBELLE_FAMILLE\" varchar(16200)\n);",
     "writeInsertBatchSize": 10000,
     "writeJDBCBadDataBehavior": "DISCARD_ROW",
     "readColsWithUnknownTzAsDates": false,
@@ -103,7 +104,7 @@
       },
       {
         "name": "AC_CodePostal",
-        "type": "string",
+        "type": "int",
         "maxLength": 16200
       },
       {
