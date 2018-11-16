@@ -79,6 +79,7 @@
         "tooltipMeasures": [],
         "boxplotBreakdownDim": [],
         "boxplotValue": [],
+        "filters": [],
         "axis1LogScale": false,
         "axis2LogScale": false,
         "includeZero": true,
@@ -120,7 +121,6 @@
           "defaultRadius": 5.0,
           "singleShape": "FILLED_CIRCLE"
         },
-        "computeMode": "NORMAL",
         "xAxisMode": "NORMAL",
         "yAxisMode": "NORMAL",
         "pieOptions": {
@@ -135,8 +135,8 @@
           "lockSquareGrid": false
         },
         "mapGridOptions": {
-          "gridLonDeg": 0.6,
-          "gridLatDeg": 0.6
+          "gridLonDeg": 0.5,
+          "gridLatDeg": 0.5
         },
         "disableSafetyLimits": false,
         "useLiveProcessingIfAvailable": true,
